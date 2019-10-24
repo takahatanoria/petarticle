@@ -1,0 +1,100 @@
+a:link {
+  color: $green_dark1;
+}
+a:visited {
+  color: $green_dark1;
+}
+a:hover {
+  color: $green_dark1;
+}
+a:active {
+  color: $green_dark1;
+}
+
+.header-btn {
+  height: 30px;
+  width: 100%; 
+  float: left;
+  box-sizing: border-box;
+  position: fixed;
+  top: 60px;
+  z-index: 0;
+
+  .left-header-btn{
+    width: calc(100vw - 200px);
+    height: 30px;
+    background-color: white;
+    float: left;
+
+  .main-contents__categories{
+    height: 30px; 
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    float: left;
+    display: flex;
+    color: $green_dark1;
+
+      .main-contents__categories__dogs{
+        width: calc(calc(100vw - 200px)/4);       
+        float: left;
+        border: 1px solid $green_light5;
+        border-bottom: 2px solid $green_light5;
+      }
+      .main-contents__categories__cats{
+        width: calc(calc(100vw - 200px)/4);   
+        float: left;
+        border: 1px solid $green_light5;
+        border-bottom: 2px solid $green_light5;
+        
+      }
+      .main-contents__categories__smallanimals{
+        width: calc(calc(100vw - 200px)/4);    
+        float: left;
+        border: 1px solid $green_light5;
+        border-bottom: 2px solid $green_light5;
+      }
+      .main-contents__categories__others{
+        width: calc(calc(100vw - 200px)/4);   
+        float: left;
+        border: 1px solid $green_light5;
+        border-bottom: 2px solid $green_light5;
+      }
+    }
+  }
+
+  .right-header-btn{
+    width: 200px;
+    height: 30px;
+    float: left;
+    background-color: $green_light3;
+
+  .ranking-order {
+    height: 30px; 
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    float: left;
+    display: flex;
+    color: $white;
+
+    &__new  {
+    width: calc(200px/2);       
+    float: left;
+    border: 1px solid $green_light5;
+    border-bottom: 2px solid $green_light5;
+ }
+    &__popularity{
+    width: calc(200px/2);       
+    float: left;
+    border: 1px solid $green_light5;
+    border-bottom: 2px solid $green_light5;    
+  }
+  }
+}
+
+}

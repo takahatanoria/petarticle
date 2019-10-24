@@ -1,0 +1,24 @@
+  
+.articles-box
+  - @articles.each do |article|
+    .article-post
+      .article-post-content
+        .article-post__title
+          = article.title
+        .article-post__text  
+          = article.text
+      .article-post__image  
+        = image_tag article.image.url, class: 'article-post__image' if article.image.present?
+  .kaminari
+    = paginate(@articles)
+      
+
+   
+
+
+
+    
+
+
+
+
