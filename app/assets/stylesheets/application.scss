@@ -1,0 +1,31 @@
+@import "config/colors";
+@import "config/font-size";
+@import "config/reset";
+@import "font-awesome";
+@import "mixins/mixin";
+@import "modules/flash";
+@import "modules/header";
+@import "modules/header-btn";
+@import "modules/maincontents";
+@import "modules/contents-box";
+@import "modules/side-bar";
+@import "modules/user";
+
+
+@font-face {
+  font-family: 'あずきフォント';
+  src: url('azuki.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}  
+
+.wrapper{
+  color: #000;
+  box-sizing: border-box;   
+  font-family: 'あずきフォント'; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+

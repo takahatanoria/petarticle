@@ -1,0 +1,263 @@
+.header {
+  height: 60px;
+  width: 100%;
+  // position: absolute;
+  // top: 0;
+  // position: fixed;
+  &__bar__row {
+    height: 60px;
+    width: 100%;
+    color: #ffffff;
+    border-bottom: 2px solid $green_light5;
+    background-color: $green_light3;   
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 2;
+
+    a {
+      color:$white;
+      background-color: $green_light3; 
+      // border: 1px solid $green_light5;
+      }
+  
+    a:visited {
+      color:$white;
+      background-color: $green_light3; 
+      // border: 1px solid $green_light5;
+        }
+      
+    a:hover {
+      color:$white;
+      background-color: $green_light5;
+      // border: 1px solid $green_light5;
+      }
+  
+    a {
+      text-decoration: none;
+        }  
+
+  .left-header__bar__row{
+    height: 40px;
+    width: 300px;  
+    float: left;
+    margin-top: 15px;
+    padding: 0 10px;
+    
+    
+  .header__logo {
+    width: 150px;  
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    float: left;
+    padding-left: 10px;
+    }
+  .header__first { 
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    float: left;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+  .header__first__dropdown{
+    // height: 60px;
+    // width: 70px;  
+    // text-align: center;
+    // font-size: 20px;
+    // font-weight: 400;
+    // line-height: 60px;
+    // float: left;
+    // position: absolute;
+    // left: 180;
+    .header__first__dropdown__icon{
+      font-size: 15px;
+      padding-left: 4px;
+      padding-right: 4px;
+      float: left;
+      padding-top: 20px;
+      text-align: center;
+    }
+    // &:after {
+    //   content: '▼';
+    //   font-size: .7em;
+    //   margin-left: -4px;
+    // }
+    &:hover ul {
+      color: $green_light5;
+      display: block;
+    }
+
+  }
+  .header__english{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    float: left;
+    padding-top: 15px;
+    padding-left: 10px;
+
+
+  }
+
+  }
+
+.right-header__bar__row{
+  height: 40px;
+  width: 480px;  
+  float: left;
+  margin-top: 15px;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+.right-header__bar__row__search{
+  height: 30px;
+  width: 230px;  
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  float: left;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.right-header__bar__row__search__keyword{
+  height: 30px;
+  width: 160px;  
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  float: left;
+  padding-left: 5px;
+ }
+ .input.submit-btn{
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  float: left;
+  // padding-top: 15px;
+  // padding-left: 10px;
+ }
+
+ .user-info-list{
+  height: 30px; 
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  float: right;
+  padding-top: 10px;
+  top: 0;
+  right: 0;
+ 
+  &__like{  
+  float: left;
+  padding-left: 10px;
+ }
+
+  &__contribution{  
+  float: left;
+  padding-left: 10px;
+ }
+  &__name{ 
+  float: left;
+  padding-left: 10px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+
+//  span {
+//   top: 5px;
+//   display: block;
+//   float: left;
+//   margin-left: 30px;
+//   width: 150px;
+//   height: 50px;
+//   font-size: 1em;
+//   cursor: pointer;
+//   position: relative;
+ &:after {
+  content: '▼';
+  font-size: .7em;
+  margin-left: 4px;
+}
+&:hover ul {
+  color: $white;
+  display: block;
+  
+}
+  }
+
+ul {
+  height: 15px;
+  width: 150px; 
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  border-left: 1px solid $green_light3;
+  border-right: 1px solid $green_light3;
+  font-size: 15px;
+  color: white;
+  background-color: $green_light3;
+  box-shadow: 1px 2px 5px $green_light3(0,0,0,0.1);
+  li {
+    background-color: #f0f0f0;
+    a {
+      display: block;
+      padding: 10px 20px;
+      text-align: left;
+      border-bottom: 1px solid #d8d8d8;
+    }
+  }
+ }
+}
+
+.right-header__bar__row__login{
+  height: 30px; 
+  width: 220px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  float: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  // margin-left: 10px;
+  top: 0px;
+  right: 5px;
+  a {
+    text-align: right;
+  }
+
+  .right-header__bar__row__login__signin{
+    padding-left: 15px;
+    float: left;
+  }
+
+  .right-header__bar__row__login__register{
+    padding-left: 25px;
+    float: left;
+  }
+
+}
+} 
+}
+}
+
+.footer {
+  height: 20px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px solid $green_light5;
+  background-color: $green_light3;   
+  box-sizing: border-box;
+  position: fixed;
+
+}
+
+
+
+
+
+
