@@ -1,0 +1,39 @@
+.contents-box
+  .article-post-sh__image{:style => "list-style-image: url(#{@article.image});"}
+    = image_tag @article.image.url, class: 'image' if @article.image.present?
+    .more
+      %ul.more_list
+  .article-post-sh__title    
+    = simple_format(@article.title) 
+  .article-post-sh__text   
+    = simple_format(@article.text)
+  .article-post-sh__info
+    .article-post-sh__contributer
+      投稿者
+    .article-post-sh__user    
+      = @article.user.name
+
+
+  -# = article.image if article.image.present?
+  -#   .article-detail__content
+  -#   .article-post
+  -#     .article-post-content
+  -#       .article-post__title
+  -#       .article-detail__title
+  -#         = article.title
+  -#       .article-__text  
+  -#       .article-detail__text
+  -#         = article.text
+  -#     .article-post__image  
+        -# = image_tag article.image.url, class: 'article-post__image' if article.image.present?
+
+
+
+    -# - if user_signed_in? && current_user.id == @article.user_id
+    -#   .article-post-row
+    -#     = link_to '編集', "/articles/#{@article.id}/edit", method: :get
+    -#     = link_to '削除', "/articles/#{@article.id}", method: :delete
+    -# = simple_format(@article.text)
+    -# %span.name
+    -#   %a{:href => "/users/#{@article.user.id}"}
+    -#     = @article.user.name

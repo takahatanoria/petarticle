@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @articles = Article.order("created_at DESC").page(params[:page]).per(10)
+    @articles = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
   end
 
   def new
@@ -23,7 +23,29 @@ class ArticlesController < ApplicationController
     #   # render :index
     # end
   end
+
+  def destroy
+    article = Article.find(params[:id])
+    if article.user_id == current_user.id
+      article.destroy
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    article = Article.find(params[:id])
+    if article.user_id == current_user.id
+      article.update(article_params)
+    end
+  end
   
+  def show
+    @article = Article.find(params[:id])
+  end
+
   private
   def article_params
     # params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)

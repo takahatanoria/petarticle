@@ -1,13 +1,23 @@
 .notification {
   .notice {
+    height: 12px;
+    width: 100%;
     background-color: $green_dark1;
     color: $white;
+    font-size: 10px;
+    line-height: 10px;
     text-align: center;
+    position: absolute;
+    top: 0px;
+    z-index: 3;
   }
 
   .alert {
     background-color: $green_dark1;
     color: $white;
     text-align: center;
+    position: absolute;
+    top:0;
+    z-index: 3;
   }
 }
