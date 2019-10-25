@@ -1,5 +1,5 @@
 .contents-box
-  = form_tag('/articles', method: :post, :multipart => true ) do
+  = form_with(model: Article.create, local: true, multipart: true ) do |f|
     %h3
       投稿する
       .new-article

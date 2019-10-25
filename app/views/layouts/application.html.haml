@@ -31,7 +31,7 @@
             .keyword-search
               %input{:type => "hidden"}/
               .input-box
-                %input{:type => "text", :placeholder => "type a keyword"}/
+                %input{:type => "text", :placeholder => "検索キーワード入力"}/
               .input.submit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Send"}/
               %span
                         
@@ -69,9 +69,9 @@
     .right-header-btn 
       .ranking-order     
         .ranking-order__new
-          新着順
+          人気順（年間）
         .ranking-order__popularity
-          人気順
+          人気順（週間）
 
   .main-box  
     = yield

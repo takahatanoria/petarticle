@@ -7,6 +7,16 @@
           = article.title
         .article-post__text  
           = article.text
+        .article-post-row
+          .article-post__name  
+            = article.user.name
+          .article-post__det
+            = link_to '詳細', "/articles/#{article.id}", method: :get
+          - if user_signed_in? && current_user.id == article.user_id
+            .article-post__ed
+              = link_to '編集', "/articles/#{article.id}/edit", method: :get
+            .article-post__dle
+              = link_to '削除', "/articles/#{article.id}", method: :delete  
       .article-post__image  
         = image_tag article.image.url, class: 'article-post__image' if article.image.present?
   .kaminari
