@@ -11,10 +11,14 @@ CarrierWave.configure do |config|
     config.fog_credentials = {
 
   #AWSのアクセスキーとシークレットキーを環境変数で定義
-    provider: 'AWS',
-    aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
-    aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-    secret_key_base: Rails.application.credentials.secret_key_base,
+      provider: 'AWS',
+      aws_access_key_id: eval(Rails.application.credentials.aws[:aws_access_key_id]),
+      aws_secret_access_key: eval(Rails.application.credentials.aws[:aws_secret_access_key]),
+      secret_key_base: eval(Rails.application.credentials.secret_key_base),
+      # provider: 'AWS',
+      # aws_access_key_id: eval(Rails.application.credentials.aws[:aws_access_key_id]),
+      # aws_secret_access_key: eval(Rails.application.credentials.aws[:aws_secret_access_key]),
+      # secret_key_base: eval(Rails.application.credentials.secret_key_base),
     region: 'ap-northeast-1' 
   }
 
