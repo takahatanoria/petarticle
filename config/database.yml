@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: petarticle_production
-  username: petarticle
+  username: root
   password: <%= ENV['PETARTICLE_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
