@@ -38,24 +38,24 @@ set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 # 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
 
-# after 'deploy:publishing', 'deploy:restart'
-# namespace :deploy do
-#   task :restart do
-#     invoke 'unicorn:restart'
-#   end
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
 
-#   desc 'upload master.key'
-#   task :upload do
-#     on roles(:app) do |host|
-#       if test "[ ! -d #{shared_path}/config ]"
-#         execute "mkdir -p #{shared_path}/config"
-#       end
-#       upload!('config/master.key', "#{shared_path}/config/master.key")
-#     end
-#   end
-#   before :starting, 'deploy:upload'
-#   after :finishing, 'deploy:cleanup'
-# end
+  desc 'upload credentials.yml.enc'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/config/credentials.yml.enc', "#{shared_path}/config/config/credentials.yml.enc")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
+end
 
 
 
@@ -63,12 +63,12 @@ set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
+# after 'deploy:publishing', 'deploy:restart'
+# namespace :deploy do
+#   task :restart do
+#     invoke 'unicorn:restart'
+#   end
+# end
 
 
 # Default branch is :master
