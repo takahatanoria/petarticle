@@ -18,46 +18,41 @@
     border: 1px solid $green_light5;
     }
 
-    a {
-      text-decoration: none;
-      color: black;
-        }    
-
+  a {
+    text-decoration: none;
+    color: black;
+      }    
 
   .account-page__inner {
     margin:0 auto;
     text-align: center;
     padding: 60px;
 
-    .account-page__inner__box {
-      margin:0 auto;
-      width: 700px;
-      height: calc(100vh -5px);
+      .account-page__inner__box {
+        margin:0 auto;
+        width: 700px;
+        height: calc(100vh -5px);
+      }
+        &:after {
+          clear: both;
+          content: "";
+          display: block;
+        }
+      .account-page__inner__form{
+        height: calc(100vh -5px);
+        width: 600px;
+        margin:0 auto;
+        border: 2px solid $green_light5;
+        border-radius: 5px;
+        margin-bottom: 60px;
 
+        .field{
+          margin:0 auto;
+          width: 500px;
+        }  
+      }
     }
-    &:after {
-      clear: both;
-      content: "";
-      display: block;
-    }
-    .account-page__inner__form{
-      height: calc(100vh -5px);
-      width: 600px;
-      margin:0 auto;
-      border: 2px solid $green_light5;
-      border-radius: 5px;
-      margin-bottom: 60px;
-
-
-    .field{
-      margin:0 auto;
-      width: 500px;
-
-      }  
-    }
-
-  }
-
+    
   .account-page__header {
 
     h2 {
@@ -192,13 +187,9 @@
   }
 }
 
-
-
-
 .article-detail__name  {
   margin-bottom: 10px;
  
-
 }
 
 .article-detail__content{

@@ -53,9 +53,8 @@
       overflow: scroll;
       top:0;
       left:0;
-
-    }
-    }
+  }
+}
     .input-box-text {
       height: 100px;
       width: 100%;
@@ -111,9 +110,8 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
-    }
-
   }
+}
 
 
   .article-post-main-image{
@@ -140,27 +138,22 @@
 }
 
 .article-post-main-info{
-.article-post-show-contributer{
-  font-size: 15px;
-  margin-bottom: 2px;
-  overflow: hidden;
-  white-space: pre-wrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-}
-.article-post-show-user {
-  font-size: 15px;
-  padding-left: 5px;
-  margin-bottom: 2px;
-  overflow: hidden;
-  white-space: pre-wrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-}
-}
-
-
-
-
-
+  .article-post-show-contributer{
+    font-size: 15px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+    .article-post-show-user {
+      font-size: 15px;
+      padding-left: 5px;
+      margin-bottom: 2px;
+      overflow: hidden;
+      white-space: pre-wrap;
+      text-overflow: ellipsis;
+      word-break: break-all;
+    }
+  }
 }

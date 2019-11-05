@@ -23,19 +23,19 @@ a:active {
     line-height: 24px;
 
 
-  .left-header-low-btn{
-    width: calc(100vw - 200px);
-    background-color: white;
-    float: left;
+    .left-header-low-btn{
+      width: calc(100vw - 200px);
+      background-color: white;
+      float: left;
 
-    .main-contents-categories{
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 24px;
-    color: $green_dark1;
-    justify-content: space-around;
-    align-items: baseline; 
+      .main-contents-categories{
+      text-align: center;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 24px;
+      color: $green_dark1;
+      justify-content: space-around;
+      align-items: baseline; 
 
       &__dogs{
         width: calc(calc(100vw - 200px)/7);       
@@ -60,15 +60,15 @@ a:active {
       }
     }
 
-    .main-contents-other{
-      text-align: center;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 24px;
-      color: $green_dark1;
-      justify-content: space-around;
-      align-items: baseline; 
-  
+      .main-contents-other{
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $green_dark1;
+        justify-content: space-around;
+        align-items: baseline; 
+    
         &__follow{
           width: calc(calc(100vw - 200px)/7);       
           border: 1px solid $green_light5;
@@ -86,37 +86,35 @@ a:active {
           border-bottom: 2px solid $green_light5;
         }
       }
-  }
+    }
 
   .right-header-low-btn {
     width: 200px;
     float: right;
     background-color: $green_light3;
 
-  .ranking-order {
-    text-align: center;
-    font-size: 10px;
-    font-weight: 500;
-    line-height: 24px;
-    color: $white;
-    justify-content: space-around;
-    align-items: baseline; 
-    margin: auto;
-    font-weight: 500;
+    .ranking-order {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 24px;
+      color: $white;
+      justify-content: space-around;
+      align-items: baseline; 
+      margin: auto;
+      font-weight: 500;
 
-
-
-    &__new  {
-    width: calc(200px/2);       
-    border: 1px solid $green_light5;
-    border-bottom: 2px solid $green_light5;
- }
-    &__popularity{
-    width: calc(200px/2);       
-    border: 1px solid $green_light5;
-    border-bottom: 2px solid $green_light5;    
-  }
-  }
-}
+        &__new  {
+        width: calc(200px/2);       
+        border: 1px solid $green_light5;
+        border-bottom: 2px solid $green_light5;
+      }
+        &__popularity{
+        width: calc(200px/2);       
+        border: 1px solid $green_light5;
+        border-bottom: 2px solid $green_light5;    
+        }
+      }
+    }
   }
 }

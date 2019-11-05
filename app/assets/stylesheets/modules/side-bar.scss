@@ -8,14 +8,16 @@
   position: fixed;
   top: 66px;
   left: calc(100vw - 200px);
-.ranking{
-  margin: 10px 10px;
-  &__box{
-    width: 160px;
-    background-color: white;
-    border-radius: 7px;
-    border: 2px solid $green_light5;
-    overflow: scroll, hidden;
+
+  .ranking{
+    margin: 10px 10px;
+
+    &__box{
+      width: 160px;
+      background-color: white;
+      border-radius: 7px;
+      border: 2px solid $green_light5;
+      overflow: scroll, hidden;
     }
   }
 }

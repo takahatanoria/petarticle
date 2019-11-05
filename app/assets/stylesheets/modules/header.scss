@@ -1,13 +1,10 @@
 .header {
   height: 40px;
   width: 100%;
-  // position: absolute;
-  // top: 0;
-  // position: fixed;
+  padding-top: 5px;
   .header-bar__row {
-    height: 35px;
+    height: 40px;
     width: 100%;
-    margin-top: 5px;
     color: #ffffff;
     border-bottom: 2px solid $green_light5;
     background-color: $green_light3;   
@@ -19,19 +16,16 @@
     a {
       color:$white;
       background-color: $green_light3; 
-      // border: 1px solid $green_light5;
       }
   
     a:visited {
       color:$white;
       background-color: $green_light3; 
-      // border: 1px solid $green_light5;
         }
       
     a:hover {
       color:$white;
       background-color: $green_light5;
-      // border: 1px solid $green_light5;
       }
   
     a {
@@ -39,161 +33,112 @@
         }  
 
   .left-header-bar__row{
-    // height: 40px;
     width: 400px;  
     float: left;
-    // margin-top: 15px;
     padding: 0 10px;
     align-items: baseline; 
     justify-content: space-between; /*均等に間隔をあける*/
+    line-height: 35px;
 
-    line-height: 40px;
+    .header__logo {
+      text-align: left;
+      font-size: 26px;
+      font-weight: 500;
+      padding-left: 10px;
+      }
+    .header-navi { 
+      font-size: 15px;
+      float: left;
 
-    
-    
-  .header__logo {
-    // width: 150px;  
-    text-align: left;
-    font-size: 26px;
-    font-weight: 500;
-    padding-left: 10px;
-    }
-  .header-navi { 
-    // text-align: left;
-    font-size: 15px;
-    // font-weight: 400;
-    float: left;
-    // padding-top: 15px;
-    // padding-left: 10px;
-  }
+      }
   .header-navi-dropdown{
-    // height: 60px;
-    // width: 70px;  
-    // text-align: center;
-    // font-size: 20px;
-    // font-weight: 400;
-    // line-height: 60px;
-    // float: left;
-    // position: absolute;
-    // left: 180;
   
     .header-navi-icon{
 
-    .header-navi-dropdown__icon{
-      padding: 10px 4px 0px 4px;
-      // margin-top:20px;
-      font-size: 20px;
+      .header-navi-dropdown__icon{
+        padding: 10px 4px 0px 4px;
+        // margin-top:20px;
+        font-size: 20px;
+      }
     }
-  }
-    // &:after {
-    //   content: '▼';
-    //   font-size: .7em;
-    //   margin-left: -4px;
-    // }
-    &:hover ul {
-      color: $green_light5;
-      display: block;
+        &:hover ul {
+          color: $green_light5;
+          display: block;
+        }
+      }
     }
-  }
-
-  
-  // .header-community{
-  //   text-align: left;
-  //   font-size: 15px;
-  //   font-weight: 400;
-  //   float: left;
-  //   padding-top: 15px;
-  //   padding-left: 10px;
-
-
-  // }
-
-  }
 
 .right-header-bar__row.displayflex{
-  // height: 40px;
-  // width: 500px;  
   float: right;
-  // margin-top: 15px;
   padding: 0 10px;
   position: absolute;
   top: 0;
   right: 0;
-  align-items: baseline;   /*ベースラインを揃える*/
-  justify-content: space-between; /*均等に間隔をあける*/
-  line-height: 40px;
-
-.right-bar-search{
-  font-size: 15px;
-  font-weight: 400;
-  align-items: baseline;  
+  align-items: baseline;   
   justify-content: space-between; 
-  padding: 0 10px;
+  line-height: 35px;
 
-  &__heading{
+  .right-bar-search{
+    font-size: 15px;
+    font-weight: 400;
+    align-items: baseline;  
+    justify-content: space-between; 
     padding: 0 10px;
 
+    &__heading{
+      padding: 0 10px;
 
+    }
   }
 
-  &__keyword{
+    .input.submit-btn{
+      text-align: left;
+      font-size: 15px;
+      font-weight: 400;
 
+    }
 
-  }
-
-
-
-}
-
- .input.submit-btn{
-  text-align: left;
-  font-size: 15px;
-  font-weight: 400;
-
- }
-
- .user-info-list{
-  align-items: baseline;  
-  justify-content: space-between; 
-  font-size: 15px;
-  padding-right: 10px;
+    .user-info-list{
+      align-items: baseline;  
+      justify-content: space-between; 
+      font-size: 15px;
+      padding-right: 10px;
 
  
-  &__like{  
-  padding-right: 10px;
- }
+      &__like{  
+      padding-right: 10px;
+    }
 
-  &__contribution{  
-    padding-right: 10px;
- }
-  &__name{ 
-  height: 60px;
-  display: block;
-  cursor: pointer;
-  position: relative;
+      &__contribution{  
+        padding-right: 10px;
+    }
+      &__name{ 
+      height: 40px;
+      display: block;
+      cursor: pointer;
+      position: relative;
 
 
- &:after {
-  content: '▼';
-  font-size: .7em;
-  margin-left: 4px;
-}
-&:hover ul {
-  height: 15px;
-  width: 150px; 
-  color: $white;
-  display: block;
-  
-}
+    &:after {
+      content: '▼';
+      font-size: .7em;
+      margin-left: 4px;
+    }
+    &:hover ul {
+      height: 15px;
+      width: 120px; 
+      color: $white;
+      display: block;
+      
+    }
   }
 
 
 ul {
   height: 15px;
-  width: 150px; 
+  width: 120px; 
   display: none;
   position: absolute;
-  // top: 15px;
   right: -10px;
   border-left: 1px solid $green_light3;
   border-right: 1px solid $green_light3;
@@ -201,20 +146,19 @@ ul {
   color: white;
   background-color: $green_light3;
   box-shadow: 1px 2px 5px $green_light3(0,0,0,0.1);
+  
   li {
     height: 15px;
-    width: 150px; 
+    width: 120px; 
     background-color: #f0f0f0;
+    
     a {
-      // height: 15px;
-      // width: 150px; 
       display: block;
-      // padding: 10px 20px;
-      text-align: left;
+      text-align: center;
       border-bottom: 1px solid #d8d8d8;
+      }
     }
   }
- }
 }
 
 
@@ -224,35 +168,49 @@ ul {
   font-size: 15px;
   padding: 0 10px;
 
-  // height: 30px; 
-  // width: 220px;
-  // text-align: left;
-  // font-size: 20px;
-  // font-weight: 400;
-  // float: left;
-  // padding-top: 10px;
-  // padding-left: 10px;
-  // margin-left: 10px;
-  // top: 0px;
-  // right: 5px;
   a {
     text-align: right;
   }
 
-  &__signin{
-    padding: 0 10px;
+    &__signin{
+      padding: 0 10px;
+    }
 
-
+    &__register{
+      padding: 0 10px;
+        }
+      }
+    } 
   }
+}
 
-  &__register{
-    padding: 0 10px;
 
+
+.gretel-box {
+  height: 24px;
+  width: 100%; 
+  box-sizing: border-box;
+  position: fixed;
+  top: 40px;
+  z-index: 0;
+  background-color: white;
+
+  .breadcrumbs {
+    margin: 0 auto;
+    padding: 2px 0px;
+    color: $green_dark1;
+
+
+
+    a {
+      margin: 0 8px;
+      text-decoration: none;
+    }
+    .current {
+      font-weight: 600;
+      margin: 0 8px;
+    }
   }
-
-}
-} 
-}
 }
 
 .footer {
@@ -264,11 +222,4 @@ ul {
   background-color: $green_light3;   
   box-sizing: border-box;
   position: fixed;
-
 }
-
-
-
-
-
-
