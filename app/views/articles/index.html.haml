@@ -1,14 +1,12 @@
+.header-select-btn
+  = render 'articles/header-btn' 
 
-.main-contents 
-  = render 'articles/article'      
+.main-index-box.displayflex
+  .main-contents 
+    = render 'articles/article'      
 
-.side-bar
-  .ranking
-    .ranking__box
-      ランキング
-      %span<>
-      ランキング
-      %span<>
+  .side-bar
+    = render 'shared/side-bar'   
 
 
 

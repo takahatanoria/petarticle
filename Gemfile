@@ -83,3 +83,16 @@ gem 'pry-rails'
 gem 'kaminari' 
 gem 'devise' 
 gem 'fog-aws'
+
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'dotenv-rails'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails' 
+gem 'active_hash'
+gem 'ancestry'
+gem 'gretel'
+gem 'payjp'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'

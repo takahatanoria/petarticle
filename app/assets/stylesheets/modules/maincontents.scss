@@ -3,11 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main-box{
-  height: calc(100vh -60px);
+  height: calc(100vh -64px);
   width: 100vw;
-  padding-top: 90px;
-  float: left;
-  display: flex;
+  padding-top: 64px;
   box-sizing: border-box;
   z-index: 0;
 
@@ -21,21 +19,24 @@
   
 
   .article-post{
-  height: 150px;
-  padding: 10px 20px;
-  margin: 10px;
-  border: 2px solid $green_light5;
-  border-radius: 5px;
-  box-sizing: border-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: normal;
+    height: 150px;
+    padding: 10px 20px;
+    margin:0 auto;
+    border: 2px solid $green_light5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    justify-content: center; 
+    align-items: center; 
 
 
   .article-post-content{
     width: calc(100% - 120px);
-    float: left;
+    padding: 0 20px;
     box-sizing: border-box;
+    margin:0 auto;
 
   .article-post__title{
     height: 20px;
@@ -57,48 +58,35 @@
     word-break: break-all;
   }
 
-  .article-post-row{
+  .users-resource-select{
     height: 20px;
-    text-align: left;
     float: left;
+    justify-content: space-between; 
+    align-items: baseline; 
 
-  .article-post__name {
-    height: 18px;
-    text-align: left;
+    a{
+      text-decoration: none;
+
+    }
+
+  &__name {
     font-size: 16px;
-    line-height:  18px;
-    margin-top: 1px;
-    float: left;
+    color: $green_dark1;
 
   }
 
-  .article-post__det{
-    height: 18px;
-    text-align: left;
+  &__detail{
     font-size: 14px;
-    line-height:  18px;
     padding-left: 5px;
-    margin-top: 2px;
-    float: left;
   
 }
-  .article-post__ed{
-    height: 18px;
-    text-align: left;
+  &__edit{
     font-size: 14px;
-    line-height:  18px;
     padding-left: 5px;
-    margin-top: 2px;
-    float: left;
   }
-  .article-post__dle{
-    height: 18px;
-    text-align: left;
+  &__dlete{
     font-size: 14px;
-    line-height:  18px;
     padding-left: 5px;
-    margin-top: 2px;
-    float: left;
 
   }
 
@@ -108,11 +96,10 @@
 }
 
   .article-post__image{
-    height: 100px;
-    width: 100px;
-    padding-left: 20px;
-    padding-top: 7px;
-    float: right;
+    height: 120px;
+    width: 120px;
+    // padding-left: 20px;
+    // padding-top: 7px;
   }
 
 
