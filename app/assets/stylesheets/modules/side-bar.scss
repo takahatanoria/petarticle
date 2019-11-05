@@ -1,24 +1,23 @@
-.side-bar{
+.side-bar-box{
   height: 100%;
   width: 200px;
-  float: left;
   background-color: $green_light3;
   border: 2px solid $green_light5;
   box-sizing: border-box;
   padding: 10px 5px;
   position: fixed;
-  top: 90px;
+  top: 66px;
   left: calc(100vw - 200px);
-.ranking{
-  margin: 10px 10px;
-  &__box{
-    width: 160px;
-    background-color: white;
-    border-radius: 7px;
-    border: 2px solid $green_light5;
-    overflow: scroll, hidden;
-    // position: absolute;
-    
+
+  .ranking{
+    margin: 10px 10px;
+
+    &__box{
+      width: 160px;
+      background-color: white;
+      border-radius: 7px;
+      border: 2px solid $green_light5;
+      overflow: scroll, hidden;
+    }
   }
-}
 }

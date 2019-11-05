@@ -10,23 +10,31 @@
     = render 'layouts/notifications'
 .wrapper
   .header
-    .header__bar__row
-      .left-header__bar__row
+    .header-bar__row
+      .left-header-bar__row.displayflex
         .header__logo          
           = link_to "PetMeeting", root_path, method: :get
-        .header__first
-          First
-        .header__first__dropdown
-          = fa_icon 'angle-double-down', class: 'header__first__dropdown__icon'
-          .header__first__dropdownItem
-          .header__first__dropdownItem
-        .header__english
+        .header-navi
+          はじめに
+        .header-navi-dropdown
+          .header-navi-icon
+            = fa_icon 'angle-double-down', class: 'header-first-dropdown__icon'
+          .header-first-dropdown__item
+          .header-first-dropdown__item
+        .header-navi
+          コミュニティ
+        .header-navi-dropdown  
+          .header-navi-icon
+            = fa_icon 'angle-double-down', class: 'header-first-dropdown__icon'
+          .header-first-dropdown__item
+          .header-first-dropdown__item
            
 
-      .right-header__bar__row
-        .right-header__bar__row__search
-          検索する
-          .right-header__bar__row__search__keyword
+      .right-header-bar__row.displayflex
+        .right-bar-search.displayflex
+          .right-bar-search__heading
+            検索する
+          .right-bar-search__keyword
             %form.form
             .keyword-search
               %input{:type => "hidden"}/
@@ -36,7 +44,7 @@
               %span
                         
       - if user_signed_in?
-        .user-info-list      
+        .user-info-list.displayflex      
           .user-info-list__like
             いいね一覧
           .user-info-list__contribution
@@ -47,33 +55,20 @@
               %li
                 %a{:href => "/users/#{current_user.id}"} マイページ
                 = link_to "ログアウト", destroy_user_session_path, method: :delete
+                
       - else
-        .right-header__bar__row__login
-          .right-header__bar__row__login__signin
+        .right-header-login.displayflex
+          .right-header-login__signin
             = link_to "ログイン", new_user_session_path, :class => 'post'
-          .right-header__bar__row__login__register
+          .right-header-login__register
             = link_to "新規登録", new_user_registration_path, :class => 'post'
+  .gretel-box
+    = breadcrumbs separator: "＞"
 
 
-  .header-btn
-    .left-header-btn
-      .main-contents__categories
-        .main-contents__categories__dogs
-          犬
-        .main-contents__categories__cats
-          猫
-        .main-contents__categories__smallanimals
-          小動物
-        .main-contents__categories__others
-          その他
-    .right-header-btn 
-      .ranking-order     
-        .ranking-order__new
-          人気順（年間）
-        .ranking-order__popularity
-          人気順（週間）
 
-  .main-box  
+
+  .main-box.displayflex
     = yield
   
   .footer

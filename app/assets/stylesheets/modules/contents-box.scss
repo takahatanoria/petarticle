@@ -1,8 +1,7 @@
 .contents-box{
-  // height: calc(100vh -5px);
   width: 100vw;
-  padding: 30px 60px;
-  margin: 30px 100px;
+  padding: 10px 40px;
+  margin: 10px 100px 40px auto;
   box-sizing: border-box;
   overflow: scroll;
   border: 2px solid $green_light5;
@@ -13,7 +12,6 @@
   word-break: break-all;
 
   .content_post {
-    // @include boxBase(20px 0 ,30px);
     position: relative;
     height: 400px;
     color: black;
@@ -21,15 +19,7 @@
     background-position: center center;
     border: 2px solid $green_light5;
     border-radius: 5px;
-    // box-shadow: 0 0 10px rgba($black,0.2);
   }
-
-  // width: 100%;
-  // height: 150px;
-  // padding: 10px 20px;
-  // border: 2px solid $green_light5;
-  // border-radius: 5px;
-  // box-sizing: border-box;
 
   .success{
     width: 100%;
@@ -63,13 +53,8 @@
       overflow: scroll;
       top:0;
       left:0;
-
-      // @include boxBase(5px 0 15px,10px);
-      // border: 1px solid $gray;
-      // border-radius: 5px;
-      // font-family: "游ゴシック", "YuGothic";
-    }
-    }
+  }
+}
     .input-box-text {
       height: 100px;
       width: 100%;
@@ -84,10 +69,6 @@
         top:0;
         left:0;
 
-        // @include boxBase(5px 0 15px,10px);
-        // border: 1px solid $gray;
-        // border-radius: 5px;
-        // font-family: "游ゴシック", "YuGothic";
       }
     }
     .input-box-image{
@@ -129,16 +110,15 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
-    }
-
   }
+}
 
 
-  .article-post-sh__image{
+  .article-post-main-image{
     text-align: center;
   }
 
-  .article-post-sh__title {
+  .article-post-main-title {
     width: 50%;
     font-size: 20px;
     margin-top: 30px;
@@ -147,7 +127,7 @@
     word-break: break-all;
     border-bottom: 2px solid $green_light5;
   }
-  .article-post-sh__text   {
+  .article-post-main-text  {
     font-size: 15px;
     margin-bottom: 2px;
     overflow: hidden;
@@ -157,30 +137,23 @@
 
 }
 
-.article-post-sh__info{
-.article-post-sh__contributer{
-  font-size: 15px;
-  margin-bottom: 2px;
-  overflow: hidden;
-  white-space: pre-wrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  float: left;
-}
-.article-post-sh__user {
-  font-size: 15px;
-  padding-left: 5px;
-  margin-bottom: 2px;
-  overflow: hidden;
-  white-space: pre-wrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  float: left;
-}
-}
-
-
-
-
-
+.article-post-main-info{
+  .article-post-show-contributer{
+    font-size: 15px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+    .article-post-show-user {
+      font-size: 15px;
+      padding-left: 5px;
+      margin-bottom: 2px;
+      overflow: hidden;
+      white-space: pre-wrap;
+      text-overflow: ellipsis;
+      word-break: break-all;
+    }
+  }
 }
