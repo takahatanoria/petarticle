@@ -1,13 +1,23 @@
 .contents-box
-  = form_with(model: Article.create, local: true, multipart: true ) do |f|
+  = form_with model: @article  do |f|
     %h3
       投稿する
       .new-article
         .input-box-title
-          %input{:name => "title", :placeholder => "タイトル", :type => "string"}/
+          = f.text_area :title, class: "input-box-title", rows: 1, placeholder:"タイトル", maxlength: 35, type: "string"
         .input-box-text  
-          %textarea{:cols => "30", :name => "text", :placeholder => "", :type => "text", :rows => "10"}
+          = f.text_area :text, class: "input-box-text ", rows: 5, placeholder:"タイトル", maxlength: 35, type: "string"
+          -# %textarea{:cols => "30", :name => "text", :placeholder => "", :type => "text", :rows => "10"}
         .input-box-image 
-          %input{:name => "image", :placeholder => "Image", :type => "file"}/
-          %input{:type => "submit", :value => "SENT"}/
+          = f.label :image, class: 'input-box-image ' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+          -# %input{:name => "image", :placeholder => "Image", :type => "file"}/
+        .input-box-submit  
+          = link_to root_path do
+            = f.submit 'Send', class: 'form__submit'
+          
 
+
+
+  -# = form_with(model: Article.create, local: true, multipart: true ) do |f|
