@@ -84,7 +84,7 @@ gem 'kaminari'
 gem 'devise' 
 gem 'fog-aws'
 
-gem 'recaptcha', require: "recaptcha/rails"
+# gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
 
 gem 'jquery-rails'
