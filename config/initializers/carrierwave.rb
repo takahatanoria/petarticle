@@ -1,6 +1,6 @@
-require 'carrierwave/storage/abstract'
-require 'carrierwave/storage/file'
-require 'carrierwave/storage/fog'
+# require 'carrierwave/storage/abstract'
+# require 'carrierwave/storage/file'
+# require 'carrierwave/storage/fog'
 
 # CarrierWave.configure do |config|
 #   if Rails.env.development? || Rails.env.test? #開発とテストで条件分岐
@@ -18,7 +18,7 @@ require 'carrierwave/storage/fog'
 #     region: 'ap-northeast-1' 
 #   }
 
-  config.fog_directory  = 'takahatanoria'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/takahatanoria'
- end
-end
+#   config.fog_directory  = 'takahatanoria'
+#   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/takahatanoria'
+#  end
+# end
