@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
+  def index
+  end
+
   def show
     @name = current_user.name
     @articles = Article.where(user_id: current_user.id).page(params[:page]).per(10).order("created_at DESC")

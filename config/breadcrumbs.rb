@@ -3,10 +3,10 @@ crumb :root do
 end
 
 # user#index
-crumb :users do
-  link "マイページ", user_path
-  parent :root
-end
+# crumb :users do
+#   link "マイページ", user_path
+#   parent :root
+# end
 
 # user#show
 crumb :show_user do |user|

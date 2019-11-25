@@ -6,11 +6,13 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    # @article = Article.new
+    @article = Article.new
   end
 
   def create
-    Article.create(image: article_params[:image], text: article_params[:text], title: article_params[:title], user_id: current_user.id)
+    @article = Article.create(article_params)
+    # Article.create(article_params)
+    # (image: article_params[:image], text: article_params[:text], title: article_params[:title], user_id: current_user.id)
     # @article = Article.new(article_params)
     # if @article.save
     #   # respond_to do |format|
@@ -47,9 +49,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
   def article_params
+    params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
     # params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
-    params.permit(:title, :text, :image)
 
     # params.permit(:title, :text, :image)
   end
