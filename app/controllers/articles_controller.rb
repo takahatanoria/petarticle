@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index,:create, :show]
 
   def index
     @articles = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
@@ -11,8 +11,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(article_params)
-    # Article.create(article_params)
-    # (image: article_params[:image], text: article_params[:text], title: article_params[:title], user_id: current_user.id)
+    # Article.create(image: article_params[:image], text: article_params[:text], title: article_params[:title], user_id: current_user.id)
     # @article = Article.new(article_params)
     # if @article.save
     #   # respond_to do |format|
@@ -35,12 +34,16 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    if  user_signed_in? && @article.user_id == current_user.id
+    else
+      redirect_to root_path unless @article.user_id == current_user.id
+    end
   end
 
   def update
-    article = Article.find(params[:id])
-    if article.user_id == current_user.id
-      article.update(article_params)
+   @article = Article.find(params[:id])
+    if @article.user_id == current_user.id
+      @article.update(article_params)
     end
   end
   
@@ -51,8 +54,8 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
+    # params.require(:article).permit(:title, :text).merge(user_id: current_user.id)
     params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
-    # params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
 
     # params.permit(:title, :text, :image)
   end
