@@ -21,7 +21,7 @@
     .article-post{
       height: 150px;
       padding: 10px 20px;
-      margin:0 auto;
+      margin:10px 0 auto;
       border: 2px solid $green_light5;
       border-radius: 5px;
       box-sizing: border-box;
@@ -46,6 +46,7 @@
           text-overflow: ellipsis;
           word-break: break-all;
           border-bottom: 2px solid $green_light5;
+          padding: 2px;
         }
 
       .article-post__text{

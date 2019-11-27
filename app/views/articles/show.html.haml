@@ -1,12 +1,12 @@
 .contents-box
-  .article-post-main-image{:style => "list-style-image: url(#{@article.image});"}
-    = image_tag @article.image.url, class: 'image' if @article.image.present?
+  .article-post-main-image{:style => "list-style-image: url(#{@article.images});"}
+    = image_tag @article.image.url, class: 'image' if @article.images.present?
     .more
       %ul.more_list
   .article-post-main-title    
     = simple_format(@article.title) 
   .article-post-main-text   
-    = simple_format(@article.text)
+    = simple_format(@article.content)
   .article-post-main-info.user-sourse-btn.displayflex
     .article-post-show-contributer
       投稿者

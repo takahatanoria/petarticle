@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @name = current_user.name
-    @articles = Article.where(user_id: current_user.id).page(params[:page]).per(10).order("created_at DESC")
+    @article = Article.where(user_id: current_user.id).page(params[:page]).per(10).order("created_at DESC")
   end
 
   def edit

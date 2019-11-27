@@ -5,11 +5,17 @@
     .input-box-title
       = f.text_area :title, class: "input-box-title", rows: 1, placeholder:"タイトル", maxlength: 35, type: "string"
     .input-box-text  
-      = f.text_area :text, class: "input-box-text ", rows: 5, placeholder:"テキスト", maxlength: 35, type: "text"
+      = f.text_area :content, class: "input-box-text ", rows: 5, placeholder:"テキスト", maxlength: 35, type: "text"
 
-    .input-box-image  
-      = f.label :image, class: 'input-box-image', for: "input-box-image"  do
-        = fa_icon 'picture-o', class: 'icon'
-        = f.file_field :image, class: 'hidden', id: 'input-box-image'    
-    .input-box-image__del
-      = f.submit 'Send', class: 'form__submit'
+    = f.fields_for :images do |g|  
+      .dropzone-container
+        .dropzone-preview
+          #preview-image-box
+          .dropzone-area  
+            = g.label :image, class: 'input-box-image', for: "input-box-image"  do
+              = fa_icon 'picture-o', class: 'icon'
+              .file_input_area
+              = g.file_field :image, class: 'input-box-image', id: 'input-box-image'   
+              
+        .input-box-image__del
+          = f.submit 'Send', class: 'form__submit'

@@ -6,7 +6,7 @@
     = @name
     さんの投稿一覧
     .article-detail__name  
-    - @articles.each do |article|
+    - @article.each do |article|
     .article-detail__content
     .article-post
       .article-post-content
@@ -19,5 +19,5 @@
       .article-post__image  
         = image_tag article.image.url, class: 'article-post__image' if article.image.present?
   .kaminari
-    = paginate(@articles)
+    = paginate(@article)
 

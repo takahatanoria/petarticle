@@ -1,7 +1,7 @@
 .contents-box{
   width: 100vw;
   padding: 10px 40px;
-  margin: 10px 100px 40px auto;
+  margin: 10px 40px 40px;
   box-sizing: border-box;
   overflow: scroll;
   border: 2px solid $green_light5;
@@ -71,11 +71,51 @@
 
       }
     }
-    .input-box-image{
-      width: 100%;
-      border: 1px solid $green_light5;
-      border-radius: 5px;
+
+    #preview-image-box{
+      // height: 300px;
+      // width: 20%;
+      // border: 1px dashed $green_light5;
+      // // text-align: center;
+      // // vertical-align: middle;
+      // font-size: 40px;
+      // position: relative;
+      // margin: 10px;
+
     }
+
+    .dropzone-area {
+      height: 200px;
+      width: 25%;
+      border: 1px dashed $green_light5;
+      // text-align: center;
+      // vertical-align: middle;
+      font-size: 40px;
+      position: relative;
+      margin: 10px;
+
+      &__label{
+        position: absolute;
+        top: 42%;
+        left: 40%;
+        
+
+      }
+
+      // display: block;
+      // border dash
+      .input-box-image{
+        // width: 100%;
+        // border: 1px solid $green_light5;
+        // border-radius: 5px;
+        display:none;
+
+      }
+    }
+
+
+
+
     input[type="submit"] {
       background-color: $green_light3;
       color: #fff;

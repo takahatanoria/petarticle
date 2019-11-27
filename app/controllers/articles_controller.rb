@@ -2,15 +2,31 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
 
   def index
-    @articles = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
+    @article = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
   end
 
   def new
+    redirect_to new_user_session_path unless user_signed_in?
     @article = Article.new
+    # @article.images.build
+    # 4.times{@article.images.build}
   end
 
   def create
-    @article = Article.create(article_params)
+    @article = Article.new(article_params)
+    if @article.save
+      params[:images][:url].each do |url|
+      @article.images.create(url: url, article_id: @article.id)
+      end
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json
+      end  
+    else
+      # @article.images.build
+      # 4.times{@article.images.build}
+      render action: :new
+    end
     # Article.create(image: article_params[:image], text: article_params[:text], title: article_params[:title], user_id: current_user.id)
     # @article = Article.new(article_params)
     # if @article.save
@@ -54,8 +70,9 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    # params.require(:article).permit(:title, :text).merge(user_id: current_user.id)
-    params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
+    # params.require(:article).permit(:title, :content).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content).merge(user_id: current_user.id)
+    # params.require(:article).permit(:title, :content, images_attributes: [:url, :id]).merge(user_id: current_user.id)
 
     # params.permit(:title, :text, :image)
   end
