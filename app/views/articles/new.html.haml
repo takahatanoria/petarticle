@@ -1,20 +1,44 @@
 .contents-box
-  = form_with model: @article, local: true, html: {class: "new__form"}  do |f|
+  = form_with model: @article, local: true, multiple: true do |f|
     %h3
       投稿する
+
+      .dropzone-container
+        .dropzone-preview.displayflex
+          = f.fields_for :images do |g|  
+            #preview-image
+            .dropzone-area  
+              = g.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
+                -# = fa_icon 'picture-o', class: 'dropzone-area-icon'
+                .input_area
+                  = g.file_field :url, multiple: true, name: 'images[url][]', class: 'input-box-image', id: 'input-box-image', 'data-image': 0   
+                  %p.text
+                    画像を
+                    %br 選択して下さい                 
+
       .new-article
         .input-box-title
-          = f.text_area :title, class: "input-box-title", rows: 1, placeholder:"タイトル", maxlength: 35, type: "string"
+          = f.label :title, class: 'input-box-title', for: "input-box-title-area"  do
+            タイトル
+            = f.text_field :title, class: "input-box-title-area", placeholder:"タイトル",id: "input-box-title-area", value: ''
+          
         .input-box-text  
-          = f.text_area :text, class: "input-box-text ", rows: 5, placeholder:"テキスト", maxlength: 35, type: "text"
-          -# %textarea{:cols => "30", :name => "text", :placeholder => "", :type => "text", :rows => "10"}
-        .input-box-image 
-          = f.label :image, class: 'input-box-image', for: "input-box-image"  do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden', id: 'input-box-image'
-          -# %input{:name => "image", :placeholder => "Image", :type => "file"}/
-        .input-box-submit  
-          = f.submit 'Send', class: 'form__submit'
+          = f.label :content, class: 'input-box-text', for: "input-box-text-area" do         
+            投稿内容
+            = f.text_area :content, class: "input-box-text-area", placeholder:"テキスト",id: "input-box-text-area", value: ''
+            -# %textarea{:cols => "30", :name => "text", :placeholder => "", :type => "text", :rows => "10"}
+          
+
+      .input-box-image__del
+        = f.submit '投稿する', class: 'form__contribute' 
+      
+        -# .input-box-image 
+        -#   = f.label :image, class: 'input-box-image', for: "input-box-image"  do
+        -#     = fa_icon 'picture-o', class: 'icon'
+        -#     = f.file_field :image, class: 'hidden', id: 'input-box-image'
+        -#   -# %input{:name => "image", :placeholder => "Image", :type => "file"}/
+        -# .input-box-submit  
+        -#   = f.submit 'Send', class: 'form__submit'
           
 
 

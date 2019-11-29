@@ -1,16 +1,47 @@
 .contents-box
-  .article-post-main-image{:style => "list-style-image: url(#{@article.image});"}
-    = image_tag @article.image.url, class: 'image' if @article.image.present?
-    .more
-      %ul.more_list
-  .article-post-main-title    
-    = simple_format(@article.title) 
-  .article-post-main-text   
-    = simple_format(@article.text)
-  .article-post-main-info.user-sourse-btn.displayflex
-    .article-post-show-contributer
-      投稿者
-    .article-post-show-user    
-      = @article.user.name
+  .article-post-main-image
+    -  if @article.images.present? 
+      .article-post-photo__high
+        = image_tag "#{@article.images.first.url}", class: 'image', class:".article-post-photo__high__image",id:"mainimage", width: "300px", height: "300px"
+        .more
+        %ul.more_list
+    .article-post-photo__low.displayflex
+      - @article.images.each do |image| 
+        .product-exhibit-photo__low__image
+          .product-exhibit-photo__low__image__1
+            = image_tag "#{ image.url}", width: "60px", height: "60px",class:"details__image__low__image"
+
+
+    .article-post-main-title    
+      = @article.title
+    .article-post-main-text   
+      = @article.content
+    .article-post-main-info.user-sourse-btn.displayflex
+      .article-post-show-contributer
+        投稿者
+      .article-post-show-user    
+        = @article.user.name
+  
+  = render 'comments/comment'
+
+  .users-other-article
+    = "#{@article.user.name}さんのその他の記事"
+  .article-show-user-contributed.displayflex
+    - @user_article.each do |user_article|
+      .article-show-user-contributed-container
+        .article-show-user-contributed-main-box
+          .contributed-box
+            .contributed-main-image
+              -  if user_article.images.present?
+                = image_tag "#{user_article.images.first.url}", class: 'contributed-image', width: "100%", height: "150px"
+                .more
+                %ul.more_list
+            .article-post-main-title    
+              = user_article.title
+            .article-post-main-text   
+              = user_article.content  
+
+
+      
 
 
