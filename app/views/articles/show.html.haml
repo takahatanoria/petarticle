@@ -16,15 +16,19 @@
       = @article.title
     .article-post-main-text   
       = @article.content
-    .article-post-main-info.user-sourse-btn.displayflex
-      .article-post-show-contributer
-        投稿者
-      .article-post-show-user    
-        = @article.user.name
+      .article-post-main-info.user-sourse-btn.displayflex
+        .article-post-show-contributer
+          = fa_icon 'user', class: 'content-user__icon'
+        %p
+          投稿者
+        .article-post-show-user    
+          = @article.user.name
   
+  -# = render @article.comments
   = render 'comments/comment'
 
   .users-other-article
+    = fa_icon 'user', class: 'content-main__icon'
     = "#{@article.user.name}さんのその他の記事"
   .article-show-user-contributed.displayflex
     - @user_article.each do |user_article|

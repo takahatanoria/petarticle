@@ -9,13 +9,17 @@
           = article.content
         .users-resource-select.displayflex
           .users-resource-select__name  
+            = fa_icon 'user', class: 'content-user__icon'
             = article.user.name
           .users-resource-select__detail
+            = fa_icon 'file', class: 'content-user__icon'
             = link_to '詳細',article_path(article), method: :get
           - if user_signed_in? && current_user.id == article.user_id
             .users-resource-select__edit
+              = fa_icon 'edit', class: 'content-user__icon'
               = link_to '編集', edit_article_path(article), method: :get
-            .users-resource-select__dlete
+            .users-resource-select__delete
+              = fa_icon 'trash', class: 'content-user__icon'
               = link_to '削除', article_path(article), method: :delete  
       .article-post__image  
         = image_tag "#{article.images.first.url}", class: 'article-post__image' if article.images.present?

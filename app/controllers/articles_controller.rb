@@ -114,6 +114,7 @@ class ArticlesController < ApplicationController
     @user_article = Article.where(user_id: @article.user.id).where.not(id: @article.id).limit(16).order("created_at DESC")
     # @comments = @article.comments.includes(:user)
     @comment = Comment.new
+    # @article_comment = Comment.find(params[:article_id])
   end
 
   private

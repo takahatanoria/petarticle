@@ -39,14 +39,16 @@
         margin:0 auto;
 
         .article-post__title{
-          height: 20px;
+          height: 22px;
+          line-height: 22px;
           width: 40%;
-          font-size: 20px;
+          font-size: 22px;
           overflow: hidden;
           text-overflow: ellipsis;
           word-break: break-all;
-          border-bottom: 2px solid $green_light5;
-          padding: 2px;
+          // border-bottom: 2px solid $green_light5;
+          color: $green_light5;
+          font-weight: bold;
         }
 
       .article-post__text{
@@ -64,6 +66,10 @@
       float: left;
       justify-content: space-between; 
       align-items: baseline; 
+      .content-user__icon{
+        font-size: 15px;
+        color: $green_light3;
+      }
 
       a{
         text-decoration: none;
@@ -85,7 +91,7 @@
         font-size: 14px;
         padding-left: 5px;
       }
-      &__dlete{
+      &__delete{
         font-size: 14px;
         padding-left: 5px;
       }
