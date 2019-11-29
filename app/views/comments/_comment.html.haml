@@ -1,7 +1,31 @@
-= form_with model: [@article, @comment], local: true, multiple: true do |f|
+= form_for [@article, @comment], local: true do |f|
   .article-post-comment
     .article-post-comment__box
       .article-post-comment__box__text
         = f.text_area :content, placeholder: 'コメント入力', style: 'width: 100%;height: 100px;'
+  
   .input-box-form
-    = f.submit '投稿する', class: 'form__contribute'
+    = f.submit 'コメントする', class: 'form__contribute'
+
+  .article-show-comment-display-off
+    .article-show-comment-display-off__box
+      %p1.comment-display-on
+        = fa_icon 'comments', class: 'content-user__icon'
+        コメントを表示する
+      %p2.comment-display-off
+        = fa_icon 'comments', class: 'content-user__icon'
+        コメントを非表示にする
+    .article-post-comment-list
+      - @article.comments.each do |comment|
+        .article-post-comment-list__container.displayflex
+          .article-post-comment-list__container__user.displayflex
+            .article-comment-user-avater
+            .article-comment-user-nickname
+              = comment.user.name
+          .article-post-comment-list__container__box
+            .article-comment-text
+              = comment.content 
+          .article-post-comment-list__container__replay
+            .article-replay-user-avater
+            .article-replay-user-nickname
+
