@@ -1,0 +1,7 @@
+= form_with model: [@article, @comment], local: true, multiple: true do |f|
+  .article-post-comment
+    .article-post-comment__box
+      .article-post-comment__box__text
+        = f.text_area :content, placeholder: 'コメント入力', style: 'width: 100%;height: 100px;'
+  .input-box-form
+    = f.submit '投稿する', class: 'form__contribute'

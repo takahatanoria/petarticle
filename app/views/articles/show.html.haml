@@ -22,6 +22,8 @@
       .article-post-show-user    
         = @article.user.name
   
+  = render 'comments/comment'
+
   .users-other-article
     = "#{@article.user.name}さんのその他の記事"
   .article-show-user-contributed.displayflex
