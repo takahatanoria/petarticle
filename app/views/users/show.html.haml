@@ -15,9 +15,12 @@
           = article.title
         .article__text  
         .article-detail__text
-          = article.text
-      .article-post__image  
-        = image_tag article.image.url, class: 'article-post__image' if article.image.present?
+          = article.content
+      - if article.images.present? 
+        - article.images.each do |image|       
+          .article-post__image  
+            = image_tag "#{image.url}", class: 'article-post__image' 
+
   .kaminari
     = paginate(@article)
 

@@ -6,9 +6,11 @@ a:visited {
 }
 a:hover {
   color: $green_dark1;
+  z-index: 3;
 }
 a:active {
   color: $green_dark1;
+  z-index: 3;
 }
 
 .header-low {
@@ -17,16 +19,18 @@ a:active {
   box-sizing: border-box;
   position: fixed;
   top: 40px;
-  z-index: 0;
+  z-index: 1;
 
   .header-low__row{
     line-height: 24px;
-
+    background-color: white;
+  
 
     .left-header-low-btn{
       width: calc(100vw - 200px);
       background-color: white;
       float: left;
+      
 
       .main-contents-categories{
       text-align: center;

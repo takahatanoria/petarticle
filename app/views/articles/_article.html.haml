@@ -1,7 +1,7 @@
   
 .articles-box
   - @article.each do |article|
-    .article-post.displayflex
+    .article-post.fadein.displayflex
       .article-post-content
         .article-post__title
           = article.title
@@ -11,14 +11,14 @@
           .users-resource-select__name  
             = article.user.name
           .users-resource-select__detail
-            = link_to '詳細', "/articles/#{article.id}", method: :get
+            = link_to '詳細',article_path(article), method: :get
           - if user_signed_in? && current_user.id == article.user_id
             .users-resource-select__edit
-              = link_to '編集', "/articles/#{article.id}/edit", method: :get
+              = link_to '編集', edit_article_path(article), method: :get
             .users-resource-select__dlete
-              = link_to '削除', "/articles/#{article.id}", method: :delete  
+              = link_to '削除', article_path(article), method: :delete  
       .article-post__image  
-        = image_tag article.image.url, class: 'article-post__image' if article.images.present?
+        = image_tag "#{article.images.first.url}", class: 'article-post__image' if article.images.present?
   
   .kaminari
     = paginate(@article)
