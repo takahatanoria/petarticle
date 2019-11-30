@@ -84,8 +84,32 @@
     align-items: baseline;  
     justify-content: space-between; 
     padding: 0 10px;
-    &__heading{
+    &__keyword{
       padding: 0 10px;
+      .keyword-search{
+        color: $green_dark1;
+        background-color: $green_light3;
+        border: 1px solid $white;
+        justify-content: space-between; 
+        margin-left: 5px;
+        .input-box{
+          margin-right: 5px;
+        }
+        // .input.submit-btn{
+        //   height: 15px;
+        //   width: 60px;
+        //   background-color: $green_light3;
+        // }
+        .headrer-search-btn{
+          height: 15px;
+          width: 70px;
+          color: $green_light3;
+          margin: 5px;
+          // border:none;
+          // border-radius: 0 6px 6px 0;
+        }
+
+      }
 
     }
   }
@@ -94,7 +118,6 @@
       text-align: left;
       font-size: 15px;
       font-weight: 400;
-
     }
 
     .user-info-list{
@@ -102,62 +125,57 @@
       justify-content: space-between; 
       font-size: 15px;
       padding-right: 10px;
-
       &__like{  
       padding-right: 10px;
-    }
-
+      }
       &__contribution{  
         padding-right: 10px;
-    }
+      }
       &__name{ 
       height: 40px;
       display: block;
       cursor: pointer;
       position: relative;
-
-
-    &:after {
-      content: '▼';
-      font-size: .7em;
-      margin-left: 4px;
-    }
-    &:hover ul {
-      height: 15px;
-      width: 120px; 
-      color: $white;
-      display: block;
-      
-    }
-  }
-
-
-ul {
-  height: 15px;
-  width: 120px; 
-  display: none;
-  position: absolute;
-  right: -10px;
-  border-left: 1px solid $green_light3;
-  border-right: 1px solid $green_light3;
-  font-size: 15px;
-  color: white;
-  background-color: $green_light3;
-  box-shadow: 1px 2px 5px $green_light3(0,0,0,0.1);
-  
-  li {
-    height: 15px;
-    width: 120px; 
-    background-color: #f0f0f0;
-    
-    a {
-      display: block;
-      text-align: center;
-      border-bottom: 1px solid #d8d8d8;
+      &:after {
+        content: '▼';
+        font-size: .7em;
+        margin-left: 4px;
+      }
+      &:hover ul {
+        height: 15px;
+        width: 120px; 
+        color: $white;
+        display: block;
       }
     }
-  }
-}
+
+
+    ul {
+      height: 15px;
+      width: 120px; 
+      display: none;
+      position: absolute;
+      right: -10px;
+      border-left: 1px solid $green_light3;
+      border-right: 1px solid $green_light3;
+      font-size: 15px;
+      color: white;
+      background-color: $green_light3;
+      box-shadow: 1px 2px 5px $green_light3(0,0,0,0.1);
+      
+      li {
+        height: 15px;
+        width: 120px; 
+        background-color: #f0f0f0;
+        
+        a {
+          display: block;
+          text-align: center;
+          border-bottom: 1px solid #d8d8d8;
+          }
+        }
+      }
+    }
 
 
 .right-header-login{

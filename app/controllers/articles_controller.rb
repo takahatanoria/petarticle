@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
 
   def index
-    @article = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
+    @articles = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
   end
 
   def new
@@ -116,6 +116,11 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
     # @article_comment = Comment.find(params[:article_id])
   end
+
+  # def search
+  #   # 検索フォームのキーワードをあいまい検索して、productsテーブルから20件の作品情報を取得する
+  #   @article = Article.where('titile LIKE(?)',"%#{params[:keyword]}%")
+  # end
 
   private
 

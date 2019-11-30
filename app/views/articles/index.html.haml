@@ -3,7 +3,19 @@
 
 .main-index-box.displayflex
   .main-contents 
-    = render 'articles/article'      
+    .articles-box
+      - if @search_articles
+        = render partial: 'articles/article', collection: @search_articles
+      - else
+        = render partial: 'articles/article', collection: @articles
+
+
+    - if @search_articles
+      .kaminari
+        = paginate(@search_articles)
+    - else      
+      .kaminari
+        = paginate(@articles)        
 
   .side-bar
     = render 'shared/side-bar'   

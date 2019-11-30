@@ -1,0 +1,22 @@
+@media screen and (max-width: 950px) {
+  .header-navi {
+    display : none;
+  }
+  .header-first-dropdown__icon {
+    display : none;
+  }
+  .main-contents-other__myitem {
+    display : none;
+  }
+}  
+@media screen and (max-width: 770px) {
+  .main-contents-other__follow {
+    display : none;
+  }
+  .main-contents-other__event {
+    display : none;
+  }
+  .user-info-list__like {
+    display : none;
+  }
+}  
