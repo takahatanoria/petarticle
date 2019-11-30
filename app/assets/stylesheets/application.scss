@@ -17,18 +17,18 @@
 
 
 
-@font-face {
-  font-family: 'あずきフォント';
-  src: url('./fonts/azuki.woff') format('woff'),
-       url('./fonts/azuki.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}  
+// @font-face {
+//   font-family: 'あずきフォント';
+//   src: url('./fonts/azuki.woff') format('woff'),
+//        url('./fonts/azuki.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }  
 
 .wrapper{
   color: #000;
   box-sizing: border-box;   
-  font-family: 'あずきフォント'; 
+  // font-family: 'あずきフォント'; 
   margin: 0;
   padding: 0;
   display: flex;
