@@ -42,23 +42,23 @@ a:active {
       align-items: baseline; 
 
       &__dogs{
-        width: calc(calc(100vw - 200px)/7);       
+        width: calc(calc(100vw - 206px)/7);       
         border: 1px solid $green_light5;
         border-bottom: 2px solid $green_light5;
       }
       &__cats{
-        width: calc(calc(100vw - 200px)/7);   
+        width: calc(calc(100vw - 206px)/7);   
         border: 1px solid $green_light5;
         border-bottom: 2px solid $green_light5;
         
       }
       &__smallanimals{
-        width: calc(calc(100vw - 200px)/7);    
+        width: calc(calc(100vw - 206px)/7);    
         border: 1px solid $green_light5;
         border-bottom: 2px solid $green_light5;
       }
       &__others{
-        width: calc(calc(100vw - 200px)/7);   
+        width: calc(calc(100vw - 206px)/7);   
         border: 1px solid $green_light5;
         border-bottom: 2px solid $green_light5;
       }
@@ -74,18 +74,18 @@ a:active {
         align-items: baseline; 
     
         &__follow{
-          width: calc(calc(100vw - 200px)/7);       
+          width: calc(calc(100vw - 206px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
         &__myitem{
-          width: calc(calc(100vw - 200px)/7);   
+          width: calc(calc(100vw - 206px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           
         }
         &__event{
-          width: calc(calc(100vw - 200px)/7);    
+          width: calc(calc(100vw - 206px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
