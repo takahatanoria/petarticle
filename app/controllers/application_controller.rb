@@ -28,9 +28,9 @@ class ApplicationController < ActionController::Base
   def set_search
     @search = Article.ransack(params[:q])
     unless params[:q].blank?
-      @search_articles = @search.result.page(params[:page]).per(10).order("created_at DESC")
+      @search_articles = @search.result.page(params[:page]).per(5).order("created_at DESC")
     else
-      @article = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
+      @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     end
   end
 

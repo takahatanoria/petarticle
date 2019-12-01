@@ -3,24 +3,80 @@
 
 .main-index-box.displayflex
   .main-contents.fadein
-    .articles-box
-      - if @search_articles
+    .articles-box-search
+    - if @search_articles
+      .index-render
+        .index-render-box-search
+          %p4 検索結果
+          = params[:q][:title_or_content_cont] 
+          の検索結果
+          = render partial: 'articles/article', collection: @search_articles
+          - if @search_articles.length == 0
+            .index-render-box-search            
+              %h4 該当する記事が見つかりませんでした。
+    - else
+      .index-render    
         .index-render-box
-        %p4 検索結果
-        = params[:q][:title_or_content_cont] 
-        の検索結果
-        = render partial: 'articles/article', collection: @search_articles
-        - if @search_articles.length == 0
-          .index-render-box             
-            %h2 該当する記事が見つかりませんでした。
-      - else
-        .index-render-box
-        %p4 新着記事
-        = render partial: 'articles/article', collection: @articles
-
+          %p4 新着記事
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)    
+        .index-render-box-category-dog.index-render-box-green
+          %p4 ジャンル：犬
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)        
+        .index-render-box-category-cat.index-render-box-lightgreen
+          %p4 ジャンル：猫
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)   
+        .index-render-box-category-small-animal.index-render-box-green
+          %p4 ジャンル：小動物
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)   
+        .index-render-box-category-walk.index-render-box-lightgreen
+          %p4 散歩・おでかけ
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-discipline.index-render-box-green
+          %p4 しつけ
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-sick.index-render-box-lightgreen
+          %p4 怪我・病気・予防・介護
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-life.index-render-box-green
+          %p4 くらし・生活
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-food.index-render-box-lightgreen
+          %p4 エサ
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-rearing.index-render-box-green
+          %p4 ケア・飼育方法
+          = render partial: 'articles/article', collection: @articles  
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-food.index-render-box-lightgreen
+          %p4 エサ
+          = render partial: 'articles/article', collection: @articles  
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-rearing.index-render-box-green
+          %p4 ペットロス
+          = render partial: 'articles/article', collection: @articles 
 
     - if @search_articles
-      .kaminari
+      .kaminari-search
         = paginate(@search_articles)
       .index-render-box
         %p4 新着記事
