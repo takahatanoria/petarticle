@@ -22,4 +22,12 @@ $(document).on('turbolinks:load', function(){
         });
     });
   });
+
+  $(".alert").fadeOut(3000,function () {
+    console.log('フェードアウトされました！');
+  });
+
 });
+
+
+
