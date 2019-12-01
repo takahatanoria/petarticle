@@ -8,3 +8,14 @@
   opacity : 1;
   transform : translate(0, 0);
 }
+
+.fadeout.active {
+  opacity : 0;
+  transform : translate(100px,0);
+  transition : all 1s;
+}
+// .fadeout {
+//   opacity : 0;
+//   transform : translate(100px,0);
+//   transition : all 1s;
+// }
