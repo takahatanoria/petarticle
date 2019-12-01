@@ -1,4 +1,4 @@
-#account-page.account-page
+#account-page.account-page.fadein
   .account-page__inner.clearfix
     .account-page__inner__box.account-page__header
       %h2 新規登録
@@ -31,3 +31,5 @@
         .actions.displayflex
           = f.submit "新規登録する", class: 'account-register-btn'
           = render "devise/shared/links"
+
+  .main-box-footer        
