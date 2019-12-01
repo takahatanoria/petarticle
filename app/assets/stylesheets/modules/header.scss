@@ -5,7 +5,7 @@
   .header-bar__row {
     height: 40px;
     width: 100%;
-    color: #ffffff;
+    color: $headermain;
     border-bottom: 2px solid $green_light5;
     background-color: $green_light3;   
     box-sizing: border-box;
@@ -14,23 +14,21 @@
     z-index: 2;
 
     a {
-      color:$white;
+      color:$headermain;
       background-color: $green_light3; 
+      text-decoration: none;
       }
   
     a:visited {
-      color:$white;
+      color:$headermain;
       background-color: $green_light3; 
         }
       
     a:hover {
-      color:$white;
-      background-color: $green_light5;
+      color:$headermain;
+      background-color: $hover;
       }
-  
-    a {
-      text-decoration: none;
-        }  
+
 
   .left-header-bar__row{
     width: 400px;  
@@ -150,30 +148,40 @@
     }
 
 
-    ul {
-      height: 15px;
+    .user-info-mypage{
+      height: 60px;
       width: 120px; 
       display: none;
       position: absolute;
       right: -10px;
-      border-left: 1px solid $green_light3;
-      border-right: 1px solid $green_light3;
+      border: 1px solid $white;
       font-size: 15px;
-      color: white;
-      background-color: $green_light3;
+      color: $white;
+      background-color: $green_light5;
       box-shadow: 1px 2px 5px $green_light3(0,0,0,0.1);
       
-      li {
-        height: 15px;
+      .right__menu__list__hover-box {
+        text-align: center;
+        height: 30px;
         width: 120px; 
-        background-color: #f0f0f0;
+        line-height: 30px;
+        background-color: $green_light5;
         
-        a {
-          display: block;
-          text-align: center;
-          border-bottom: 1px solid #d8d8d8;
-          }
+        // a {
+        //   display: block;
+        //   text-align: center;
+        //   border-bottom: 1px solid #d8d8d8;
+        //   }
+        // .right__menu__list__hover-box__logout {
+        //   height: 30px;
+        //   width: 120px; 
+        //   background-color: $green_light5;
+
+        // }
         }
+
+
+
       }
     }
 
@@ -204,12 +212,12 @@
 
 .gretel-box {
   height: 24px;
-  width: 100%; 
+  width: calc(100vw - 200px);
   box-sizing: border-box;
   position: fixed;
   top: 40px;
   z-index: 0;
-  background-color: white;
+  background-color: $background;
 
   .breadcrumbs {
     margin: 0 auto;

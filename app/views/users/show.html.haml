@@ -1,26 +1,19 @@
 - breadcrumb :show_user          
+.main-index-box.displayflex
+  .main-contents
+    .main-contents-mypage-heading
+      = @user.name
+      さんのマイページ
+    .articles-box-mypage-heading
+      最新の投稿
+    .articles-box-mypage 
+      = render partial: 'users/userarticle', collection: @user_articles, as: :user_articles
 
-.contents-box
-  = current_user.name
-    %p
-    = @name
-    さんの投稿一覧
-    .article-detail__name  
-    - @article.each do |article|
-    .article-detail__content
-    .article-post
-      .article-post-content
-        .article-post__title
-        .article-detail__title
-          = article.title
-        .article__text  
-        .article-detail__text
-          = article.content
-      - if article.images.present? 
-        - article.images.each do |image|       
-          .article-post__image  
-            = image_tag "#{image.url}", class: 'article-post__image' 
 
-  .kaminari
-    = paginate(@article)
+      .kaminari
+        = paginate(@article)
+
+.side-bar-mypage
+  = render 'shared/side-bar-mypage'
+
 

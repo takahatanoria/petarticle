@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
+    # user = User.find(params[:id])
   end
 
   def new
@@ -133,7 +134,7 @@ class ArticlesController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    redirect_to redirect_to root_path unless user_signed_in?
   end
 
 end

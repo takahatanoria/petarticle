@@ -20,22 +20,24 @@ a:active {
   position: fixed;
   top: 40px;
   z-index: 1;
+  font-weight: bold;
 
   .header-low__row{
     line-height: 24px;
-    background-color: white;
-  
-
+    color: $green_light3;
+    // background-color: white;
+    
     .left-header-low-btn{
       width: calc(100vw - 200px);
-      background-color: white;
+      background-color: $green_light1;
       float: left;
+      color: $green_light3;
+      
       .main-contents-categories{
         text-align: center;
         font-size: 15px;
         font-weight: 500;
         line-height: 24px;
-        color: $green_dark1;
         justify-content: space-around;
         align-items: baseline; 
         &__dogs{
@@ -68,7 +70,6 @@ a:active {
         font-size: 15px;
         font-weight: 500;
         line-height: 24px;
-        color: $green_dark1;
         justify-content: space-around;
         align-items: baseline; 
         &__follow{
@@ -89,27 +90,39 @@ a:active {
       }
     }
 
-  .right-header-low-btn {
-    width: 200px;
-    float: right;
-    background-color: $green_light3;
-    .tweet-order  {
-      text-align: center;
-      font-size: 10px;
-      font-weight: 500;
-      line-height: 21px;
-      color: $white;
-      justify-content: space-around;
-      align-items: baseline; 
-      margin: auto;
-      font-weight: 500;
-      margin-right: 5px;
+    .right-header-low-btn {
+      width: 200px;
+      float: right;
+      background-color: $green_light1;
+      .tweet-order  {
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        justify-content: space-around;
+        align-items: baseline; 
+
+
+        // text-align: center;
+        // font-size: 10px;
+        // font-weight: 500;
+        // line-height: 24px;
+        // color: $white;
+        // justify-content: space-around;
+        // align-items: baseline; 
+        // margin: auto;
+        // font-weight: 500;
+        // margin-right: 5px;
         &__new  {
-        height: 21px;  
-        width: 200px;       
-        border: 2px solid $green_light5;
-        border-right: 2px solid $green_light5;
-      }
+          border: 1px solid $green_light5;
+          border-bottom: 2px solid $green_light5;
+
+
+          // height: 24px;  
+          // width: 200px;       
+          // border: 2px solid $green_light5;
+          // border-right: 2px solid $green_light5;
+        }
         // &__popularity{
         // width: calc(200px/2);       
         // border: 1px solid $green_light5;

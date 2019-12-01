@@ -1,114 +1,45 @@
 .contents-box
   = form_with model: @article, local: true, multiple: true, html: {class: "new__form"}  do |f|
-    %h3
-      編集する
-      -# .preview-open
-      -#   - if @length == 1
-      -#     - @article.images.each_with_index do |image, i|
-      -#       - if i == 0                   
-      -#         .previews{data:{id: "#{i}"}}
-      -#           %img.open-pic{src: "#{image.url}"}
-      -#             = link_to "削除", "", class: "kill-me"
-                 
+    .article-post-main-view
+      %h3
+      .file-form-box 
+        .dropzone-container-edit.displayflex
+          #preview-image  
+          = f.fields_for :images, @article.images do |pic|
+            .dropzone-preview-edit
+              .img_box-container       
+                .img_box
+                  -  if @length >=1
+                    = image_tag "#{pic.object.url.thumb.url}", class: "article-edit-img"
+                    .img_box_delete-heading
+                      削除画像をチェック
+                    .img_box_delete
+                      削除する: 
+                      = pic.check_box :_destroy
+                  -  if @length == 0    
+                    .article-edit-img-empty
+                  -# = link_to '削除',pic.object, method: :delete, data: { confirm: "写真を削除します"}
+                  -# - @article.images.each do |picture|
+              .dropzone-area-edit
+                = pic.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
+                  .input-area-container.displayflex 
+                    .input_area
+                      = pic.file_field :url, multiple: true, name: 'images[url][]', class: 'input-box-image input-box-image-edit', id: 'input-box-image', 'data-image': 0                
+                    .choice_area
+                      .choice_area__heading
+                        追加画像を選択
+                        %br 最大５枚
+                      .choice_area__text
+                        画像を
+                        %br 選択して下さい
+        .new-article
+          .input-box-title
+            = f.label :title, class: 'input-box-title', for: "input-box-title"  do
+              = f.text_field :title, class: "input-box-title", placeholder:"タイトル（必須40文字まで）",id: "input-box-title", rows: 1
+          .input-box-text  
+            = f.label :content, class: 'input-box-text', for: "input-box-text" do         
+              = f.text_area :content, class: "input-box-text", placeholder:"テキスト（必須1000文字まで）",id: "input-box-text", rows: 5
 
-      -# .dropzone-container
-      -#   .dropzone-preview.displayflex
-      -#     = f.fields_for :images do |g| 
-      -#       - @article.images.each do |image, i|
-      -#         #preview-image
-      -#           .img_box{data:{image: "#{i}"}}
-      -#             %img.open-img{src: "#{image.url}", class: "article-edit-img", 'data-image': "#{i}"}
-      -#               -# = image_tag "#{image.url}", class: "article-edit-img", 'data-image': "#{i}"
-      -#             .btn_wrapper
-      -#               .btn_edit
-      -#                 編集
-      -#               .btn_delete
-      -#                 削除    
+      .input-box-image__del
+        = f.submit '編集する', class: 'form__edit'
 
-      -# .dropzone-container
-      -#   .dropzone-preview.displayflex
-      -#     #preview-image
-      -#       = f.fields_for :images do |g| 
-      -#         - @article.images.each do |image|
-                -# .img_box
-                -#   .img_view_upper
-                -#     = image_tag "#{image.url}", class: "articlw-edit-img"
-                -#   .btn_wrapper
-                -#     .btn_edit
-                -#       編集
-                -#     .btn_delete
-                -#       削除            
-      -# .dropzone-container
-      -#   .dropzone-container__heading
-      -#     現在の画像
-      -#   .dropzone-preview.displayflex
-      -#     -  if @article.images.present?
-      -#       #preview-image
-      -#         .img_box
-      -#           - @length.times do |timesCount|
-      -#             %img.img{src: "#{@article.images[timesCount].url}"}
-      -# .dropzone-container
-      -#   .dropzone-preview.displayflex
-      -#     = f.fields_for :images do |g|
-      -#       #preview-image
-      -#       .dropzone-area  
-      -#         = g.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
-      -#           .input_area
-      -#             = g.file_field :url, multiple: true, name: 'images[url][]', class: 'input-box-image', id: 'input-box-image', 'data-image': 0   
-      -#             %p.text
-      -#               画像を
-      -#               %br 選択して下さい 
-
-      -#       #preview-image
-      -#       .dropzone-area  
-      -#         = g.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
-      -#           .input_area                    
-      -#             - @filefield_length.times do |timesCount|        
-      -#               = g.file_field :url, multiple: true, name: 'images[url][]', class: "input-box-image#{@length + timesCount}", id: "input-box-image#{@length + timesCount}", 'data-image': "#{@length + timesCount}", value: ""   
-      -#               %p.text
-      -#                 画像を
-      -#                 %br 選択して下さい
-
-      
-        -# - @length.times do |timesCount|  
-    .file-form-box 
-      .dropzone-container-edit.displayflex
-        #preview-image  
-        = f.fields_for :images, @article.images do |pic|
-          .dropzone-preview-edit
-            .img_box-container       
-              .img_box
-                -  if @length >=1
-                  = image_tag "#{pic.object.url.thumb.url}", class: "article-edit-img"
-                  .img_box_delete
-                    削除する: 
-                    = pic.check_box :_destroy
-                -  if @length == 0    
-                  .article-edit-img-empty
-                -# = link_to '削除',pic.object, method: :delete, data: { confirm: "写真を削除します"}
-                -# - @article.images.each do |picture|
-            .dropzone-area-edit
-              = pic.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
-                .input-area-container.displayflex 
-                  .input_area
-                    = pic.file_field :url, multiple: true, name: 'images[url][]', class: 'input-box-image input-box-image-edit', id: 'input-box-image', 'data-image': 0                
-                  .choice_area
-                    .choice_area__text
-                      画像を
-                      %br 選択して下さい
-                    -# - @index -= 1
-                   
-
-      .new-article
-        .input-box-title
-          = f.label :title, class: 'input-box-title', for: "input-box-title"  do
-            タイトル
-            = f.text_field :title, class: "input-box-title", placeholder:"タイトル",id: "input-box-title"
-          
-        .input-box-text  
-          = f.label :content, class: 'input-box-text', for: "input-box-text" do         
-            記事
-            = f.text_area :content, class: "input-box-text", placeholder:"テキスト",id: "input-box-text"
-
-    .input-box-image__del
-      = f.submit 'Send', class: 'form__edit'

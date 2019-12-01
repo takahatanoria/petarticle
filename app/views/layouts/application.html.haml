@@ -74,10 +74,12 @@
               = fa_icon 'user', class: 'content-dark__icon'
               = current_user.name
               %ul.user-info-mypage
-                %li
-                  %a{:href => "/users/#{current_user.id}"} マイページ
+                %li.right__menu__list__hover-box
+                  =link_to user_path(current_user) do
+                    マイページ
+                %li.right__menu__list__hover-box
                   = link_to "ログアウト", destroy_user_session_path, method: :delete
-                  
+
         - else
           .right-header-login.displayflex
             .right-header-login__signin
@@ -92,5 +94,6 @@
 
     .main-box.displayflex
       = yield
+    .main-box-footer  
   
   .footer

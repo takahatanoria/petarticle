@@ -1,23 +1,76 @@
 .side-bar-box{
   height: 100%;
   width: 200px;
-  background-color: $green_light3;
-  border: 2px solid $green_light5;
+  background-color: $backgroundsub;
   box-sizing: border-box;
   padding: 10px 5px;
   position: fixed;
   top: 64px;
   left: calc(100vw - 200px);
-
   .ranking{
     margin: 10px 10px;
-
     &__box{
       width: 160px;
-      background-color: white;
+      background-color: $white;
       border-radius: 7px;
-      border: 2px solid $green_light5;
       overflow: scroll, hidden;
     }
   }
 }
+
+.side-bar-mypage{
+  // height: 100%;
+  width: 200px;
+  background-color: $backgroundsub;
+  box-sizing: border-box;
+  padding: 1px 0 4px 0;
+  position: fixed;
+  top: -24px;
+  left: calc(100vw - 200px);
+  display: block;
+  .side-bar-mypage-box{
+    // height: 100%;
+    width: 200px;
+    padding-top: 24px;
+    display: block;
+    .mypage-side-menu-box{
+      height: 100%;
+      width: 200px;
+      padding-top: 40px;
+      margin:0 auto;
+      a:link {
+        color: $pink;
+      }
+      a:visited {
+        color: $pink;
+      }
+      a:hover {
+        color: $red;
+        z-index: 3;
+      }
+      a:active {
+        color: $red;
+        z-index: 3;
+      }
+      &__list{
+        text-align: center;
+        height: 40px;
+        width: 184px;
+        line-height: 40px;
+        padding: 2px; 
+        margin: 3px auto 0;
+        color: $pink;
+        background-color: $white;
+        font-weight: bold;
+        border-radius: 2px;
+        overflow: scroll, hidden;
+
+        &__logout{
+        cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,15 +1,22 @@
 class UsersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
-  def index
-  end
 
   def show
-    @name = current_user.name
-    @article = Article.where(user_id: current_user.id).page(params[:page]).per(10).order("created_at DESC")
+    if  user_signed_in?
+      @user = User.find(params[:id])
+      @user_articles= Article.where(user_id: current_user.id).order("created_at DESC").limit(5)
+      @name = current_user.name
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
+    if  user_signed_in? && @article.user_id == current_user.id
+    else
+      redirect_to root_path unless @article.user_id == current_user.id
+    end
   end
 
   def update
@@ -20,6 +27,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
 
   def user_params
@@ -27,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    redirect_to root_path unless user_signed_in?
   end
 
 end

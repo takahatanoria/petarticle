@@ -1,7 +1,6 @@
 .contents-box
   = form_with model: @article, local: true, multiple: true do |f|
     %h3
-      投稿する
 
       .dropzone-container
         .dropzone-preview.displayflex
@@ -19,13 +18,10 @@
       .new-article
         .input-box-title
           = f.label :title, class: 'input-box-title', for: "input-box-title-area"  do
-            タイトル
-            = f.text_field :title, class: "input-box-title-area", placeholder:"タイトル",id: "input-box-title-area", value: ''
-          
+            = f.text_field :title, class: "input-box-title-area", placeholder:"タイトル（必須40文字まで）",id: "input-box-title-area", value: '', rows: 1
         .input-box-text  
           = f.label :content, class: 'input-box-text', for: "input-box-text-area" do         
-            記事
-            = f.text_area :content, class: "input-box-text-area", placeholder:"テキスト",id: "input-box-text-area", value: ''
+            = f.text_area :content, class: "input-box-text-area", placeholder:"テキスト（必須1000文字まで）",id: "input-box-text-area", value: '', rows: 5
             -# %textarea{:cols => "30", :name => "text", :placeholder => "", :type => "text", :rows => "10"}
           
 
