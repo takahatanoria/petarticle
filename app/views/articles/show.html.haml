@@ -1,5 +1,5 @@
 .contents-box
-  .article-post-main-image
+  .article-post-main-view
     -  if @article.images.present? 
       .article-post-photo__high
         = image_tag "#{@article.images.first.url}", class: 'image', class:".article-post-photo__high__image",id:"mainimage", width: "300px", height: "300px"

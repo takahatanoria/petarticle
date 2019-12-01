@@ -1,0 +1,26 @@
+.article-post-index  
+  .article-post.fadein.displayflex
+    .article-post-content
+      .article-post__title
+        = user_articles.title
+      .article-post__text  
+        = user_articles.content
+      .users-resource-select.displayflex
+        .users-resource-select__name  
+          = fa_icon 'user', class: 'content-user__icon'
+          = user_articles.user.name
+        .users-resource-select__detail
+          = fa_icon 'file', class: 'content-user__icon'
+          = link_to '詳細',article_path(user_articles), method: :get
+        - if user_signed_in? && current_user.id == user_articles.user_id
+          .users-resource-select__edit
+            = fa_icon 'edit', class: 'content-user__icon'
+            = link_to '編集', edit_article_path(user_articles), method: :get
+          .users-resource-select__delete
+            = fa_icon 'trash', class: 'content-user__icon'
+            = link_to '削除', article_path(user_articles), method: :delete  
+          .users-post-time-index
+            投稿日時：
+            = user_articles.created_at.to_s  
+    .article-post__image  
+      = image_tag "#{user_articles.images.first.url}", class: 'article-post__image' if user_articles.images.present?

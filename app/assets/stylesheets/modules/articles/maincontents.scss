@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// インデックスメイン
 .main-box{
   height: calc(100vh -64px);
   width: 100vw;
   padding-top: 64px;
   box-sizing: border-box;
   z-index: 0;
+  background-color: $background;
   .main-contents {
     height: calc(100vh -5px);
     width: calc(100vw - 200px);
@@ -15,14 +17,33 @@
     margin: 30px 0 60px 0;
     box-sizing: border-box;
     overflow: scroll, hidden;
+    .kaminari{
+      width: 200px;
+      padding: 10px 10px;
+      margin:0 auto;
+      box-sizing: border-box;
+    }
+    p4 {
+      margin: 10px auto 0;
+      text-align: center;
+      height: 30px;
+      width: 100%px;
+      background-color: $green_light3;
+      color: #fff;
+      border: 1px solid $green_light5;
+      border-radius: 5px;
+      font-size: 20px;
+      line-height: 30px;
+      display: block;
+      cursor: pointer;
+    }
     .article-post-index{
       margin: 10px;
       .article-post{
         height: 150px;
-        max-width: 900px;
+        max-width: 800px;
         padding: 10px 20px;
         margin:0 auto;
-        border: 2px solid $green_light5;
         border-radius: 5px;
         box-sizing: border-box;
         overflow: hidden;
@@ -30,6 +51,7 @@
         word-break: normal;
         justify-content: center; 
         align-items: center; 
+        background-color: $white;
         .article-post-content{
           width: calc(100% - 120px);
           padding: 0 20px;
@@ -69,7 +91,7 @@
             }
             &__name {
               font-size: 16px;
-              color: $green_dark1;
+              color: $green_light1;
             }
             &__detail{
               font-size: 14px;
@@ -96,10 +118,29 @@
         }
       }
     }
-    .kaminari{
-      padding: 10px 10px;
-      margin: 10px;
-      box-sizing: border-box;
+    // マイページトップ
+    .main-contents-mypage-heading{
+      text-align: center;
+      margin:5px auto 0;
+      padding: 10px;
+      font-size: 26px;
+      font-weight: bold;
+      color: $green_light5;
+    }
+    .articles-box-mypage-heading{
+      text-align: center;
+      margin:0 0 30px 0;
+      padding: 2px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: $green_light5;
+      background-color: $green_light1;
+      border-radius: 10px;
     }
   }
+}
+.main-box-footer{
+  height: 300px;
+  width: 100%;
+  background-color: $background;
 }

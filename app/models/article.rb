@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   belongs_to :user, optional: true
   has_many :comments, dependent: :destroy
   # belongs_to :category
-  has_many :images
+  has_many :images, dependent: :destroy
   # , dependent: :destroy
   
   accepts_nested_attributes_for :images,reject_if: :reject_both_blank, allow_destroy: true
