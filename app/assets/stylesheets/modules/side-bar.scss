@@ -17,9 +17,7 @@
     }
   }
 }
-
 .side-bar-mypage{
-  // height: 100%;
   width: 200px;
   background-color: $backgroundsub;
   box-sizing: border-box;
@@ -29,7 +27,6 @@
   left: calc(100vw - 200px);
   display: block;
   .side-bar-mypage-box{
-    // height: 100%;
     width: 200px;
     padding-top: 24px;
     display: block;
@@ -64,7 +61,6 @@
         font-weight: bold;
         border-radius: 2px;
         overflow: scroll, hidden;
-
         &__logout{
         cursor: pointer;
         }

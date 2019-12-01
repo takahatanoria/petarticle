@@ -2,20 +2,33 @@
   = render 'articles/header-btn' 
 
 .main-index-box.displayflex
-  .main-contents 
+  .main-contents.fadein
     .articles-box
       - if @search_articles
+        .index-render-box
+        %p4 検索結果
+        = params[:q][:title_or_content_cont] 
+        の検索結果
         = render partial: 'articles/article', collection: @search_articles
+        - if @search_articles.length == 0
+          .index-render-box             
+            %h2 該当する記事が見つかりませんでした。
       - else
+        .index-render-box
+        %p4 新着記事
         = render partial: 'articles/article', collection: @articles
 
 
     - if @search_articles
       .kaminari
         = paginate(@search_articles)
+      .index-render-box
+        %p4 新着記事
+        = render partial: 'articles/article', collection: @articles_other
+          
     - else      
       .kaminari
-        = paginate(@articles)        
+        = paginate(@articles)
 
   .side-bar
     = render 'shared/side-bar'   

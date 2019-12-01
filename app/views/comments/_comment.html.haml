@@ -7,16 +7,35 @@
   .input-box-form
     = f.submit 'コメントする', class: 'form__contribute'
 
+  .article-show-comment-display
+    .article-show-comment-display__box
+      %p3.comment-display-preview
+        = fa_icon 'comments', class: 'content-user__icon'
+        新着５件
+    .article-post-comment-list-display
+      - @comment_article.each do |comment|
+        .article-post-comment-list-display__container.displayflex
+          .article-post-comment-list-display__container__user.displayflex
+            .article-comment-user-avater
+            .article-comment-user-nickname
+              = comment.user.name
+          .article-post-comment-list-display__container__box
+            .article-comment-text
+              = comment.content 
+          .article-post-comment-list-display__container__replay
+            .article-replay-user-avater
+            .article-replay-user-nickname
+
   .article-show-comment-display-off
     .article-show-comment-display-off__box
       %p1.comment-display-on
         = fa_icon 'comments', class: 'content-user__icon'
-        コメントを表示する
+        コメントを全て表示する
       %p2.comment-display-off
         = fa_icon 'comments', class: 'content-user__icon'
         コメントを非表示にする
     .article-post-comment-list
-      - @article.comments.each do |comment|
+      - @comment_all.each do |comment|
         .article-post-comment-list__container.displayflex
           .article-post-comment-list__container__user.displayflex
             .article-comment-user-avater

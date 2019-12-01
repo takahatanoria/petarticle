@@ -28,6 +28,6 @@
             = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'パスワードを入力（確認）'
-        .actions
-          = f.submit "新規登録", class: 'btn'
+        .actions.displayflex
+          = f.submit "新規登録する", class: 'account-register-btn'
           = render "devise/shared/links"

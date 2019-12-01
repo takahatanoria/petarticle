@@ -1,66 +1,52 @@
 .account-page {
   margin:0 auto;
-  a {
-    color:$white;
-    background-color: $green_light3; 
-    border: 1px solid $green_light5;
-    }
-
-  a:visited {
-    color:$white;
-    background-color: $green_light3; 
-    border: 1px solid $green_light5;
-      }
-    
-  a:hover {
-    color:$white;
-    background-color: $green_light5;
-    border: 1px solid $green_light5;
-    }
-
-  a {
-    text-decoration: none;
-    color: black;
-      }    
-
+  // a:visited {
+  //   color:$white;
+  //   background-color: $green_light3; 
+  //   border: 1px solid $green_light5;
+  // }
+  // a:hover {
+  //   color:$white;
+  //   background-color: $green_light5;
+  //   border: 1px solid $green_light5;
+  // }
   .account-page__inner {
     margin:0 auto;
     text-align: center;
     padding: 60px;
-
-      .account-page__inner__box {
-        margin:0 auto;
-        width: 700px;
-        height: calc(100vh -5px);
-      }
-        &:after {
-          clear: both;
-          content: "";
-          display: block;
-        }
-      .account-page__inner__form{
-        height: calc(100vh -5px);
-        width: 600px;
-        margin:0 auto;
-        border: 2px solid $green_light5;
-        border-radius: 5px;
-        margin-bottom: 60px;
-
-        .field{
-          margin:0 auto;
-          width: 500px;
-        }  
-      }
+    .account-page__inner__box {
+      margin:0 auto;
+      width: 700px;
+      height: calc(100vh -5px);
     }
-    
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+    .account-page__inner__form{
+      height: calc(100vh -5px);
+      width: 600px;
+      margin:0 auto;
+      border: 2px solid $green_light5;
+      border-radius: 5px;
+      margin-bottom: 60px;
+      .field{
+        margin:0 auto;
+        width: 500px;
+      }  
+      a {
+        text-decoration: none;
+        // color: black;
+      }    
+    }
+  }
   .account-page__header {
-
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
       font-size: 40px;
       font-weight: 200;
-
       &:after {
         content: '';
         display: block;
@@ -68,40 +54,35 @@
         margin-top: 5px;
       }
     }
-
     h5 {
       margin-bottom: 20px;
       font-size: 14px;
       font-weight: 200;
     }
-
     // signinのボタン
-    .btn {
-      margin:0 auto;
-      text-align: center;
-      margin: 20px 20px;
-      color: #fff;
-      background-color: $green_light3;
-      font-size: 14px;
-      
-    }
+    // .btn {
+    //   margin:0 auto;
+    //   text-align: center;
+    //   margin: 20px 20px;
+    //   color: #fff;
+    //   background-color: $green_light3;
+    //   font-size: 14px;
+    //   border-radius: 2px;
+    //   cursor: pointer;
+    // }
   }
-
   .field {
     margin-bottom: 10px;
     color: black;
-
     .field-label {
       padding: 10px 0;
       letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-
       i {
         font-size: 11px;
       }
     }
-
     .field-input {
       input {
         width: 100%;
@@ -111,31 +92,86 @@
       }
     }
   }
-
-
+  .account-register-btn{
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    // margin:0 auto;
+    text-align: center;
+    margin: 20px 20px;
+    color: $white;
+    background-color: $green_light1;
+    font-size: 14px;
+    font-weight: 560;
+    border-color: $green_light1;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .account-register-btn-link {
+    height: 30px;
+    width: 140px;
+    line-height: 30px;
+    margin:0 auto;
+    text-align: center;
+    margin: 20px 20px;
+    color: $white;
+    background-color: $green_light1;
+    font-size: 14px;
+    font-weight: 560;
+    border-color: $green_light1;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   // 新規登録ログインボタン
   .btn {
-    
-    display: inline-block;
-    height: 50px;
-    padding: 0 30px;
-    margin: 20px 20px;    
-    line-height: 50px;
-    letter-spacing: 1px;
+    height: 30px;
+    width: 100px;
+    margin:0 auto;
     text-align: center;
-    border: none;
-    border-radius: 2px;
+    margin: 20px 20px;
     color: #fff;
-    background-color: $green_light3;
-  }
+    background-color: $green_light1;
+    font-size: 14px;
+    border-color: $green_light1;
+    border-radius: 5px;
+    cursor: pointer;
 
+
+    // display: inline-block;
+    // height: 50px;
+    // padding: 0 30px;
+    // margin: 20px 20px;    
+    // line-height: 50px;
+    // letter-spacing: 1px;
+    // text-align: center;
+    // border: none;
+    // border-radius: 2px;
+    // color: #fff;
+    // background-color: $green_light3;
+  }
   // ログイン画面のログインボタン
   input[type='submit'] {
-    margin: 20px 20px auto;
-    color: #fff;
-    background-color: $green_light3;
+    height: 30px;
+    width: 100px;
+    margin:0 auto;
+    text-align: center;
+    margin: 20px 20px;
+    color: $white;
+    background-color: $green_light1;
+    font-size: 14px;
+    font-weight: 560;
+    border-color: $green_light1;
+    border-radius: 5px;
+    cursor: pointer;
+    // margin:0 auto;
+    // text-align: center;
+    // margin: 20px 20px;
+    // color: #fff;
+    // background-color: $green_light3;
+    // font-size: 14px;
+    // border-radius: 2px;
+    // cursor: pointer;
   }
-
   .field-label {
     .field_with_errors {
       display: inline-block;
@@ -143,11 +179,9 @@
       font-weight: 400;
     }
   }
-
   .field-input {
     .field_with_errors {
       position: relative;
-
       &:after {
         content: '';
         display: block;
@@ -160,6 +194,9 @@
       }
     }
   }
+  .actions{
+    justify-content: space-around;
+  }
 }
 
 #error_explanation {
@@ -167,19 +204,16 @@
   padding: 20px 30px;
   border: 1px solid #ddd;
   border-radius: 2px;
-
   h2 {
     margin-bottom: 10px;
     color: #d65f4c;
     font-size: 14px;
   }
-
   ul {
     margin: 0;
     padding-left: 17px;
     list-style: square;
   }
-
   li {
     margin: 0;
     padding: 0;
@@ -187,38 +221,5 @@
   }
 }
 
-.article-detail__name  {
-  margin-bottom: 10px;
- 
-}
-
-.article-detail__content{
-  width: 80%;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  white-space: pre-wrap;
-  border-bottom: 2px solid $green_light5;
-
-}
-
-.article-detail__title{
-  width: 40%;
-  margin-bottom: 10px;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  white-space: pre-wrap;
-  border-bottom: 2px solid $green_light5;
-
-}
-
-.article-detail__text{
-  width: 96%;
-  white-space: pre-wrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  margin-bottom: 20px;
-}
 
 

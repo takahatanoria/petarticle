@@ -1,11 +1,11 @@
-.article-show-comment-display-off{
+.article-show-comment-display{
   &__box{
     padding: 30px 0px;
-    p1{
+    p3{
       margin: 0 auto;
       text-align: center;
       height: 30px;
-      width: 220px;
+      width: 100%px;
       background-color: $green_light3;
       color: #fff;
       border: 1px solid $green_light5;
@@ -15,28 +15,13 @@
       display: block;
       cursor: pointer;
     }
-    p2{
-      margin: 0 auto;
-      text-align: center;
-      height: 30px;
-      width: 260px;
-      background-color: $green_light3;
-      color: #fff;
-      border: 1px solid $green_light5;
-      border-radius: 5px;
-      font-size: 20px;
-      line-height: 30px;
-      display: none;
-      cursor: pointer;
-    }
   }
-  .article-post-comment-list{
+  .article-post-comment-list-display{
     margin:0 auto;
     padding: 30px 10px;
-    display: none;
+    display: block;
     border-radius: 10px;
     background-color: $backgroundsub;
-
     &__container{
       justify-content: center;
       &__user{
@@ -65,7 +50,86 @@
         .article-comment-text{
           height: 80px;
           border-radius: 10px;
-          // border: 2px solid $green_light5;
+          padding: 10px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: break-all;
+        }
+      }
+      &__replay{
+        height: 100px;
+        width: 20%;
+      }
+    }
+  }
+}
+
+.article-show-comment-display-off{
+  &__box{
+    padding: 30px 0px;
+    p1{
+      margin: 0 auto;
+      text-align: center;
+      height: 30px;
+      width: 100%px;
+      background-color: $green_light3;
+      color: #fff;
+      border: 1px solid $green_light5;
+      border-radius: 5px;
+      font-size: 20px;
+      line-height: 30px;
+      display: block;
+      cursor: pointer;
+    }
+    p2{
+      margin: 0 auto;
+      text-align: center;
+      height: 30px;
+      width: 100%px;
+      background-color: $green_light3;
+      color: #fff;
+      border: 1px solid $green_light5;
+      border-radius: 5px;
+      font-size: 20px;
+      line-height: 30px;
+      display: none;
+      cursor: pointer;
+    }
+  }
+  .article-post-comment-list{
+    margin:0 auto;
+    padding: 30px 10px;
+    display: none;
+    border-radius: 10px;
+    background-color: $backgroundsub;
+    &__container{
+      justify-content: center;
+      &__user{
+        height: 100px;
+        width: 20%;
+        flex-direction: column; 
+        align-items: center;
+        .article-comment-user-avater{
+          height: 60px;
+          width: 20%;
+          padding: 5px;
+          border-radius: 50%;
+        }
+        .article-comment-user-nickname{
+          height: 20px;
+          padding: 5px;
+          line-height: 15px;
+        }
+      }
+      &__box{
+        height: 100px;
+        width: 60%;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: $white;
+        .article-comment-text{
+          height: 80px;
+          border-radius: 10px;
           padding: 10px;
           overflow: hidden;
           text-overflow: ellipsis;

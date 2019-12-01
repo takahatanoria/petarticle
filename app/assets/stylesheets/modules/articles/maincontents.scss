@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// インデックスメイン
 .main-box{
   height: calc(100vh -64px);
   width: 100vw;
@@ -22,6 +23,20 @@
       margin:0 auto;
       box-sizing: border-box;
     }
+    p4 {
+      margin: 10px auto 0;
+      text-align: center;
+      height: 30px;
+      width: 100%px;
+      background-color: $green_light3;
+      color: #fff;
+      border: 1px solid $green_light5;
+      border-radius: 5px;
+      font-size: 20px;
+      line-height: 30px;
+      display: block;
+      cursor: pointer;
+    }
     .article-post-index{
       margin: 10px;
       .article-post{
@@ -29,7 +44,6 @@
         max-width: 800px;
         padding: 10px 20px;
         margin:0 auto;
-        // border: 2px solid $green_light5;
         border-radius: 5px;
         box-sizing: border-box;
         overflow: hidden;
@@ -63,7 +77,6 @@
             text-overflow: ellipsis;
             word-break: break-all;
           }
-
           .users-resource-select{
             height: 20px;
             float: left;
@@ -126,8 +139,6 @@
     }
   }
 }
-
-
 .main-box-footer{
   height: 300px;
   width: 100%;

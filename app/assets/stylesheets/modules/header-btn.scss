@@ -12,7 +12,7 @@ a:active {
   color: $green_dark1;
   z-index: 3;
 }
-
+// 下段ヘッダー
 .header-low {
   height: 24px;
   width: 100%; 
@@ -21,18 +21,14 @@ a:active {
   top: 40px;
   z-index: 1;
   font-weight: bold;
-
   .header-low__row{
     line-height: 24px;
     color: $green_light3;
-    // background-color: white;
-    
     .left-header-low-btn{
       width: calc(100vw - 200px);
       background-color: $green_light1;
       float: left;
       color: $green_light3;
-      
       .main-contents-categories{
         text-align: center;
         font-size: 15px;
@@ -41,30 +37,27 @@ a:active {
         justify-content: space-around;
         align-items: baseline; 
         &__dogs{
-          width: calc(calc(100vw - 206px)/7);       
+          width: calc(calc(100vw - 210px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
         &__cats{
-          width: calc(calc(100vw - 206px)/7);   
+          width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           
         }
         &__smallanimals{
-          width: calc(calc(100vw - 206px)/7);    
+          width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
         &__others{
-          width: calc(calc(100vw - 206px)/7);   
+          width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
       }
-
-
-
       .main-contents-other{
         text-align: center;
         font-size: 15px;
@@ -73,23 +66,22 @@ a:active {
         justify-content: space-around;
         align-items: baseline; 
         &__follow{
-          width: calc(calc(100vw - 206px)/7);       
+          width: calc(calc(100vw - 210px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
         &__myitem{
-          width: calc(calc(100vw - 206px)/7);   
+          width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
-        &__event{
-          width: calc(calc(100vw - 206px)/7);    
+        &__detailed-search{
+          width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
         }
       }
     }
-
     .right-header-low-btn {
       width: 200px;
       float: right;
@@ -101,33 +93,10 @@ a:active {
         line-height: 24px;
         justify-content: space-around;
         align-items: baseline; 
-
-
-        // text-align: center;
-        // font-size: 10px;
-        // font-weight: 500;
-        // line-height: 24px;
-        // color: $white;
-        // justify-content: space-around;
-        // align-items: baseline; 
-        // margin: auto;
-        // font-weight: 500;
-        // margin-right: 5px;
         &__new  {
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
-
-
-          // height: 24px;  
-          // width: 200px;       
-          // border: 2px solid $green_light5;
-          // border-right: 2px solid $green_light5;
         }
-        // &__popularity{
-        // width: calc(200px/2);       
-        // border: 1px solid $green_light5;
-        // border-bottom: 2px solid $green_light5;    
-        // }
       }
     }
   }
