@@ -1,3 +1,4 @@
+
 @media screen and (max-width: 950px) {
   .header-navi {
     display : none;
@@ -14,9 +15,11 @@
   .main-contents-other__myitem {
     display : none;
   }
-
+  .users-post-time-index {
+    display : none;
+  }
 }  
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
   .main-contents-categories__dogs {
     display : none;
   }
