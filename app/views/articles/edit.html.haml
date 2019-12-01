@@ -1,4 +1,4 @@
-.contents-box
+.contents-box.fadein
   = form_with model: @article, local: true, multiple: true, html: {class: "new__form"}  do |f|
     .article-post-main-view
       %h3
@@ -42,4 +42,4 @@
 
       .input-box-image__del
         = f.submit '編集する', class: 'form__edit'
-
+    .main-box-footer-edit

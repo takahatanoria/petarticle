@@ -14,6 +14,7 @@
     margin:0 auto;
     text-align: center;
     padding: 60px;
+    background-color: $white;
     .account-page__inner__box {
       margin:0 auto;
       width: 700px;
@@ -28,7 +29,7 @@
       height: calc(100vh -5px);
       width: 600px;
       margin:0 auto;
-      border: 2px solid $green_light5;
+      background-color: $backgroundsub;
       border-radius: 5px;
       margin-bottom: 60px;
       .field{
@@ -37,7 +38,6 @@
       }  
       a {
         text-decoration: none;
-        // color: black;
       }    
     }
   }
