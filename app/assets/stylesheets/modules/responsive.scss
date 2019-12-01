@@ -5,27 +5,35 @@
   .header-first-dropdown__icon {
     display : none;
   }
-  .main-contents-other__myitem {
-    display : none;
-  }
-}  
-@media screen and (max-width: 770px) {
-  .main-contents-other__follow {
-    display : none;
-  }
-  .main-contents-other__detailed-search {
-    display : none;
-  }
   .main-contents-categories__smallanimals {
     display : none;
   }
   .main-contents-categories__others {
     display : none;
   }
+  .main-contents-other__myitem {
+    display : none;
+  }
+
+}  
+@media screen and (max-width: 770px) {
+  .main-contents-categories__dogs {
+    display : none;
+  }
+  .main-contents-categories__cats {
+    display : none;
+  }
+  .main-contents-other__follow {
+    display : none;
+  }
+  .main-contents-other__detailed-search {
+    display : none;
+  }
+
   .user-info-list__like {
     display : none;
   }
-  .right-bar-search {
+  .user-info-list__contribution {
     display : none;
   }
 }  
