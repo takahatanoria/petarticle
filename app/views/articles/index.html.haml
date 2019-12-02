@@ -57,23 +57,30 @@
       .kaminari
         = paginate(@articles)           
         .index-render-box-category-food.index-render-box-lightgreen
-          %p4 失敗談
-          = render partial: 'articles/article', collection: @articles
+          %p4 エサ・食事
+          = render partial: 'articles/article', collection: @articles  
       .kaminari
-        = paginate(@articles)           
+        = paginate(@articles)    
         .index-render-box-category-rearing.index-render-box-green
           %p4 ケア・飼育方法
           = render partial: 'articles/article', collection: @articles  
       .kaminari
         = paginate(@articles)           
         .index-render-box-category-food.index-render-box-lightgreen
-          %p4 エサ
-          = render partial: 'articles/article', collection: @articles  
+          %p4 成功談
+          = render partial: 'articles/article', collection: @articles
       .kaminari
         = paginate(@articles)           
         .index-render-box-category-rearing.index-render-box-green
-          %p4 ペットロス
+          %p4 失敗談
           = render partial: 'articles/article', collection: @articles 
+      .kaminari
+        = paginate(@articles)           
+        .index-render-box-category-food.index-render-box-lightgreen
+          %p4 ペットロス
+          = render partial: 'articles/article', collection: @articles
+      .kaminari
+        = paginate(@articles)           
 
     - if @search_articles
       .kaminari-search
@@ -81,10 +88,6 @@
       .index-render-box
         %p4 新着記事
         = render partial: 'articles/article', collection: @articles_other
-          
-    - else      
-      .kaminari
-        = paginate(@articles)
 
   .side-bar
     = render 'shared/side-bar'   

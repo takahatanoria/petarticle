@@ -1,38 +1,31 @@
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 980px) {
   .header-navi {
     display : none;
   }
   .header-first-dropdown__icon {
     display : none;
   }
+  .main-contents-other {
+    display : none;
+  }
+  .main-contents-other__follow {
+    display : none;
+  }
+  .main-contents-other__myitem {
+    display : none;
+  }
+  .main-contents-other__detailed-search {
+    display : none;
+  }
+}  
+@media screen and (max-width: 680px) {
   .main-contents-categories__smallanimals {
     display : none;
   }
   .main-contents-categories__others {
     display : none;
   }
-  .main-contents-other__myitem {
-    display : none;
-  }
-  .users-post-time-index {
-    display : none;
-  }
-}  
-@media screen and (max-width: 800px) {
-  .main-contents-categories__dogs {
-    display : none;
-  }
-  .main-contents-categories__cats {
-    display : none;
-  }
-  .main-contents-other__follow {
-    display : none;
-  }
-  .main-contents-other__detailed-search {
-    display : none;
-  }
-
   .user-info-list__like {
     display : none;
   }
@@ -40,3 +33,11 @@
     display : none;
   }
 }  
+@media screen and (max-width: 480px) {
+  .main-contents-categories__dogs {
+    display : none;
+  }
+  .main-contents-categories__cats {
+    display : none;
+  }
+} 
