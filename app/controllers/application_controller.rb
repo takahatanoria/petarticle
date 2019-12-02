@@ -26,12 +26,29 @@ class ApplicationController < ActionController::Base
   # end
 
   def set_search
-    @search = Article.ransack(params[:q])
-    unless params[:q].blank?
-      @search_articles = @search.result.page(params[:page]).per(5).order("created_at DESC")
+
+    # @search = Article.ransack(params[:q])
+    # @search = Article.ransack(params[:q])
+
+
+
+    if params[:q] != nil
+      params[:q]['title_or_content_cont_any'] = params[:q]['title_or_content_cont_any'].split(/[\s|\p{blank}]+/)
+      @search = Article.ransack(params[:q])
+      @search_articles = @search.result.page(params[:page]).order("created_at DESC")
+      # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+
     else
+      @search = Article.ransack(params[:q])
       @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     end
+
+    # @search = Article.ransack(params[:q])
+    # unless params[:q].blank?
+    #   @search_articles = @search.result.page(params[:page]).per(5).order("created_at DESC")
+    # else
+      # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    # end
   end
 
 
