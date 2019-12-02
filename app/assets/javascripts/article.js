@@ -129,4 +129,5 @@ $(document).on('click', '.btn_delete', function() {
       $(this).val("");
     }
   });
+  
 });

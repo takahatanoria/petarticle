@@ -40,22 +40,26 @@ a:active {
           width: calc(calc(100vw - 210px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
         }
         &__cats{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
           
         }
         &__smallanimals{
           width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
         }
         &__others{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
         }
       }
       .main-contents-other{
@@ -69,16 +73,19 @@ a:active {
           width: calc(calc(100vw - 210px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
         }
         &__myitem{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
         }
         &__detailed-search{
           width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 112px;
         }
       }
     }
