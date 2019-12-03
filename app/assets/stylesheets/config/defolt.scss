@@ -1,0 +1,20 @@
+select{
+  outline:none;
+  text-indent: 0.01px;
+  vertical-align: middle;
+  color: $white;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+select option{
+background-color: $background;
+color: #333;
+}
+select::-ms-expand {
+display: none;
+}
+select:-moz-focusring { 
+color: transparent; 
+text-shadow: 0 0 0 #828c9a;
+}

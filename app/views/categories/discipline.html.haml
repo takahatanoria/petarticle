@@ -1,0 +1,14 @@
+.header-select-btn
+  = render 'articles/header-btn' 
+
+.main-index-box.displayflex
+  .main-contents.fadein
+    .index-render-container
+      .index-render    
+        .index-render-box-category-walk.index-render-box-lightgreen
+          %p4 #{@categories[1].name}
+          = render partial: 'articles/article', collection: @articles_discipline
+      .kaminari-category
+        = paginate(@articles_discipline)   
+  .side-bar
+    = render 'shared/side-bar'   

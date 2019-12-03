@@ -1,9 +1,22 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
+  before_action :set_category
+
 
   def index
     @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_other = Article.includes(:user).limit(10).order("created_at DESC")
+    @category_number = 1
+    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_sick= Article.where(:category_id => 3).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_life= Article.where(:category_id => 4).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_food= Article.where(:category_id => 5).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_rearing= Article.where(:category_id => 6).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_question= Article.where(:category_id => 7).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_story= Article.where(:category_id => 8).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_petloss= Article.where(:category_id => 9).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_other= Article.where(:category_id => 10).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
@@ -19,6 +32,7 @@ class ArticlesController < ApplicationController
       params[:images][:url].each do |url|
       @article.images.create(url: url, article_id: @article.id)
       end
+      # バリデーション設定時に仕様確認
       # respond_to do |format|
       #   format.html { redirect_to root_path }
       #   format.json
@@ -67,6 +81,7 @@ class ArticlesController < ApplicationController
         params[:images][:url].each do |url|
         @article.images.create(url: url, article_id: @article.id) 
         end
+        # バリデーション設定時に仕様確認
         # respond_to do |format|
         #   format.html { redirect_to root_path }
         #   format.json
@@ -102,19 +117,24 @@ class ArticlesController < ApplicationController
     end  
   end
 
-  # def search
-  #   # 検索フォームのキーワードをあいまい検索して、productsテーブルから20件の作品情報を取得する
-  #   @article = Article.where('titile LIKE(?)',"%#{params[:keyword]}%")
-  # end
+  def category
+    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+  end  
+
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content, :category_id, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index
     redirect_to redirect_to root_path unless user_signed_in?
+  end
+
+  def set_category
+    @categories = Category.all
   end
 
 end

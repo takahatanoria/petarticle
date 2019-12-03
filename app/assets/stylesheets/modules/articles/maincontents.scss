@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// インデックスメイン
+// インデックス
 .main-box{
   height: calc(100vh -64px);
   width: 100vw;
-  padding-top: 64px;
+  padding: 40px 0 30px;
   box-sizing: border-box;
   z-index: 0;
   background-color: $background;
@@ -43,6 +43,12 @@
     }
     .kaminari{
       // width: 200px;
+      padding: 10px 0px;
+      margin:0 auto;
+      box-sizing: border-box;
+    }
+    .kaminari-category{
+      width: 200px;
       padding: 10px 0px;
       margin:0 auto;
       box-sizing: border-box;
@@ -162,6 +168,13 @@
       border-radius: 10px;
     }
   }
+}
+
+.category-show{
+  width:200px;
+  min-width: 200px;
+  text-align: center;
+  margin:0 auto;
 }
 .main-box-footer{
   height: 300px;

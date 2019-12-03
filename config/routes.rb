@@ -4,7 +4,27 @@ Rails.application.routes.draw do
   root to: 'articles#index'
   resources :articles do
     resources :comments, only: [:create, :show, :destroy]
+    # collection do
+    #   get ':categories'  => 'articles#category', as: 'category'
+    # end
   end
+
   resources :users, only: [:index, :edit, :update, :show, :destroy]
+
+  resources :categories, only: [:index] do
+    collection do
+      get 'walk'  => 'categories#walk'
+      get 'discipline'  => 'categories#discipline'
+      get 'sick'  => 'categories#sick'
+      get 'life'  => 'categories#life'
+      get 'food'  => 'categories#food'
+      get 'rearing'  => 'categories#rearing'
+      get 'question'  => 'categories#question'
+      get 'story'  => 'categories#story'
+      get 'petloss'  => 'categories#petloss'
+      get 'other'  => 'categories#other'
+    end
+  end  
+
 
 end
