@@ -6,15 +6,17 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_other = Article.includes(:user).limit(10).order("created_at DESC")
-    # @article_category = Article..includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @category_number = 1
-    # @articles.where(category_id: category.id)
-    # @articles_walk = Article.categories.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    # @relation = @article.article_category_relations.build
-    # @articles.categories << category(:category_id => 1)
     @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-
+    @articles_sick= Article.where(:category_id => 3).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_life= Article.where(:category_id => 4).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_food= Article.where(:category_id => 5).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_rearing= Article.where(:category_id => 6).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_question= Article.where(:category_id => 7).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_story= Article.where(:category_id => 8).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_petloss= Article.where(:category_id => 9).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_other= Article.where(:category_id => 10).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
@@ -22,7 +24,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
     @article.images.build
     gon.length = 0
-    # @articles = @category.articles.includes(:user)
   end
 
   def create
@@ -31,6 +32,7 @@ class ArticlesController < ApplicationController
       params[:images][:url].each do |url|
       @article.images.create(url: url, article_id: @article.id)
       end
+      # バリデーション設定時に仕様確認
       # respond_to do |format|
       #   format.html { redirect_to root_path }
       #   format.json
@@ -79,6 +81,7 @@ class ArticlesController < ApplicationController
         params[:images][:url].each do |url|
         @article.images.create(url: url, article_id: @article.id) 
         end
+        # バリデーション設定時に仕様確認
         # respond_to do |format|
         #   format.html { redirect_to root_path }
         #   format.json
@@ -117,14 +120,8 @@ class ArticlesController < ApplicationController
   def category
     @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-
-
   end  
 
-  # def search
-  #   # 検索フォームのキーワードをあいまい検索して、productsテーブルから20件の作品情報を取得する
-  #   @article = Article.where('titile LIKE(?)',"%#{params[:keyword]}%")
-  # end
 
   private
 

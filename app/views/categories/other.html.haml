@@ -6,9 +6,9 @@
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          %p4 #{@categories[1].name}
-          = render partial: 'articles/article', collection: @articles_discipline
+          %p4 #{@categories[9].name}
+          = render partial: 'articles/article', collection: @articles_other
       .kaminari-category
-        = paginate(@articles_discipline)   
+        = paginate(@articles_other)          
   .side-bar
-    = render 'shared/side-bar'   
+    = render 'shared/side-bar'         

@@ -6,7 +6,7 @@
 .main-box{
   height: calc(100vh -64px);
   width: 100vw;
-  padding-top: 64px;
+  padding: 40px 0 30px;
   box-sizing: border-box;
   z-index: 0;
   background-color: $background;
@@ -43,6 +43,12 @@
     }
     .kaminari{
       // width: 200px;
+      padding: 10px 0px;
+      margin:0 auto;
+      box-sizing: border-box;
+    }
+    .kaminari-category{
+      width: 200px;
       padding: 10px 0px;
       margin:0 auto;
       box-sizing: border-box;
