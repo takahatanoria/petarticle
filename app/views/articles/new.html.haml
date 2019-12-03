@@ -18,7 +18,10 @@
       .input-box-text  
         = f.label :content, class: 'input-box-text', for: "input-box-text-area" do         
           = f.text_area :content, class: "input-box-text-area", placeholder:"テキスト（必須1000文字まで）",id: "input-box-text-area", value: '', rows: 5
-    .new-article-select-box.displayflex  
+    .new-article-select-heading-box
+      .new-article-select-box-heading
+        選択必須
+    .new-article-select-box.displayflex     
       .input-box-select
         = f.collection_select(:category_id, @categories, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
       -#   = f.label :category, 'カテゴリ' 
