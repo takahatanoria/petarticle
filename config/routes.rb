@@ -15,8 +15,14 @@ Rails.application.routes.draw do
     collection do
       get 'walk'  => 'categories#walk'
       get 'discipline'  => 'categories#discipline'
-
-      
+      get 'sick'  => 'categories#sick'
+      get 'life'  => 'categories#life'
+      get 'food'  => 'categories#food'
+      get 'rearing'  => 'categories#rearing'
+      get 'question'  => 'categories#question'
+      get 'story'  => 'categories#story'
+      get 'petloss'  => 'categories#petloss'
+      get 'other'  => 'categories#other'
     end
   end  
 

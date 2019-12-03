@@ -39,17 +39,7 @@
         .kaminari
           = paginate(@articles)   
           .index-render-box-category-walk.index-render-box-lightgreen
-            %p4 ジャンル：とり
-            = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)           
-          .index-render-box-category-discipline.index-render-box-green
             %p4 ジャンル：さかな
-            = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)    
-          .index-render-box-category-walk.index-render-box-lightgreen
-            %p4 ジャンル：爬虫類
             = render partial: 'articles/article', collection: @articles
         .kaminari
           = paginate(@articles)           
@@ -71,7 +61,7 @@
           .index-render-box-category-discipline.index-render-box-green
             %p4 しつけ
             = render partial: 'articles/article', collection: @articles_discipline
-        = link_to discipline_categories_path(@articles_walk) do
+        = link_to discipline_categories_path(@articles_discipline) do
           .category-show
             もっと見る          
           .index-render-box-category-sick.index-render-box-lightgreen
@@ -94,26 +84,27 @@
             = render partial: 'articles/article', collection: @articles  
         .kaminari
           = paginate(@articles)           
-          .index-render-box-category-food.index-render-box-lightgreen
-            %p4 成功談
+          .index-render-box-category-question.index-render-box-lightgreen
+            %p4 Q & A
             = render partial: 'articles/article', collection: @articles
         .kaminari
           = paginate(@articles)           
-          .index-render-box-category-rearing.index-render-box-green
-            %p4 失敗談
+          .index-render-box-category-success-failure-story.index-render-box-green
+            %p4 成功談・失敗談
             = render partial: 'articles/article', collection: @articles 
         .kaminari
           = paginate(@articles)           
-          .index-render-box-category-food.index-render-box-lightgreen
+          .index-render-box-category-petloss.index-render-box-lightgreen
             %p4 ペットロス
             = render partial: 'articles/article', collection: @articles
         .kaminari
-          = paginate(@articles)           
-          .index-render-box-category-food.index-render-box-lightgreen
+          = paginate(@articles)
+          .index-render-box-category-other.index-render-box-green
             %p4 その他
-            = render partial: 'articles/article', collection: @articles
+            = render partial: 'articles/article', collection: @articles 
         .kaminari
-          = paginate(@articles)           
+          = paginate(@articles)             
+
 
     - if @search_articles
       .index-render-container

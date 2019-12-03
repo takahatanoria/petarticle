@@ -6,7 +6,9 @@
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          %p4 散歩・おでかけ
+          %p4 しつけ
           = render partial: 'articles/article', collection: @articles_discipline
       .kaminari
         = paginate(@articles_discipline)   
+  .side-bar
+    = render 'shared/side-bar'   
