@@ -4,12 +4,12 @@ class Article < ApplicationRecord
   # belongs_to :category
   has_many :images, dependent: :destroy
   # , dependent: :destroy
-  has_many :article_category_relations
+  # has_many :article_category_relations
   belongs_to :category
   # , through: :article_category_relations
   
   accepts_nested_attributes_for :images,reject_if: :reject_both_blank, allow_destroy: true
-  accepts_nested_attributes_for :article_category_relations, allow_destroy: true
+  # accepts_nested_attributes_for :article_category_relations, allow_destroy: true
   # validates  :title,  presence: true, length:{maximum: 40}
   # validates :title, presence: true
   # validates :text, presence: true

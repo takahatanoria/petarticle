@@ -21,8 +21,10 @@
     .new-article-select-heading-box
       .new-article-select-box-heading
         選択必須
-    .new-article-select-box.displayflex     
-      .input-box-select
+    .new-article-select-box  
+      .input-box-select.displayflex
+        .new-article-select-box-heading
+          カテゴリ 
         = f.collection_select(:category_id, @categories, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
       -#   = f.label :category, 'カテゴリ' 
       -#     = f.collection_select :category_id, Category.all, :id, :name,{prompt: "---"}
