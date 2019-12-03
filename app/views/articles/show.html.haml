@@ -25,7 +25,12 @@
           = @article.user.name
         .article-post-show-contribute-time 
           = @article.created_at.to_s 
-  
+    .show-article-select-box
+      .new-article-select-box.displayflex     
+        .input-box-select
+          .input-box-select-chose
+            カテゴリ：
+            = @article.category.name  
   -# = render @article.comments
   = render 'comments/comment'
 

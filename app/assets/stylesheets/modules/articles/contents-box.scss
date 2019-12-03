@@ -161,11 +161,11 @@
       }
     }
     .new-article-select-box  {
-      height:300px;
+      height:200px;
       width: 100%;
       padding: 20px 0 20px 0;
       .input-box-select{
-        height:200px;
+        height:100px;
         width: 100%;
         padding: 20px;
         background-color: $backgroundsub;
@@ -190,6 +190,18 @@
   // 記事詳細画面
     .article-post-main-view{
       text-align: center;
+      .show-article-select-box{
+        width: 80%;
+        min-width: 500px;
+        margin: 0 auto;
+        .new-article-select-box{
+          .input-box-select-chose{
+            font-size: 20px;
+            color: $green_light5;
+            font-weight: 600;
+          }
+        }
+      }
       .article-post-main-title {
         width: 50%;
         font-size: 28px;
