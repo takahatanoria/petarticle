@@ -1,9 +1,20 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
+  before_action :set_category
+
 
   def index
     @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_other = Article.includes(:user).limit(10).order("created_at DESC")
+    # @article_category = Article..includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @category_number = 1
+    # @articles.where(category_id: category.id)
+    # @articles_walk = Article.categories.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    # @relation = @article.article_category_relations.build
+    # @articles.categories << category(:category_id => 1)
+    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+
   end
 
   def new
@@ -11,6 +22,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
     @article.images.build
     gon.length = 0
+    # @articles = @category.articles.includes(:user)
   end
 
   def create
@@ -102,6 +114,13 @@ class ArticlesController < ApplicationController
     end  
   end
 
+  def category
+    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+
+
+  end  
+
   # def search
   #   # 検索フォームのキーワードをあいまい検索して、productsテーブルから20件の作品情報を取得する
   #   @article = Article.where('titile LIKE(?)',"%#{params[:keyword]}%")
@@ -110,11 +129,15 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content, :category_id, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index
     redirect_to redirect_to root_path unless user_signed_in?
+  end
+
+  def set_category
+    @categories = Category.all
   end
 
 end

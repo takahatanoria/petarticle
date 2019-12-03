@@ -1,25 +1,31 @@
 .contents-box.fadein
   = form_with model: @article, local: true, multiple: true do |f|
-    %h3
-      .dropzone-container
-        .dropzone-preview.displayflex
-          = f.fields_for :images do |g|  
-            #preview-image
-            .dropzone-area  
-              = g.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
-                .input_area
-                  = g.file_field :url, multiple: true, name: 'images[url][]', class: 'input-box-image', id: 'input-box-image', 'data-image': 0   
-                  %p.text
-                    画像を
-                    %br 選択して下さい                 
-      .new-article
-        .input-box-title
-          = f.label :title, class: 'input-box-title', for: "input-box-title-area"  do
-            = f.text_field :title, class: "input-box-title-area", placeholder:"タイトル（必須40文字まで）",id: "input-box-title-area", value: '', rows: 1
-        .input-box-text  
-          = f.label :content, class: 'input-box-text', for: "input-box-text-area" do         
-            = f.text_area :content, class: "input-box-text-area", placeholder:"テキスト（必須1000文字まで）",id: "input-box-text-area", value: '', rows: 5
-      .input-box-image__del
-        = f.submit '投稿する', class: 'form__contribute' 
-      
-    .main-box-footer-new
+    .dropzone-container
+      .dropzone-preview.displayflex
+        = f.fields_for :images do |g|  
+          #preview-image
+          .dropzone-area  
+            = g.label :url, class: 'dropzone-area__label', for: "input-box-image"  do
+              .input_area
+                = g.file_field :url, multiple: true, name: 'images[url][]', class: 'input-box-image', id: 'input-box-image', 'data-image': 0   
+                %p.text
+                  画像を
+                  %br 選択して下さい                 
+    .new-article
+      .input-box-title
+        = f.label :title, class: 'input-box-title', for: "input-box-title-area"  do
+          = f.text_field :title, class: "input-box-title-area", placeholder:"タイトル（必須40文字まで）",id: "input-box-title-area", value: '', rows: 1
+      .input-box-text  
+        = f.label :content, class: 'input-box-text', for: "input-box-text-area" do         
+          = f.text_area :content, class: "input-box-text-area", placeholder:"テキスト（必須1000文字まで）",id: "input-box-text-area", value: '', rows: 5
+    .new-article-select-box.displayflex  
+      .input-box-select
+        = f.collection_select(:category_id, @categories, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
+      -#   = f.label :category, 'カテゴリ' 
+      -#     = f.collection_select :category_id, Category.all, :id, :name,{prompt: "---"}
+            
+
+    .input-box-image__del
+      = f.submit '投稿する', class: 'form__contribute' 
+    
+  .main-box-footer-new
