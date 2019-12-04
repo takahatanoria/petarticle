@@ -102,9 +102,11 @@
       .new-article{
         .input-box-title{
           width: 100%;
+          min-width:600px;
           line-height: 20px;
         input,textarea {
           width: 100%;
+          min-width:600px;
           border-radius: 5px;
           overflow: scroll;
           top:0;
@@ -115,6 +117,7 @@
         }
         .input-box-text {
           width: 100%;
+          min-width:600px;
           line-height: 20px;
           input,textarea {
             width: 100%;
@@ -161,31 +164,52 @@
       }
     }
     .new-article-select-box  {
-      height:200px;
+      height:300px;
       width: 100%;
+      min-width:600px;
       padding: 20px 0 20px 0;
-      .input-box-select{
-        height:100px;
-        width: 100%;
-        padding: 20px;
-        background-color: $backgroundsub;
-        border-radius: 20px;
-        .input-box-select-area{
-          height:40px;
-          width: 200px;
-          min-width: 300px;
-          line-height: 40px;
-          font-size: 20px;
-          font-weight: 600;
-          border-radius: 5px;
-          margin:30px 0;
-          padding: 0 10px;
-          border: 1px solid $green_light1;
-          background-color: $green_light1;
-
+      border-radius: 20px;
+      margin:0 auto;
+        justify-content: space-around; 
+        .input-box-select{
+          height:260px;
+          padding: 20px 40px;
+          background-color: $backgroundsub;
+          border-radius: 20px;
+          margin:0 auto;
+          justify-content: space-around; 
+          .input-box-select-container{
+            width: 50%;
+            margin:0 auto;
+            .new-article-select-box-heading{
+              height:40px;
+              width: 80px;
+              min-width: 80px;
+              line-height: 40px;
+              font-size: 20px;
+              font-weight: 600;
+              border-radius: 5px;
+              // margin:30px 0;
+              // margin:0 auto;
+            }
+            .input-box-select-area{
+              height:40px;
+              width: 300px;
+              min-width: 300px;
+              line-height: 40px;
+              font-size: 20px;
+              font-weight: 600;
+              border-radius: 5px;
+              // margin:10px 0;
+              // margin:0 auto;
+              // padding: 0 10px;
+              border: 1px solid $green_light1;
+              background-color: $green_light1;
+            }
+          }
         }
-      }
-  }
+      
+    }
 
   // 記事詳細画面
     .article-post-main-view{
@@ -194,7 +218,12 @@
         width: 80%;
         min-width: 500px;
         margin: 0 auto;
-        .new-article-select-box{
+        .input-box-select-show{
+          height:100px;
+          padding: 20px 40px;
+          background-color: $backgroundsub;
+          border-radius: 20px;
+          margin:0 auto;
           .input-box-select-chose{
             font-size: 20px;
             color: $green_light5;
@@ -278,6 +307,7 @@
 .dropzone-container{
   clear: both;
   width: 650px;
+  min-width:600px;
   height: 100%;
   display: block;
   margin:0 auto;
@@ -287,6 +317,7 @@
   display: block;
   box-sizing: border-box;
   width: 650px;
+  min-width:600px;
   height: 160px;
   margin: 20px 0 10px 0;
   border: 1px dashed $green_light5;

@@ -6,7 +6,7 @@
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          %p4 #{@categories[5].name}
+          %p4 ケア・飼育方法
           = render partial: 'articles/article', collection: @articles_rearing
       .kaminari-category
         = paginate(@articles_rearing)          

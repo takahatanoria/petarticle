@@ -9,117 +9,163 @@
         .index-render
           .index-render-box-search
             %p4 検索結果
-            = params[:q][:title_or_content_cont_any]
-            の検索結果
+            .search-result-heading-box
+              = params[:q][:title_or_content_cont_all]
+              の検索結果　新着１０件
             = render partial: 'articles/article', collection: @search_articles
-            - if @search_articles.length == 0
-              .index-render-box-search            
-                %h4 該当する記事が見つかりませんでした。
+            .category-show
+              .show-all-search-btn
+                全件表示する
+              .show-all-search-off-btn
+                非表示にする
+            .show-all-search-display-off
+              = render partial: 'articles/article', collection: @search_articles_all
+
+        - if @search_articles.length == 0
+          .index-render-box-search            
+            %h4 該当する記事が見つかりませんでした。
+        - else @search_articles.length >= 1
+
+
     - else
       .index-render-container
         .index-render    
           .index-render-box
+          = link_to latest_details_path(@articles) do
             %p4 新着記事
             = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)    
-        .index-render-box-category-dog.index-render-box-green
-          %p4 ジャンル：犬
-          = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)        
-          .index-render-box-category-cat.index-render-box-lightgreen
+          = link_to latest_details_path(@articles) do
+            .category-show
+              もっと見る
+        .index-render-box-genre-dog.index-render-box-green
+          = link_to dog_genres_path(@articles) do        
+            %p4 ジャンル：犬
+            = render partial: 'articles/article', collection: @articles_dog 
+          = link_to dog_genres_path(@articles) do
+            .category-show
+              もっと見る
+        .index-render-box-genre-cat.index-render-box-lightgreen
+          = link_to cat_genres_path(@articles_cat) do
             %p4 ジャンル：猫
-            = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)   
-          .index-render-box-category-small-animal.index-render-box-green
+            = render partial: 'articles/article', collection: @articles_cat
+          = link_to cat_genres_path(@articles_cat) do
+            .category-show
+              もっと見る
+        .index-render-box-genre-small-animal.index-render-box-green
+          = link_to small_animal_genres_path(@articles_small_animal) do          
             %p4 ジャンル：小動物
-            = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)   
-          .index-render-box-category-walk.index-render-box-lightgreen
-            %p4 ジャンル：とり
-            = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)           
-          .index-render-box-category-discipline.index-render-box-green
-            %p4 ジャンル：その他
-            = render partial: 'articles/article', collection: @articles
-        .kaminari
-          = paginate(@articles)   
-          
-          
+            = render partial: 'articles/article', collection: @articles_small_animal
+          = link_to small_animal_genres_path(@articles_small_animal) do
+            .category-show
+              もっと見る
+          .index-render-box-genre-bird.index-render-box-lightgreen
+            = link_to bird_genres_path(@articles_bird) do
+              %p4 ジャンル：とり
+              = render partial: 'articles/article', collection: @articles_bird
+            = link_to bird_genres_path(@articles_bird) do
+              .category-show
+                もっと見る
+          .index-render-box-genre-fish.index-render-box-lightgreen
+            = link_to fish_genres_path(@articles_fish) do
+              %p4 ジャンル：さかな
+              = render partial: 'articles/article', collection:@articles_fish
+            = link_to fish_genres_path(@articles_fish) do
+              .category-show
+                もっと見る
+          .index-render-box-genre-reptile.index-render-box-lightgreen
+            = link_to reptile_genres_path(@articles_reptile) do
+              %p4 ジャンル：爬虫類
+              = render partial: 'articles/article', collection: @articles_reptile
+            = link_to reptile_genres_path(@articles_reptile) do
+              .category-show
+                もっと見る                 
+          .index-render-box-genre-other.index-render-box-green
+            = link_to genre_other_genres_path(@articles_genre_other) do
+              %p4 ジャンル：その他
+              = render partial: 'articles/article', collection: @articles_genre_other
+            = link_to genre_other_genres_path(@articles_genre_other) do
+              .category-show
+                もっと見る
           .index-render-box-category-walk.index-render-box-lightgreen#1
-            %p4 散歩・おでかけ
-            = render partial: 'articles/article', collection: @articles_walk
-        = link_to walk_categories_path(@articles_walk) do
-          .category-show
-            もっと見る
-              
+            = link_to walk_categories_path(@articles_walk) do
+              %p4 散歩・おでかけ
+              = render partial: 'articles/article', collection: @articles_walk
+            = link_to walk_categories_path(@articles_walk) do
+              .category-show
+                もっと見る
           .index-render-box-category-discipline.index-render-box-green
-            %p4 しつけ
-            = render partial: 'articles/article', collection: @articles_discipline
-        = link_to discipline_categories_path(@articles_discipline) do
-          .category-show
-            もっと見る          
+            = link_to discipline_categories_path(@articles_discipline) do            
+              %p4 しつけ
+              = render partial: 'articles/article', collection: @articles_discipline
+            = link_to discipline_categories_path(@articles_discipline) do
+              .category-show
+                もっと見る          
           .index-render-box-category-sick.index-render-box-lightgreen
-            %p4 怪我・病気・予防・介護
-            = render partial: 'articles/article', collection: @articles_sick
-        = link_to sick_categories_path(@articles_sick) do
-          .category-show
-            もっと見る          
+            = link_to sick_categories_path(@articles_sick) do
+              %p4 怪我・病気・予防・介護
+              = render partial: 'articles/article', collection: @articles_sick
+            = link_to sick_categories_path(@articles_sick) do
+              .category-show
+                もっと見る          
           .index-render-box-category-life.index-render-box-green
-            %p4 くらし・生活・日常
-            = render partial: 'articles/article', collection: @articles_life
-        = link_to life_categories_path(@articles_life) do
-          .category-show
-            もっと見る          
+            = link_to life_categories_path(@articles_life) do
+              %p4 くらし・生活・日常
+              = render partial: 'articles/article', collection: @articles_life
+            = link_to life_categories_path(@articles_life) do
+              .category-show
+                もっと見る          
           .index-render-box-category-food.index-render-box-lightgreen
-            %p4 エサ・食事
-            = render partial: 'articles/article', collection: @articles_food  
-        = link_to food_categories_path(@articles_food) do
-          .category-show
-            もっと見る    
+            = link_to food_categories_path(@articles_food) do
+              %p4 エサ・食事
+              = render partial: 'articles/article', collection: @articles_food  
+            = link_to food_categories_path(@articles_food) do
+              .category-show
+                もっと見る    
           .index-render-box-category-rearing.index-render-box-green
-            %p4 ケア・飼育方法
-            = render partial: 'articles/article', collection: @articles_rearing  
-        = link_to rearing_categories_path(@articles_rearing) do
-          .category-show
-            もっと見る           
+            = link_to rearing_categories_path(@articles_rearing) do
+              %p4 ケア・飼育方法
+              = render partial: 'articles/article', collection: @articles_rearing  
+            = link_to rearing_categories_path(@articles_rearing) do
+              .category-show
+                もっと見る           
           .index-render-box-category-question.index-render-box-lightgreen
-            %p4 Q & A
-            = render partial: 'articles/article', collection: @articles_question
-        = link_to question_categories_path(@articles_question) do
-          .category-show
-            もっと見る           
+            = link_to question_categories_path(@articles_question) do
+              %p4 Q & A
+              = render partial: 'articles/article', collection: @articles_question
+            = link_to question_categories_path(@articles_question) do
+              .category-show
+                もっと見る           
           .index-render-box-category-success-failure-story.index-render-box-green
-            %p4 成功談・失敗談
-            = render partial: 'articles/article', collection: @articles_story
-        = link_to  story_categories_path(@articles_story) do
-          .category-show
-            もっと見る           
+            = link_to  story_categories_path(@articles_story) do
+              %p4 成功談・失敗談
+              = render partial: 'articles/article', collection: @articles_story
+            = link_to  story_categories_path(@articles_story) do
+              .category-show
+                もっと見る           
           .index-render-box-category-petloss.index-render-box-lightgreen
-            %p4 ペットロス
-            = render partial: 'articles/article', collection: @articles_petloss
-        = link_to petloss_categories_path(@articles_petloss) do
-          .category-show
-            もっと見る
+            = link_to petloss_categories_path(@articles_petloss) do
+              %p4 ペットロス
+              = render partial: 'articles/article', collection: @articles_petloss
+            = link_to petloss_categories_path(@articles_petloss) do
+              .category-show
+                もっと見る
           .index-render-box-category-other.index-render-box-green
-            %p4 その他
-            = render partial: 'articles/article', collection: @articles_other 
-        = link_to other_categories_path(@articles_other) do
-          .category-show
-            もっと見る            
+            = link_to other_categories_path(@articles_other) do
+              %p4 その他
+              = render partial: 'articles/article', collection: @articles_other 
+            = link_to other_categories_path(@articles_other) do
+              .category-show
+                もっと見る            
 
 
     - if @search_articles
       .index-render-container
-        .kaminari-search
-          = paginate(@search_articles)
         .index-render-box
           %p4 新着記事
-          = render partial: 'articles/article', collection: @articles_other
+          = render partial: 'articles/article', collection: @articles
+        = link_to latest_details_path(@articles) do
+          .category-show
+            もっと見る
 
   .side-bar
     = render 'shared/side-bar'   

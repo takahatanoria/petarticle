@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
   before_action :set_category
+  before_action :set_genre
 
 
   def index
@@ -17,6 +18,14 @@ class ArticlesController < ApplicationController
     @articles_story= Article.where(:category_id => 8).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_petloss= Article.where(:category_id => 9).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_other= Article.where(:category_id => 10).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    
+    @articles_dog = Article.where(:genre_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_cat = Article.where(:genre_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_small_animal = Article.where(:genre_id => 3).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_bird = Article.where(:genre_id => 4).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_fish = Article.where(:genre_id => 5).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_reptile = Article.where(:genre_id => 6).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_genre_other = Article.where(:genre_id => 7).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
@@ -117,16 +126,11 @@ class ArticlesController < ApplicationController
     end  
   end
 
-  def category
-    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-  end  
-
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :category_id, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content, :category_id, :genre_id, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -135,6 +139,10 @@ class ArticlesController < ApplicationController
 
   def set_category
     @categories = Category.all
+  end
+
+  def set_genre
+    @genres = Genre.all
   end
 
 end

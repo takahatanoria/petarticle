@@ -6,7 +6,7 @@
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          %p4 #{@categories[6].name}
+          %p4 Q & A
           = render partial: 'articles/article', collection: @articles_question
       .kaminari-category
         = paginate(@articles_question)          

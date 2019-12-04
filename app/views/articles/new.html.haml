@@ -21,9 +21,18 @@
     .new-article-select-heading-box
       .new-article-select-box-heading
         選択必須
-    .new-article-select-box.displayflex     
-      .input-box-select
-        = f.collection_select(:category_id, @categories, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
+    .new-article-select-box
+      .input-box-select.displayflex
+        .input-box-select-container
+          .new-article-select-box-heading
+            ジャンル
+          = f.collection_select(:genre_id, @genres, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
+          .new-article-select-box-heading.displayflex
+            カテゴリ 
+          = f.collection_select(:category_id, @categories, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
+        .input-box-select-container
+      
+      
       -#   = f.label :category, 'カテゴリ' 
       -#     = f.collection_select :category_id, Category.all, :id, :name,{prompt: "---"}
             

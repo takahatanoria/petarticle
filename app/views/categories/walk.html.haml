@@ -6,8 +6,7 @@
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          -# idと配列中が１つづつずれているので注意
-          %p4 #{@categories[0].name}  
+          %p4 散歩・おでかけ
           = render partial: 'articles/article', collection: @articles_walk
       .kaminari-category
         = paginate(@articles_walk)          

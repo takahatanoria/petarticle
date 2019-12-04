@@ -26,12 +26,16 @@
         .article-post-show-contribute-time 
           = @article.created_at.to_s 
     .show-article-select-box
-      .new-article-select-box.displayflex     
-        .input-box-select
-          .input-box-select-chose
-            カテゴリ：
-            = @article.category.name  
-  -# = render @article.comments
+      .new-article-select-box   
+        .input-box-select-show
+          .input-box-select-container
+            .input-box-select-chose.displayflex
+              ジャンル：
+              = @article.genre.name 
+            .input-box-select-chose.displayflex
+              カテゴリ：
+              = @article.category.name  
+
   = render 'comments/comment'
 
   .users-other-article

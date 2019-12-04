@@ -3,15 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'articles#index'
   resources :articles do
-    resources :comments, only: [:create, :show, :destroy]
-    # collection do
-    #   get ':categories'  => 'articles#category', as: 'category'
-    # end
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :users, only: [:index, :edit, :update, :show, :destroy]
 
-  resources :categories, only: [:index] do
+  resources :categories do
     collection do
       get 'walk'  => 'categories#walk'
       get 'discipline'  => 'categories#discipline'
@@ -25,6 +22,27 @@ Rails.application.routes.draw do
       get 'other'  => 'categories#other'
     end
   end  
+
+  resources :genres do
+    collection do
+      get 'dog'  => 'genres#dog'
+      get 'cat'  => 'genres#cat'
+      get 'small_animal'  => 'genres#small_animal'
+      get 'bird'  => 'genres#bird'
+      get 'fish'  => 'genres#fish'
+      get 'reptile'  => 'genres#reptile'
+      get 'genre_other'  => 'genres#genre_other'
+    end
+  end  
+
+  resources :details do
+    collection do
+      get 'latest'  => 'details#latest'
+      get 'ranking'  => 'details#ranking'
+      get 'search'  => 'details#search'
+    end
+  end
+  
 
 
 end
