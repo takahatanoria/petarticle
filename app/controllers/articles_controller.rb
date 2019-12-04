@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
   before_action :set_category
+  before_action :set_genre
 
 
   def index
@@ -126,7 +127,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :category_id, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content, :category_id, :genre_id, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -135,6 +136,10 @@ class ArticlesController < ApplicationController
 
   def set_category
     @categories = Category.all
+  end
+
+  def set_genre
+    @genres = Genre.all
   end
 
 end

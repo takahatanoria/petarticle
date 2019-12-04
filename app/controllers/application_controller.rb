@@ -13,43 +13,65 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  # def configure_permitted_parameters
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image])
+
+
+
+
+  # def set_search
+  #   # @search = Article.ransack(params[:q])
+  #   condition = Hash.new
+  #   # @search = Array.new 
+
+  #   if params[:q].kind_of?(Hash)
+  #     params[:q].each do |key, value|
+  #       if key == 'title_or_content_cont_all' then
+  #       [:title_or_content_cont_all] = params[:q][:title_or_content_cont_all].split(/[ 　]+/)
+  #     @search = Article.ransack(params[:q])
+  #     @search_articles = @search.result.page(params[:page]).per(5).order("created_at DESC")
+  #     # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+
+  #   else
+  #     @search = Article.ransack(params[:q])
+  #     @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+  #   end
   # end
 
-  # def index
-  #   @article = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
-  # end
-
-  # def index
-  #   @article = Article.includes(:user).page(params[:page]).per(10).order("created_at DESC")
-  # end
 
   def set_search
-
-    # @search = Article.ransack(params[:q])
-    # @search = Article.ransack(params[:q])
-
-
-
     if params[:q] != nil
-      params[:q]['title_or_content_cont_any'] = params[:q]['title_or_content_cont_any'].split(/[\s|\p{blank}]+/)
+      params[:q]['title_or_content_cont_all'] = params[:q]['title_or_content_cont_all'].split(/[\s\p{blank}]+/)
       @search = Article.ransack(params[:q])
       @search_articles = @search.result.page(params[:page]).order("created_at DESC")
       # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
-
     else
       @search = Article.ransack(params[:q])
       @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     end
+  end
+
+
+  # def set_search
+  #   if params[:q] != nil
+  #     params[:q]['title_or_content_cont_all'] = params[:q]['title_or_content_cont_all'].split(/[\s|\p{blank}]+/)
+  #     @search = Article.ransack(params[:q])
+  #     @search_articles = @search.result.page(params[:page]).order("created_at DESC")
+  #     # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+
+  #   else
+  #     @search = Article.ransack(params[:q])
+  #     @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+  #   end
+  # end
+  
+
+
 
     # @search = Article.ransack(params[:q])
     # unless params[:q].blank?
     #   @search_articles = @search.result.page(params[:page]).per(5).order("created_at DESC")
     # else
-      # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    #   @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     # end
-  end
 
 
 
