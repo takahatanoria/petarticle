@@ -26,7 +26,6 @@ a:active {
     color: $green_light3;
     .left-header-low-btn{
       width: calc(100vw - 200px);
-      // background-color: $green_light1;
       float: left;
       color: $green_light3;
       .main-contents-categories{
@@ -41,7 +40,8 @@ a:active {
           list-style: none;
 
         }
-        &__dogs{
+        // カテゴリhover
+        &__genres{
           width: calc(calc(100vw - 210px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
@@ -58,23 +58,33 @@ a:active {
               }
             }
           }
-        
         }
-        &__cats{
-          width: calc(calc(100vw - 210px)/7);   
+        &__categories{
+          width: calc(calc(100vw - 210px)/7 * 2);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
-          min-width: 112px;
+          min-width: 180px;
           background-color: $green_light1;
+          #header-genre__list{
+            min-width: 180px;
+            display:none;
+            .parents__list{
+              .parents__list-box{
+                a {
+                  color: $white;
+                }
+              }
+            }
+          }
         }
-        &__smallanimals{
+        &__ranking{
           width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
           background-color: $green_light1;
         }
-        &__others{
+        &__lost_child{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;

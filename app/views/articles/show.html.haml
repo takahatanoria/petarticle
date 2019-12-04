@@ -26,7 +26,7 @@
         .article-post-show-contribute-time 
           = @article.created_at.to_s 
     .show-article-select-box
-      .new-article-select-box   
+      .show-article-select-box-container   
         .input-box-select-show
           .input-box-select-container
             .input-box-select-chose.displayflex
@@ -35,6 +35,16 @@
             .input-box-select-chose.displayflex
               カテゴリ：
               = @article.category.name  
+    -if user_signed_in? && @article.user_id == current_user.id            
+      .show-article-edit-box
+        .new-article-edit-box   
+          .input-box-edit-show
+            .input-box-edit-container
+              .input-box-edit-container__edit
+                = link_to '記事を編集する', edit_article_path(@article), method: :get,class: "input-box-edit-container__edit__btn"
+              .input-box-edit-container__delete
+                = link_to '記事を削除する', article_path(@article), method: :delete,class: "input-box-edit-container__delet__btn"
+
 
   = render 'comments/comment'
 

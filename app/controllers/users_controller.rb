@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     if  user_signed_in?
       @user = User.find(params[:id])
-      @user_articles= Article.where(user_id: current_user.id).order("created_at DESC").limit(5)
+      @user_articles= Article.where(user_id: current_user.id).includes(:user).page(params[:page]).per(5).order("created_at DESC")
       @name = current_user.name
     else
       redirect_to root_path

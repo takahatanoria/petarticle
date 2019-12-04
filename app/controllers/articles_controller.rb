@@ -59,12 +59,11 @@ class ArticlesController < ApplicationController
 
   def destroy
     article = Article.find(params[:id])
-    if article.user_id == current_user.id
+    if user_signed_in? && article.user_id == current_user.id
       article.destroy
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.json
-      end  
+      redirect_to root_path, notice: '記事を削除しました'
+    else
+      render :show
     end
   end
 
@@ -113,6 +112,8 @@ class ArticlesController < ApplicationController
   
   def show
     @article = Article.find(params[:id])
+    # article = Article.find(params[:id])
+
     if @article.present? 
       @user_article = Article.where(user_id: @article.user.id).where.not(id: @article.id).limit(16).order("created_at DESC")
       @comment_article = Comment.where(article_id: @article.id).limit(5).order("created_at DESC")

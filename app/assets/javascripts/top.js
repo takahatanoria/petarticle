@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function() {
       return false;
   });
 
-  $('.main-contents-categories__dogs').hover(
+  $('.header-hover-btn').hover(
     function() {
       //マウスカーソルが重なった時の処理
       $(this).children('ul').show();

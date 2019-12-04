@@ -2,7 +2,7 @@
   .header-low__row
     .left-header-low-btn.displayflex
       .main-contents-categories.displayflex
-        %li.main-contents-categories__dogs
+        %li.main-contents-categories__genres.header-hover-btn
           = fa_icon 'paw', class: 'header-btn__icon'
           ジャンル
           %ul#header-genre__list
@@ -12,19 +12,25 @@
                   = link_to "##{genre.id}" do
                     #{genre.name}
 
-        .main-contents-categories__cats
+        %li.main-contents-categories__categories.header-hover-btn
           = fa_icon 'paw', class: 'header-btn__icon'
           カテゴリ
-        .main-contents-categories__smallanimals
+          %ul#header-genre__list
+            .parents__list
+              - @categories.each do |category|
+                %li.parents__list-box
+                  = link_to "##{category.id + 30}" do
+                    #{category.name}          
+        .main-contents-categories__ranking
           = fa_icon 'paw', class: 'header-btn__icon'
           ランキング
-        .main-contents-categories__others
+        .main-contents-categories__lost_child
           = fa_icon 'paw', class: 'header-btn__icon'
           迷子
       .main-contents-other.displayflex
-        .main-contents-other__follow
-          = fa_icon 'leaf', class: 'header-btn__icon'
-          フォロー
+        -# .main-contents-other__follow
+        -#   = fa_icon 'leaf', class: 'header-btn__icon'
+        -#   フォロー
         .main-contents-other__myitem
           = fa_icon 'star', class: 'header-btn__icon'
           マイアイテム
