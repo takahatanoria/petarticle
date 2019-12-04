@@ -6,9 +6,9 @@
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          %p4 怪我・病気・予防・介護
-          = render partial: 'articles/article', collection:  @articles_sick
+          %p4 爬虫類
+          = render partial: 'articles/article', collection: @articles_reptile
       .kaminari-category
-        = paginate( @articles_sick)          
+        = paginate(@articles_reptile)          
   .side-bar
-    = render 'shared/side-bar'         
+    = render 'shared/side-bar'      

@@ -18,6 +18,14 @@ class ArticlesController < ApplicationController
     @articles_story= Article.where(:category_id => 8).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_petloss= Article.where(:category_id => 9).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @articles_other= Article.where(:category_id => 10).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    
+    @articles_dog = Article.where(:genre_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_cat = Article.where(:genre_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_small_animal = Article.where(:genre_id => 3).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_bird = Article.where(:genre_id => 4).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_fish = Article.where(:genre_id => 5).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_reptile = Article.where(:genre_id => 6).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_genre_other = Article.where(:genre_id => 7).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
@@ -117,12 +125,6 @@ class ArticlesController < ApplicationController
       end  
     end  
   end
-
-  def category
-    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-  end  
-
 
   private
 

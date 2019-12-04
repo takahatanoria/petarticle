@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :show, :destroy]
     # collection do
-    #   get ':categories'  => 'articles#category', as: 'category'
+    #   get ':categor'  => 'articles#category', as: 'category'
+    #   get ':genre' => 'articles#genre', as: 'genre'
     # end
   end
 
   resources :users, only: [:index, :edit, :update, :show, :destroy]
 
-  resources :categories, only: [:index] do
+  resources :categories do
     collection do
       get 'walk'  => 'categories#walk'
       get 'discipline'  => 'categories#discipline'
@@ -23,6 +24,18 @@ Rails.application.routes.draw do
       get 'story'  => 'categories#story'
       get 'petloss'  => 'categories#petloss'
       get 'other'  => 'categories#other'
+    end
+  end  
+
+  resources :genres do
+    collection do
+      get 'dog'  => 'genres#dog'
+      get 'cat'  => 'genres#cat'
+      get 'small_animal'  => 'genres#small_animal'
+      get 'bird'  => 'genres#bird'
+      get 'fish'  => 'genres#fish'
+      get 'reptile'  => 'genres#reptile'
+      get 'genre_other'  => 'genres#genre_other'
     end
   end  
 

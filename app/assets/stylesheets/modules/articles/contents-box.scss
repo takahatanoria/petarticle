@@ -170,12 +170,6 @@
       padding: 20px 0 20px 0;
       border-radius: 20px;
       margin:0 auto;
-      .input-box-select-show{
-        height:100px;
-        padding: 20px 40px;
-        background-color: $backgroundsub;
-        border-radius: 20px;
-        margin:0 auto;
         justify-content: space-around; 
         .input-box-select{
           height:260px;
@@ -214,7 +208,7 @@
             }
           }
         }
-      }
+      
     }
 
   // 記事詳細画面
@@ -224,7 +218,12 @@
         width: 80%;
         min-width: 500px;
         margin: 0 auto;
-        .new-article-select-box{
+        .input-box-select-show{
+          height:100px;
+          padding: 20px 40px;
+          background-color: $backgroundsub;
+          border-radius: 20px;
+          margin:0 auto;
           .input-box-select-chose{
             font-size: 20px;
             color: $green_light5;

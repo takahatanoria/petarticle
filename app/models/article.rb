@@ -5,11 +5,11 @@ class Article < ApplicationRecord
   belongs_to :category
   belongs_to :genre
   
-  accepts_nested_attributes_for :images,reject_if: :reject_both_blank, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true
   validates  :title,  presence: true, length:{maximum: 40}
   validates :content, presence: true, length:{maximum: 1000}
   validates :category_id, presence: true  
-  # validates :genre_id, presence: true 
+  validates :genre_id, presence: true 
   
 
 
