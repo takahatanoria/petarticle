@@ -1,0 +1,15 @@
+.header-select-btn
+  = render 'articles/header-btn' 
+
+.main-index-box.displayflex
+  .main-contents.fadein
+    .articles-box-search
+      .index-render-container
+        .index-render    
+          .index-render-box
+            %p4 ランキング
+            = render partial: 'articles/article', collection: @articles
+        .kaminari-under
+          = paginate(@articles)    
+  .side-bar
+    = render 'shared/side-bar'   

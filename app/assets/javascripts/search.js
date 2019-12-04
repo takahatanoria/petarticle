@@ -14,19 +14,6 @@ $(document).on('turbolinks:load', function() {
       'display': 'block'
     })
   });
-
-  // $(".comment-display-off").on("click", function() {
-  //   commentzone.css({
-  //     'display': 'none'
-  //   })
-  //   comment_on_btn.css({
-  //     'display': 'block'
-  //   })
-  //   comment_off_btn.css({
-  //     'display': 'none'
-  //   })
-  // });  
-
   $(document).on('click', '.show-all-search-off-btn',function() {
     serch_result_zone.css({
       'display': 'none'
@@ -38,6 +25,4 @@ $(document).on('turbolinks:load', function() {
       'display': 'none'
     })
   });
-
-
 });

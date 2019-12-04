@@ -2,9 +2,16 @@
   .header-low__row
     .left-header-low-btn.displayflex
       .main-contents-categories.displayflex
-        .main-contents-categories__dogs
+        %li.main-contents-categories__dogs
           = fa_icon 'paw', class: 'header-btn__icon'
           ジャンル
+          %ul#header-genre__list
+            .parents__list
+              - @genres.each do |genre|
+                %li.parents__list-box
+                  = link_to "##{genre.id}" do
+                    #{genre.name}
+
         .main-contents-categories__cats
           = fa_icon 'paw', class: 'header-btn__icon'
           カテゴリ
@@ -30,5 +37,8 @@
         .tweet-order__new
           = fa_icon 'comment', class: 'header-btn__icon'
           キャンバス
-        -# .tweet-order__popularity
-        -#   人気記事
+
+
+
+
+        

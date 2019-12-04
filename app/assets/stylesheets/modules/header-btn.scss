@@ -26,7 +26,7 @@ a:active {
     color: $green_light3;
     .left-header-low-btn{
       width: calc(100vw - 200px);
-      background-color: $green_light1;
+      // background-color: $green_light1;
       float: left;
       color: $green_light3;
       .main-contents-categories{
@@ -36,30 +36,50 @@ a:active {
         line-height: 24px;
         justify-content: space-around;
         align-items: baseline; 
+        cursor :pointer;
+        li{
+          list-style: none;
+
+        }
         &__dogs{
           width: calc(calc(100vw - 210px)/7);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
+          background-color: $green_light1;
+          #header-genre__list{
+            min-width: 112px;
+            display:none;
+            .parents__list{
+              .parents__list-box{
+                a {
+                  color: $white;
+                }
+              }
+            }
+          }
+        
         }
         &__cats{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
-          
+          background-color: $green_light1;
         }
         &__smallanimals{
           width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
+          background-color: $green_light1;
         }
         &__others{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
+          background-color: $green_light1;
         }
       }
       .main-contents-other{
@@ -74,18 +94,21 @@ a:active {
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
+          background-color: $green_light1;
         }
         &__myitem{
           width: calc(calc(100vw - 210px)/7);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
+          background-color: $green_light1;
         }
         &__detailed-search{
           width: calc(calc(100vw - 210px)/7);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
+          background-color: $green_light1;
         }
       }
     }
@@ -106,5 +129,8 @@ a:active {
         }
       }
     }
+  }
+  .now-selected-header{
+    background-color: $green_light5;
   }
 }

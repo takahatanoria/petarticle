@@ -15,18 +15,6 @@ $(document).on('turbolinks:load', function() {
     })
   });
 
-  // $(".comment-display-off").on("click", function() {
-  //   commentzone.css({
-  //     'display': 'none'
-  //   })
-  //   comment_on_btn.css({
-  //     'display': 'block'
-  //   })
-  //   comment_off_btn.css({
-  //     'display': 'none'
-  //   })
-  // });  
-
   $(document).on('click', '.comment-display-off',function() {
     commentzone.css({
       'display': 'none'
