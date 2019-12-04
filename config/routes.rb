@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   root to: 'articles#index'
   resources :articles do
     resources :comments, only: [:create, :show, :destroy]
-    # collection do
-    #   get ':categor'  => 'articles#category', as: 'category'
-    #   get ':genre' => 'articles#genre', as: 'genre'
-    # end
+    collection do
+      # get ':latest'  => 'articles#latest', as: 'latest'
+      # get ':ranking' => 'articles#ranking', as: 'ranking'
+      # get ':search' => 'articles#search', as: 'search'
+    end
   end
 
   resources :users, only: [:index, :edit, :update, :show, :destroy]
@@ -38,6 +39,15 @@ Rails.application.routes.draw do
       get 'genre_other'  => 'genres#genre_other'
     end
   end  
+
+  resources :details do
+    collection do
+      get 'latest'  => 'details#latest'
+      get 'ranking'  => 'details#ranking'
+      get 'search'  => 'details#search'
+    end
+  end
+  
 
 
 end

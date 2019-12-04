@@ -48,7 +48,15 @@
       box-sizing: border-box;
     }
     .kaminari-category{
-      width: 200px;
+      width: 300px;
+      text-align: center;
+      padding: 10px 0px;
+      margin:0 auto;
+      box-sizing: border-box;
+    }
+    .kaminari-under{
+      width: 300px;
+      text-align: center;
       padding: 10px 0px;
       margin:0 auto;
       box-sizing: border-box;
@@ -175,6 +183,19 @@
   min-width: 200px;
   text-align: center;
   margin:0 auto;
+  color: $green_light5;
+}
+.show-all-search-btn{
+  display:block;
+  cursor:pointer;
+}
+.show-all-search-off-btn{
+  display:none;
+  cursor:pointer;
+}
+.show-all-search-display-off{
+  display:none;
+  
 }
 .main-box-footer{
   height: 300px;

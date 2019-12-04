@@ -41,7 +41,8 @@ class ApplicationController < ActionController::Base
     if params[:q] != nil
       params[:q]['title_or_content_cont_all'] = params[:q]['title_or_content_cont_all'].split(/[\s\p{blank}]+/)
       @search = Article.ransack(params[:q])
-      @search_articles = @search.result.page(params[:page]).order("created_at DESC")
+      @search_articles = @search.result.order("created_at DESC").limit(10)
+      @search_articles_all = @search.result.order("created_at DESC")
       # @article = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     else
       @search = Article.ransack(params[:q])
