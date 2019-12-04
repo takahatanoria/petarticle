@@ -9,8 +9,9 @@
         .index-render
           .index-render-box-search
             %p4 検索結果
-            = params[:q][:title_or_content_cont_all]
-            の検索結果
+            .search-result-heading-box
+              = params[:q][:title_or_content_cont_all]
+              の検索結果　新着１０件
             = render partial: 'articles/article', collection: @search_articles
             .category-show
               .show-all-search-btn

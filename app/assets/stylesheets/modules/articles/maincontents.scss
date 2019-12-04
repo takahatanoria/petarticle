@@ -20,6 +20,12 @@
     .index-render-box-search{
       background-color: $green_light1;
       padding: 10px 0;
+      .search-result-heading-box{
+        width: 260px;
+        min-width: 260px;
+        text-align: center;
+        margin: 0 auto;
+      }
     }
     .index-render-box{
       background-color: $background;

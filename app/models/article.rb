@@ -6,8 +6,8 @@ class Article < ApplicationRecord
   belongs_to :genre
   
   accepts_nested_attributes_for :images, allow_destroy: true
-  validates  :title,  presence: true, length:{maximum: 40}
-  validates :content, presence: true, length:{maximum: 1000}
+  validates  :title,  presence: true, length:{minimum: 1,maximum: 40}
+  validates :content, presence: true, length:{minimum: 1,maximum: 1000}
   validates :category_id, presence: true  
   validates :genre_id, presence: true 
   

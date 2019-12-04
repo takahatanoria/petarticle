@@ -1,10 +1,5 @@
 class CommentsController < ApplicationController
 
-  # def new
-  #   @article = Article.find(params[:article_id])
-  #   @comment = Comment.new
-  # end
-
   def create 
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build(comment_params)
@@ -12,9 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @article
     end
-
-    # Comment.create(create_params)
-    # redirect_to controller: :products, action: :index
+    redirect_to article_path(@article)
   end
 
   def destroy

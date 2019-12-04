@@ -3,12 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'articles#index'
   resources :articles do
-    resources :comments, only: [:create, :show, :destroy]
-    collection do
-      # get ':latest'  => 'articles#latest', as: 'latest'
-      # get ':ranking' => 'articles#ranking', as: 'ranking'
-      # get ':search' => 'articles#search', as: 'search'
-    end
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :users, only: [:index, :edit, :update, :show, :destroy]
