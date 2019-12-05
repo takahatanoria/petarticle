@@ -28,5 +28,33 @@ $(document).on('turbolinks:load', function() {
       $(this).removeClass("now-selected-header");
     },
   );
+
+  // $(document).on('click', '.like-btn__icon',function() {
+  //   $(this).css({
+  //     'color': '$pink'
+  //   })
+  // });
+  // $(document).on('click', '.liked-btn__icon',function() {
+  //   $(this).css({
+  //     'color': '$gray'
+  //   })
+  // });
+  $('.like-btn__icon').click(function () {
+
+    $(window).on('load',function(){
+
+      var speed = 500;
+      var position = $(this).offset().top;
+      console.log(this)
+      $("html, body").animate({scrollTop:position - 100}, speed, 'swing');
+      return false;
+
+    });
+
+  
+
+
+});
+
 });
 

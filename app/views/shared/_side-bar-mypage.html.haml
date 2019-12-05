@@ -9,7 +9,8 @@
     %li.mypage-side-menu-box__list
       キャンバス
     %li.mypage-side-menu-box__list
-      ストック   
+      = link_to user_likes_path(current_user) do
+        いいね一覧   
     %li.mypage-side-menu-box__list
       フォロー 
     %li.mypage-side-menu-box__list

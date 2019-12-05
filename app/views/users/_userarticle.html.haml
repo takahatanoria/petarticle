@@ -26,3 +26,5 @@
                 = user_articles.created_at.to_s  
     .article-post__image  
       = image_tag "#{user_articles.images.first.url}", class: 'article-post__image' if user_articles.images.present?
+
+      

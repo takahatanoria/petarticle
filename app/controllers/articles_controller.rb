@@ -112,7 +112,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     # article = Article.find(params[:id])
-
+    @likes_count = Like.where(article_id: @article.id).count
     if @article.present? 
       @user_article = Article.where(user_id: @article.user.id).where.not(id: @article.id).limit(16).order("created_at DESC")
       @comment_article = Comment.where(article_id: @article.id).limit(5).order("created_at DESC")

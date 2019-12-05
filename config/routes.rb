@@ -4,9 +4,18 @@ Rails.application.routes.draw do
   root to: 'articles#index'
   resources :articles do
     resources :comments, only: [:create, :destroy]
-  end
+    post "likes/:article_id/create"  => "likes#create"
+    delete "likes/:article_id/destroy"  => "likes#destroy"
 
-  resources :users, only: [:index, :edit, :update, :show, :destroy]
+  end
+  # post "likes/:article_id/create"  => "likes#create"
+  # delete "likes/:article_id/destroy"  => "likes#destroy"
+
+  # resources :likes, only: [:create]
+
+  resources :users, only: [:index, :edit, :update, :show, :destroy] do
+    get "likes" => "users#likes"
+  end  
 
   resources :categories do
     collection do
