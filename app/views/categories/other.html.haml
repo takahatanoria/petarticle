@@ -1,12 +1,12 @@
 .header-select-btn
-  = render 'articles/header-btn' 
+  = render 'details/header-btn-details' 
 
 .main-index-box.displayflex
   .main-contents.fadein
     .index-render-container
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
-          %p4 #{@categories[9].name}
+          %p4 その他
           = render partial: 'articles/article', collection: @articles_other
       .kaminari-category
         = paginate(@articles_other)          

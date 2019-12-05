@@ -2,27 +2,14 @@
   .header-low__row
     .left-header-low-btn.displayflex
       .main-contents-categories.displayflex
-        %li.main-contents-categories__genres.header-hover-btn
+        %li.main-contents-categories__genres
           = fa_icon 'paw', class: 'header-btn__icon'
-          = link_to "#100" do
-            ジャンル
-            %ul#header-genre__list
-              .parents__list
-                - @genres.each do |genre|
-                  = link_to "##{genre.id}" do
-                    %li.parents__list-box
-                      #{genre.name}
+          = link_to "ジャンル選択へ", root_path, method: :get
 
-        %li.main-contents-categories__categories.header-hover-btn
+        %li.main-contents-categories__categories
           = fa_icon 'paw', class: 'header-btn__icon'
-          = link_to "#101" do
-            カテゴリ
-          %ul#header-genre__list
-            .parents__list
-              - @categories.each do |category|
-                = link_to "##{category.id + 30}" do
-                  %li.parents__list-box
-                    #{category.name}          
+          = link_to "カテゴリ選択へ", root_path, method: :get
+
         .main-contents-categories__ranking
           = fa_icon 'paw', class: 'header-btn__icon'
           ランキング
@@ -45,8 +32,3 @@
         .tweet-order__new
           = fa_icon 'comment', class: 'header-btn__icon'
           キャンバス
-
-
-
-
-        

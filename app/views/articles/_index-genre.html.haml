@@ -1,0 +1,50 @@
+.index-render-container#100
+  .index-render-box-genre-dog.index-render-box-green#1
+    = link_to dog_genres_path(@articles) do        
+      %p4 ジャンル：犬
+      = render partial: 'articles/article', collection: @articles_dog 
+    = link_to dog_genres_path(@articles) do
+      .category-show
+        もっと見る
+  .index-render-box-genre-cat.index-render-box-lightgreen#2
+    = link_to cat_genres_path(@articles_cat) do
+      %p4 ジャンル：猫
+      = render partial: 'articles/article', collection: @articles_cat
+    = link_to cat_genres_path(@articles_cat) do
+      .category-show
+        もっと見る
+  .index-render-box-genre-small-animal.index-render-box-green#3
+    = link_to small_animal_genres_path(@articles_small_animal) do          
+      %p4 ジャンル：小動物
+      = render partial: 'articles/article', collection: @articles_small_animal
+    = link_to small_animal_genres_path(@articles_small_animal) do
+      .category-show
+        もっと見る
+  .index-render-box-genre-bird.index-render-box-lightgreen#4
+    = link_to bird_genres_path(@articles_bird) do
+      %p4 ジャンル：とり
+      = render partial: 'articles/article', collection: @articles_bird
+    = link_to bird_genres_path(@articles_bird) do
+      .category-show
+        もっと見る
+  .index-render-box-genre-fish.index-render-box-lightgreen#5
+    = link_to fish_genres_path(@articles_fish) do
+      %p4 ジャンル：さかな
+      = render partial: 'articles/article', collection:@articles_fish
+    = link_to fish_genres_path(@articles_fish) do
+      .category-show
+        もっと見る
+  .index-render-box-genre-reptile.index-render-box-lightgreen#6
+    = link_to reptile_genres_path(@articles_reptile) do
+      %p4 ジャンル：爬虫類
+      = render partial: 'articles/article', collection: @articles_reptile
+    = link_to reptile_genres_path(@articles_reptile) do
+      .category-show
+        もっと見る                 
+  .index-render-box-genre-other.index-render-box-green#7
+    = link_to genre_other_genres_path(@articles_genre_other) do
+      %p4 ジャンル：その他
+      = render partial: 'articles/article', collection: @articles_genre_other
+    = link_to genre_other_genres_path(@articles_genre_other) do
+      .category-show
+        もっと見る
