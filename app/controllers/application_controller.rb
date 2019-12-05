@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :basic_auth, if: :production?
   before_action :set_search
+  before_action :set_category
+  before_action :set_genre
 
   def after_sign_out_path_for(resource)
     '/users/sign_in' # サインアウト後のリダイレクト先URL
@@ -78,6 +80,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def set_category
+    @categories = Category.all
+  end
+
+  def set_genre
+    @genres = Genre.all
+  end
+
   def production?
     Rails.env.production?
   end
@@ -87,4 +97,5 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
 end

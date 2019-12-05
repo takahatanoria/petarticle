@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index,:create, :show]
-  before_action :set_category
-  before_action :set_genre
+
 
 
   def index
@@ -138,12 +137,6 @@ class ArticlesController < ApplicationController
     redirect_to redirect_to root_path unless user_signed_in?
   end
 
-  def set_category
-    @categories = Category.all
-  end
 
-  def set_genre
-    @genres = Genre.all
-  end
 
 end
