@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user_articles= Article.where(user_id: current_user.id).includes(:user).page(params[:page]).per(5).order("created_at DESC")
       @name = current_user.name
+
     else
       redirect_to root_path
     end
