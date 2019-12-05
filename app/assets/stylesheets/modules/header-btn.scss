@@ -29,6 +29,7 @@ a:active {
       float: left;
       color: $green_light3;
       .main-contents-categories{
+        width: 100%; 
         text-align: center;
         font-size: 15px;
         font-weight: 500;
@@ -37,6 +38,7 @@ a:active {
         align-items: baseline; 
         cursor :pointer;
         li{
+          width: 100%; 
           list-style: none;
 
         }
@@ -48,13 +50,18 @@ a:active {
           min-width: 112px;
           background-color: $green_light1;
           #header-genre__list{
+            width: 100%; 
             min-width: 112px;
             display:none;
             .parents__list{
+              width: 100%; 
+              color: $white;
+              a {
+                width: 100%; 
+                color: $white;
+              }
               .parents__list-box{
-                a {
-                  color: $white;
-                }
+                width: 100%; 
               }
             }
           }
@@ -69,10 +76,12 @@ a:active {
             min-width: 180px;
             display:none;
             .parents__list{
+              a {
+                width: 100%; 
+                color: $white;
+              }
               .parents__list-box{
-                a {
-                  color: $white;
-                }
+                width: 100%; 
               }
             }
           }

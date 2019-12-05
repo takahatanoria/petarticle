@@ -8,8 +8,8 @@
           %ul#header-genre__list
             .parents__list
               - @genres.each do |genre|
-                %li.parents__list-box
-                  = link_to "##{genre.id}" do
+                = link_to "##{genre.id}" do
+                  %li.parents__list-box
                     #{genre.name}
 
         %li.main-contents-categories__categories.header-hover-btn
@@ -18,8 +18,8 @@
           %ul#header-genre__list
             .parents__list
               - @categories.each do |category|
-                %li.parents__list-box
-                  = link_to "##{category.id + 30}" do
+                = link_to "##{category.id + 30}" do
+                  %li.parents__list-box
                     #{category.name}          
         .main-contents-categories__ranking
           = fa_icon 'paw', class: 'header-btn__icon'
