@@ -28,5 +28,14 @@ $(document).on('turbolinks:load', function() {
       $(this).removeClass("now-selected-header");
     },
   );
+
+  $('.like-btn__icon').click(function () {
+    $(this).addClass("change-pink");
+  });
+
+  $('.liked-btn__icon').click(function () {
+    $(this).addClass("change-gray");
+  });
+
 });
 

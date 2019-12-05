@@ -351,6 +351,9 @@
           color: $green_dark1;
           font-weight: bold;
         }
+        .article-post-show-like-icon{
+          padding: 0 5px;
+        }
         .article-post-show-contribute-time{
           padding-left: 5px;
           overflow: hidden;
@@ -652,5 +655,23 @@
   font-size: 15px;
   color: $headericon;
 }
+.like-btn__icon{
+  font-size: 15px;
+  color: $gray;
+}
+.liked-btn__icon{
+  font-size: 15px;
+  color: $pink;
+}
+
+.change-pink{
+  color: $pink;
+}
+.change-gray{
+  color: $gray;
+}
+
+
+
 
 

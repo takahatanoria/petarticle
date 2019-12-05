@@ -102,10 +102,10 @@
           box-sizing: border-box;
           margin:0 auto;
           .article-post__title{
-            height: 22px;
-            line-height: 22px;
+            height: 24px;
+            line-height: 24px;
             width: 80%;
-            font-size: 22px;
+            font-size: 20px;
             overflow: hidden;
             text-overflow: ellipsis;
             word-break: break-all;
@@ -137,6 +137,11 @@
               font-size: 16px;
               color: $green_light1;
             }
+            &__like{
+              &__box{
+                margin: 0 5px;
+              }
+            }  
             &__detail{
               font-size: 14px;
               padding-left: 5px;

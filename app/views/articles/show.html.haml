@@ -23,6 +23,18 @@
           投稿者
         .article-post-show-user    
           = @article.user.name
+
+        .article-post-show-like-icon
+        - if Like.find_by(user_id: current_user.id, article_id: @article.id) 
+          = link_to "#{@article.id}/likes/#{@article.id}/destroy",{method: "delete"}, class: "liked-btn" do
+            .users-resource-select__like__box{data: {id: @article.id}}
+              = fa_icon 'heart', class: 'liked-btn__icon'
+        - else  
+          = link_to "#{@article.id}/likes/#{@article.id}/create",{method: "post"}, class: "liked-btn" do
+            .users-resource-select__like__box{data: {id: @article.id}}
+              = fa_icon 'heart', class: 'like-btn__icon'
+        .article-post-show-like-icon
+          = @likes_count        
         .article-post-show-contribute-time 
           = @article.created_at.to_s 
     .show-article-select-box
