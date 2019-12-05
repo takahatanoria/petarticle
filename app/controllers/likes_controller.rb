@@ -6,24 +6,31 @@ class LikesController < ApplicationController
       user_id: current_user.id,
       article_id: params[:article_id]
       )
-      @like.save
+      if @like.present? 
+        @like.save
+        redirect_to article_path(@article), notice: 'いいね！しました'
+      else
+      end
     else
-      format.html {redirect_to article_path(@article), notice: 'ログインしてください' }
+      redirect_to article_path(@article), notice: 'ログインしてください'    
     end
-    redirect_to article_path(@article)
   end  
+
   def destroy
-    if user_signed_in?
+    if user_signed_in? 
       @article = Article.find(params[:article_id])
       @like = Like.find_by(
         user_id: current_user.id,
         article_id: params[:article_id]
       )
-      @like.destroy
+      if @like.present? 
+        @like.destroy
+        redirect_to article_path(@article), notice: 'いいね！を取り消しました'
+      else
+      end
     else
-    format.html {redirect_to article_path(@article), notice: 'ログインしてください' }
-    end
-      redirect_to article_path(@article)
+      redirect_to article_path(@article), notice: 'ログインしてください'
+    end 
   end 
   
   def topcreate
@@ -33,9 +40,13 @@ class LikesController < ApplicationController
       user_id: current_user.id,
       article_id: params[:article_id]
       )
-      @like.save
+      if @like.present?  
+        @like.save
+        redirect_to articles_path, notice: 'いいね！しました'
+      else
+      end
     else
-      format.html {redirect_to articles_path(article), notice: 'ログインしてください' }
+      redirect_to articles_path(article), notice: 'ログインしてください'
     end
   end  
 
@@ -46,9 +57,15 @@ class LikesController < ApplicationController
         user_id: current_user.id,
         article_id: params[:article_id]
       )
-      @like.destroy
-    else
-    format.html {redirect_to articles_path(article), notice: 'ログインしてください' }
-    end
-  end 
-end
+      if @like.present?  
+        @like.destroy
+        redirect_to articles_path, notice: 'いいね！を取り消しました'
+      else
+      end
+    else  
+      redirect_to articles_path(article), notice: 'ログインしてください'
+    end 
+
+  end
+
+end  
