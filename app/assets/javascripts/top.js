@@ -30,12 +30,16 @@ $(document).on('turbolinks:load', function() {
   );
 
   $('.like-btn__icon').click(function () {
+    $(this).removeClass("change-gray");
     $(this).addClass("change-pink");
   });
 
   $('.liked-btn__icon').click(function () {
+    $(this).removeClass("change-pink");
     $(this).addClass("change-gray");
   });
+
+
 
 });
 
