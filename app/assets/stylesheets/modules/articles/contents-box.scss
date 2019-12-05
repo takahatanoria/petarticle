@@ -170,7 +170,7 @@
       padding: 20px 0 20px 0;
       border-radius: 20px;
       margin:0 auto;
-        justify-content: space-around; 
+      justify-content: space-around; 
         .input-box-select{
           height:260px;
           padding: 20px 40px;
@@ -189,8 +189,6 @@
               font-size: 20px;
               font-weight: 600;
               border-radius: 5px;
-              // margin:30px 0;
-              // margin:0 auto;
             }
             .input-box-select-area{
               height:40px;
@@ -200,9 +198,6 @@
               font-size: 20px;
               font-weight: 600;
               border-radius: 5px;
-              // margin:10px 0;
-              // margin:0 auto;
-              // padding: 0 10px;
               border: 1px solid $green_light1;
               background-color: $green_light1;
             }
@@ -215,22 +210,86 @@
     .article-post-main-view{
       text-align: center;
       .show-article-select-box{
+        height: 200px;
         width: 80%;
         min-width: 500px;
         margin: 0 auto;
-        .input-box-select-show{
+        .show-article-select-box-container  {
+          height:200px;
+          width: 100%;
+          min-width:600px;
+          padding: 20px 0 20px 0;
+          border-radius: 20px;
+          margin:0 auto;
+          justify-content: space-around; 
+          .input-box-select-show{
+            height:100px;
+            padding: 20px 40px;
+            background-color: $backgroundsub;
+            border-radius: 20px;
+            margin:0 auto;
+            .input-box-select-chose{
+              font-size: 20px;
+              color: $green_light5;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      // 記事詳細編集削除ボタン
+      .show-article-edit-box{
+        height: 160px;
+        width: 80%;
+        min-width: 500px;
+        padding: 30px 0;
+        margin: 0 auto;
+        .input-box-edit-show{
           height:100px;
           padding: 20px 40px;
           background-color: $backgroundsub;
           border-radius: 20px;
           margin:0 auto;
-          .input-box-select-chose{
-            font-size: 20px;
-            color: $green_light5;
-            font-weight: 600;
+          .input-box-edit-container{
+            margin-bottom: 30px;
+            a:link {
+              color: $white;
+            }
+            a:visited {
+              color: $white;
+            }
+            &__edit{
+              height:30px;
+              font-size: 20px;
+              text-align: center;
+              color: $green_light5;
+              font-weight: 600;
+              padding: 5px;
+              margin:10px auto 0;
+              border-radius: 5px;
+              background-color: $green_light1;
+              cursor: pointer;
+              &__btn{
+                color: $white;
+              }
+            }
+            &__delete{
+              height:30px;
+              font-size: 20px;
+              text-align: center;
+              color: $green_light5;
+              font-weight: 600;
+              padding: 5px;
+              margin:10px auto 0;
+              border-radius: 5px;
+              background-color: $green_light1;
+              cursor: pointer;
+              &__btn{
+                color: $white;
+              }
+            }
           }
         }
-      }
+      }      
       .article-post-main-title {
         width: 50%;
         font-size: 28px;

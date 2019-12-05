@@ -6,6 +6,8 @@ class User < ApplicationRecord
   
   has_many :articles  
   has_many :comments  
+
+  has_one_attached :avatar
   
   # has_one_attached :avatar
 end

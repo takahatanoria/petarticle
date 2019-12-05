@@ -1,11 +1,12 @@
 = form_for [@article, @comment], local: true do |f|
-  .article-post-comment
-    .article-post-comment__box
-      .article-post-comment__box__text
-        = f.text_area :content, placeholder: 'コメント入力（必須200文字まで）', style: 'width: 100%;height: 100px;'
-  
-  .input-box-form
-    = f.submit 'コメントする', class: 'form__contribute'
+  -if user_signed_in?
+    .article-post-comment
+      .article-post-comment__box
+        .article-post-comment__box__text
+          = f.text_area :content, placeholder: 'コメント入力（必須200文字まで）', style: 'width: 100%;height: 100px;'
+    
+    .input-box-form
+      = f.submit 'コメントする', class: 'form__contribute'
 
   .article-show-comment-display
     .article-show-comment-display__box

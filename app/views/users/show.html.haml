@@ -10,8 +10,8 @@
       = render partial: 'users/userarticle', collection: @user_articles, as: :user_articles
 
 
-      .kaminari
-        = paginate(@article)
+      .kaminari-under
+        = paginate(@user_articles)
 
 .side-bar-mypage
   = render 'shared/side-bar-mypage'
