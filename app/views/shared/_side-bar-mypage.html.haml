@@ -5,7 +5,8 @@
     %li.mypage-side-menu-box__list
       プロフィール
     %li.mypage-side-menu-box__list
-      投稿記事
+      =link_to user_path(current_user) do
+        投稿記事
     %li.mypage-side-menu-box__list
       キャンバス
     %li.mypage-side-menu-box__list

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     post "likes/:article_id/create"  => "likes#create"
     delete "likes/:article_id/destroy"  => "likes#destroy"
+    post "likes/:article_id/topcreate"  => "likes#topcreate"
+    delete "likes/:article_id/topdestroy"  => "likes#topdestroy"
 
   end
   # post "likes/:article_id/create"  => "likes#create"

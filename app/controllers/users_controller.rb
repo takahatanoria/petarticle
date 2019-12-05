@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def likes
     if  user_signed_in?
       @user = @user = User.find_by(params[:id])
-      @likes = Like.where(user_id: @user.id).page(params[:page]).per(5).order("created_at DESC")
+      @likes = Like.select(:user_id, :article_id).distinct.where(user_id: @user.id).page(params[:page]).per(5).order("created_at DESC")
     else
       redirect_to root_path unless @article.user_id == current_user.id
     end  

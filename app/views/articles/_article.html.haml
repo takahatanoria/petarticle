@@ -11,6 +11,15 @@
         .users-resource-select__name  
           = fa_icon 'user', class: 'content-user__icon'
           = article.user.name
+        .users-resource-select__like
+        - if Like.find_by(user_id: current_user.id, article_id: article.id) 
+          = link_to "articles/#{article.id}/likes/#{article.id}/topdestroy",{method: "delete"}, class: "liked-btn" do
+            .users-resource-select__like__box{data: {id: article.id}}
+              = fa_icon 'heart', class: 'liked-btn__icon'
+        - else  
+          = link_to "articles/#{article.id}/likes/#{article.id}/topcreate",{method: "post"}, class: "liked-btn" do
+            .users-resource-select__like__box{data: {id: article.id}}
+              = fa_icon 'heart', class: 'like-btn__icon'
         .users-post-time-index
           投稿日時：
           = article.created_at.to_s    
