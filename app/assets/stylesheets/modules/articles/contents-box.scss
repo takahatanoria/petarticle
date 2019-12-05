@@ -106,7 +106,7 @@
           line-height: 20px;
         input,textarea {
           width: 100%;
-          min-width:600px;
+          min-width:650px;
           border-radius: 5px;
           overflow: scroll;
           top:0;
@@ -117,7 +117,7 @@
         }
         .input-box-text {
           width: 100%;
-          min-width:600px;
+          min-width:650px;
           line-height: 20px;
           input,textarea {
             width: 100%;
@@ -138,6 +138,9 @@
         &:hover {
           background-color: $green_light5;
         }
+      }
+      .form__contribute{
+        min-width:650px;
       }
       &__mask {
         background-color: $white;
@@ -166,7 +169,7 @@
     .new-article-select-box  {
       height:300px;
       width: 100%;
-      min-width:600px;
+      min-width:650px;
       padding: 20px 0 20px 0;
       border-radius: 20px;
       margin:0 auto;
@@ -217,7 +220,7 @@
         .show-article-select-box-container  {
           height:200px;
           width: 100%;
-          min-width:600px;
+          min-width:650px;
           padding: 20px 0 20px 0;
           border-radius: 20px;
           margin:0 auto;
@@ -366,7 +369,7 @@
 .dropzone-container{
   clear: both;
   width: 650px;
-  min-width:600px;
+  min-width:650px;
   height: 100%;
   display: block;
   margin:0 auto;
@@ -376,7 +379,7 @@
   display: block;
   box-sizing: border-box;
   width: 650px;
-  min-width:600px;
+  min-width:650px;
   height: 160px;
   margin: 20px 0 10px 0;
   border: 1px dashed $green_light5;

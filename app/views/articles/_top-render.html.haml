@@ -1,0 +1,42 @@
+- if @search_articles
+  .index-render-container
+    .index-render
+      .index-render-box-search
+        %p4 検索結果
+        - if @search_articles.length >= 1  
+          .search-result-heading-box
+            = params[:q][:title_or_content_cont_all]
+            の検索結果　新着１０件
+          = render partial: 'articles/article', collection: @search_articles
+          .category-show
+            .show-all-search-btn
+              全件表示する
+            .show-all-search-off-btn
+              非表示にする
+          .show-all-search-display-off
+            = render partial: 'articles/article', collection: @search_articles_all
+
+        - elsif @search_articles.length == 0
+          .index-render-box-search            
+            %h4 該当する記事が見つかりませんでした。
+  .index-render-container
+    .index-render-box
+      %p4 新着記事
+      = render partial: 'articles/article', collection: @articles
+    = link_to latest_details_path(@articles) do
+      .category-show
+        もっと見る
+- else
+  .index-render-container
+    .index-render    
+      .index-render-box
+      = link_to latest_details_path(@articles) do
+        %p4 新着記事
+        = render partial: 'articles/article', collection: @articles
+      = link_to latest_details_path(@articles) do
+        .category-show
+          もっと見る            
+
+    = render 'articles/index-genre' 
+    = render 'articles/index-category' 
+

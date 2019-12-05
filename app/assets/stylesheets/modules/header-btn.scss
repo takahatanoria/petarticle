@@ -24,10 +24,14 @@ a:active {
   .header-low__row{
     line-height: 24px;
     color: $green_light3;
+    a {
+      width: 100%; 
+      color: $white;
+    }
     .left-header-low-btn{
       width: calc(100vw - 200px);
       float: left;
-      color: $green_light3;
+      color: $white;
       .main-contents-categories{
         width: 100%; 
         text-align: center;
