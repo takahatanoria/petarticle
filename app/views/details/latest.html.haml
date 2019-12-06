@@ -8,7 +8,7 @@
         .index-render    
           .index-render-box
             %p4 新着記事
-            = render partial: 'articles/article', collection: @articles
+            = render partial: 'details//article', collection: @articles
         .kaminari-under
           = paginate(@articles)    
   .side-bar
