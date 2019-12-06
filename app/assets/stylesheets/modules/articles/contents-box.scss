@@ -372,7 +372,6 @@
 .dropzone-container{
   clear: both;
   width: 650px;
-  min-width:650px;
   height: 100%;
   display: block;
   margin:0 auto;
@@ -382,7 +381,6 @@
   display: block;
   box-sizing: border-box;
   width: 650px;
-  min-width:650px;
   height: 160px;
   margin: 20px 0 10px 0;
   border: 1px dashed $green_light5;

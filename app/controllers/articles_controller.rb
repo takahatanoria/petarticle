@@ -4,27 +4,27 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles = Article.includes(:user).page(params[:page]).per(3).order("created_at DESC")
     @articles_other = Article.includes(:user).limit(10).order("created_at DESC")
     @category_number = 1
-    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_sick= Article.where(:category_id => 3).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_life= Article.where(:category_id => 4).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_food= Article.where(:category_id => 5).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_rearing= Article.where(:category_id => 6).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_question= Article.where(:category_id => 7).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_story= Article.where(:category_id => 8).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_petloss= Article.where(:category_id => 9).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_other= Article.where(:category_id => 10).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_sick= Article.where(:category_id => 3).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_life= Article.where(:category_id => 4).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_food= Article.where(:category_id => 5).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_rearing= Article.where(:category_id => 6).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_question= Article.where(:category_id => 7).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_story= Article.where(:category_id => 8).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_petloss= Article.where(:category_id => 9).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_other= Article.where(:category_id => 10).includes(:user).page(params[:page]).per(3).order("created_at DESC")
     
-    @articles_dog = Article.where(:genre_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_cat = Article.where(:genre_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_small_animal = Article.where(:genre_id => 3).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_bird = Article.where(:genre_id => 4).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_fish = Article.where(:genre_id => 5).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_reptile = Article.where(:genre_id => 6).includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @articles_genre_other = Article.where(:genre_id => 7).includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @articles_dog = Article.where(:genre_id => 1).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_cat = Article.where(:genre_id => 2).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_small_animal = Article.where(:genre_id => 3).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_bird = Article.where(:genre_id => 4).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_fish = Article.where(:genre_id => 5).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_reptile = Article.where(:genre_id => 6).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    @articles_genre_other = Article.where(:genre_id => 7).includes(:user).page(params[:page]).per(3).order("created_at DESC")
   end
 
   def new

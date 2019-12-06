@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   has_many :images, dependent: :destroy
   belongs_to :category
   belongs_to :genre
-  has_many :stocks, dependent: :destroy  
+  # has_many :stocks, dependent: :destroy  
   has_many :likes, dependent: :destroy    
   
   accepts_nested_attributes_for :images, allow_destroy: true
