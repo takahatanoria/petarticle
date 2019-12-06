@@ -10,8 +10,8 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   validates  :title,  presence: true, length:{minimum: 1,maximum: 40}
   validates :content, presence: true, length:{minimum: 1,maximum: 1000}
-  validates :category_id, presence: true  
-  validates :genre_id, presence: true 
+  validates :category_id, presence: {message:  "を選択して下さい"}
+  validates :genre_id, presence: {message:  "を選択して下さい"}
   
 
 
