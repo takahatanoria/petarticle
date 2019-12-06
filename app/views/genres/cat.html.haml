@@ -7,7 +7,7 @@
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
           %p4 猫
-          = render partial: 'details//article', collection: @articles_cat
+          = render partial: 'articles/article', collection: @articles_cat
       .kaminari-category
         = paginate(@articles_cat)          
   .side-bar
