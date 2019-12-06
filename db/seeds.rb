@@ -13,7 +13,7 @@ Category.create(:name => 'エサ・食事')
 Category.create(:name => 'ケア・飼育方法')
 Category.create(:name => 'Q & A')
 Category.create(:name => '成功談・失敗談')
-Category.create(:name => 'ペットロス')
+Category.create(:name => '迷子')
 Category.create(:name => 'その他')
 
 Genre.create(:name => '犬')
