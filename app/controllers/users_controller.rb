@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
+  def index
+    redirect_to new_user_registration_path
+  end  
 
   def show
     if  user_signed_in?
