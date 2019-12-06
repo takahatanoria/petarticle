@@ -17,7 +17,16 @@
                 %i (英数字8文字以上20文字以下)
               .field-input
                 = f.password_field :password, autocomplete: "off", size: 30, maxlength: 20
+            
+          - if devise_mapping.rememberable? 
+            .field-remember
+              .field-label-remember
+                = f.label "パスワードを記憶"
+                %span<>
+                .field-label-remember
+                  = f.check_box :remember_me
             .actions.displayflex
               = f.submit "ログインする", class: 'account-register-btn'
+
               = render "devise/shared/links"
   .main-box-footer             
