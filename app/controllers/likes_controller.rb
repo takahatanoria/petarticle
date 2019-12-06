@@ -2,10 +2,13 @@ class LikesController < ApplicationController
   def create
     if user_signed_in?
       @article = Article.find(params[:article_id])
-      @like = Like.new(
-      user_id: current_user.id,
-      article_id: params[:article_id]
-      )
+      @like = Like.where(user_id: current_user.id,
+        article_id: params[:article_id]).first_or_initialize
+      #   .new(
+      # user_id: current_user.id,
+      # article_id: params[:article_id]
+      # )
+      
       if @like.present? 
         @like.save
         redirect_to article_path(@article), notice: 'いいね！しました'
@@ -36,10 +39,12 @@ class LikesController < ApplicationController
   def topcreate
     if user_signed_in?
       article = Article.find(params[:article_id])
-      @like = Like.new(
-      user_id: current_user.id,
-      article_id: params[:article_id]
-      )
+      # @like = Like.new(
+      # user_id: current_user.id,
+      # article_id: params[:article_id]
+      # )
+      @like = Like.where(user_id: current_user.id,
+        article_id: params[:article_id]).first_or_initialize
       if @like.present?  
         @like.save
         redirect_to articles_path, notice: 'いいね！しました'

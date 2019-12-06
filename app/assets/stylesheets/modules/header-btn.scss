@@ -29,7 +29,7 @@ a:active {
       color: $white;
     }
     .left-header-low-btn{
-      width: calc(100vw - 200px);
+      width: 100vw;
       float: left;
       color: $white;
       .main-contents-categories{
@@ -48,7 +48,7 @@ a:active {
         }
         // カテゴリhover
         &__genres{
-          width: calc(calc(100vw - 220px)/7);       
+          width: calc(100vw/9);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
@@ -71,7 +71,7 @@ a:active {
           }
         }
         &__categories{
-          width: calc(calc(100vw - 220px)/7 * 2);   
+          width: calc(100vw/9 * 2);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 180px;
@@ -91,14 +91,14 @@ a:active {
           }
         }
         &__ranking{
-          width: calc(calc(100vw - 220px)/7);    
+          width: calc(100vw/9);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
           background-color: $green_light1;
         }
         &__lost_child{
-          width: calc(calc(100vw - 210px)/7);   
+          width: calc(100vw/9);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
@@ -114,45 +114,57 @@ a:active {
         align-items: baseline; 
         box-sizing: border-box;
         &__follow{
-          width: calc(calc(100vw - 220px)/7);       
+          width: calc(100vw/9);       
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
           background-color: $green_light1;
         }
         &__myitem{
-          width: calc(calc(100vw - 220px)/7);   
+          width: calc(100vw/9);   
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
           background-color: $green_light1;
         }
         &__detailed-search{
-          width: calc(calc(100vw - 220px)/7);    
+          width: calc(100vw/9);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
           min-width: 112px;
           background-color: $green_light1;
         }
-      }
-    }
-    .right-header-low-btn {
-      width: 200px;
-      float: right;
-      background-color: $green_light1;
-      .tweet-order  {
-        text-align: center;
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 24px;
-        justify-content: space-around;
-        align-items: baseline; 
-        &__new  {
+        &__order  {
+          width: calc(100vw/9 * 2);    
           border: 1px solid $green_light5;
           border-bottom: 2px solid $green_light5;
+          min-width: 200px;
+          max-width:200px;
+          background-color: $green_light1;
+          // &__new  {
+          //   border: 1px solid $green_light5;
+          //   border-bottom: 2px solid $green_light5;
+          // }
         }
       }
     }
+    // .right-header-low-btn {
+    //   width: 200px;
+    //   float: right;
+    //   background-color: $green_light1;
+      // .tweet-order  {
+      //   text-align: center;
+      //   font-size: 15px;
+      //   font-weight: 500;
+      //   line-height: 24px;
+      //   justify-content: space-around;
+      //   align-items: baseline; 
+      //   &__new  {
+      //     border: 1px solid $green_light5;
+      //     border-bottom: 2px solid $green_light5;
+      //   }
+      // }
+    // }
   }
   .now-selected-header{
     background-color: $green_light5;
