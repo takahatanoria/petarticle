@@ -7,7 +7,7 @@
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
           %p4 くらし・生活・日常
-          = render partial: 'details//article', collection: @articles_life
+          = render partial: 'articles/article', collection: @articles_life
       .kaminari-category
         = paginate(@articles_life)          
   .side-bar

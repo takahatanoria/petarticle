@@ -7,7 +7,7 @@
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
           %p4 散歩・おでかけ
-          = render partial: 'details//article', collection: @articles_walk
+          = render partial: 'articles/article', collection: @articles_walk
       .kaminari-category
         = paginate(@articles_walk)          
   .side-bar
