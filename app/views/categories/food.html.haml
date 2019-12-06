@@ -7,7 +7,7 @@
       .index-render    
         .index-render-box-category-walk.index-render-box-lightgreen
           %p4 エサ・食事
-          = render partial: 'articles/article', collection: @articles_food
+          = render partial: 'details//article', collection: @articles_food
       .kaminari-category
         = paginate(@articles_food)          
   .side-bar
