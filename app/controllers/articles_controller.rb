@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
     @articles_fish = Article.where(:genre_id => 5).includes(:user).page(params[:page]).per(3).order("created_at DESC")
     @articles_reptile = Article.where(:genre_id => 6).includes(:user).page(params[:page]).per(3).order("created_at DESC")
     @articles_genre_other = Article.where(:genre_id => 7).includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    # @likes_count = Like.where(article_id: article.id).count
   end
 
   def new

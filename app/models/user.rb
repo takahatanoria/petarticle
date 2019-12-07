@@ -11,6 +11,6 @@ class User < ApplicationRecord
   # accepts_nested_attributes_for :profile, allow_destroy: true
 
   # has_one_attached :avatar
-  validates  :name,  presence: true
+  validates  :name,  presence: true, length: { maximum: 10 }
   # has_one_attached :avatar
 end

@@ -22,6 +22,10 @@
               .users-resource-select__like__box{data: {id: article.id}}
                 = fa_icon 'heart', class: 'like-btn__icon change-gray'
         - else
+        .article-post-show-like-icon
+          = Like.where(article_id: article.id).count       
+        .article-post-show-like-heading
+          いいね！
         .users-post-time-index
           投稿日時：
           = article.created_at.to_s    
