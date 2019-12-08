@@ -1,0 +1,87 @@
+#account-page.account-page.fadein
+  .account-page__inner.clearfix
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through
+          ユーザー情報
+          .progress-status
+          .progress-status_bar
+        %li.active#through
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.profile#addres#through
+          ユーザープロフィール
+          .progress-status
+          .progress-status_bar
+        %li.confirm#payment#active
+          登録内容の確認
+          .progress-status
+          .progress-status_bar  
+        %li.end#end
+          完了
+          .progress-status
+          .progress-status_bar
+    .account-page__inner__box.account-page__header
+      %h2 新規登録
+      %h5 新規アカウントの作成
+    .account-page__inner__form.user-form
+      = form_with model: @profile, url: signup_index_path, method: :post, local: true do |f|
+        .field
+          .field-label
+            ニックネーム:
+            = @user.name
+        .field
+          .field-label
+            Eメール:
+            = @user.email
+        .field
+          .field-label
+            自己紹介
+          .field-label  
+            = @profile.self_introduction
+        .field
+          .field-label
+            電話番号:
+            = @profile.phone_number
+        .field
+          .field-label
+            都道府県:
+          - if @profile.prefectures.present? 
+            = Prefecture.find(@profile.prefectures).name
+        .field
+          .field-label
+            生年月日:
+            = @profile.birth_year
+            年
+            = @profile.birth_month
+            月
+            = @profile.birth_day
+            日
+        .field
+          .field-label
+            年代:
+            = @profile.age
+        .field
+          .field-label
+            性別:
+            = @profile.gender
+        .field
+          .field-label
+            職業:
+            = @profile.occupation
+        .field
+          .field-label
+          - if @profile.expert == true
+            職業:
+            専門家です  
+        .field
+          .field-label
+          - if @profile.release == true
+            詳細なプロフィールを公開します
+          - elsif @profile.release == false
+            詳細なプロフィールを公開しません
+
+        .field-entry.displayflex
+          = f.submit "登録を完了する", class: 'account-register-btn'
+          = link_to "ログインへ戻る", user_session_path, class: 'account-register-btn'

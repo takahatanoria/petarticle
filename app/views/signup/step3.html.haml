@@ -1,0 +1,132 @@
+#account-page.account-page.fadein
+  .account-page__inner.clearfix
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through
+          ユーザー情報
+          .progress-status
+          .progress-status_bar
+        %li.active#through
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.profile#active
+          ユーザープロフィール
+          .progress-status
+          .progress-status_bar
+        %li.confirm
+          登録内容の確認
+          .progress-status
+          .progress-status_bar  
+        %li.end#end
+          完了
+          .progress-status
+          .progress-status_bar
+
+    .account-page__inner__box.account-page__header
+      %h2 新規登録
+      %h5 新規アカウントの作成
+    .account-page__inner__form.user-form
+      = form_with model: @profile, url: step4_signup_index_path, method: :get, local: true do |f|
+        .field
+          .field-label
+            = f.label :avatar, "アバター画像"
+            %i （任意）
+          .field-input
+            = f.file_field :avatar, autofocus: true, placeholder: '画像を選択(任意)'
+            =  render partial: 'error-profile-messages2', locals: {profile: @profile, column: "avatar"} 
+        .field
+          .field-label
+            = f.label :自己紹介
+            %i (任意：300文字以内)
+          .field-input
+            = f.text_area :self_introduction, placeholder: '自己紹介を入力（任意）', rows: 4, class: "self-introduction-register"
+            =  render partial: 'error-profile-messages2', locals: {profile: @profile, column: "self_introduction"} 
+        
+        .new-article-select-heading-box
+          .new-article-select-box-heading
+            詳細なプロフィール
+        .field
+          .field-label
+            = f.label :お住まいの都道府県
+            %i (選択任意)
+          .field-input
+            = f.collection_select :prefectures, Prefecture.all, :id, :name, {prompt: "▼"},{class:"select-area-default"}
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "prefectures"}     
+        .field
+          .field-label
+            = f.label :市区町村
+            %i (任意)
+          .field-input
+            = f.text_field :city, placeholder: '市町村名を入力（任意）'
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "city"}
+        .field
+          .field-label
+            = f.label :生年月日
+            %i (任意)
+        .field-birthday-register.displayflex  
+          .field-label-register
+            = f.label :年
+            .field-input-register
+              = f.text_field :birth_year, placeholder: '年を入力'
+              = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "birth_year"}
+          .field-label-register
+            = f.label :月
+            .field-input-register
+              = f.text_field :birth_month, placeholder: '月を入力'
+              = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "birth_month"}
+          .field-label-register
+            = f.label :日            
+            .field-input-register
+              = f.text_field :birth_day, placeholder: '日を入力'
+              = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "birth_day"}
+          
+        .field
+          .field-label.require-register
+            = f.label :年代、性別
+            %i (必須)
+        .field.displayflex
+          .field-label-register.half-box.require-register
+            = f.label :年代
+          .field-input-register.half-box.require-register
+            = f.select :age, Profile.ages.keys.to_a ,{prompt: "---"},{class:"select-area-default"}
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "age"}
+          .field-label-register.half-box.require-register
+            = f.label :性別
+          .field-input-register.half-box.require-register
+            = f.select :gender, Profile.genders.keys.to_a ,{prompt: "---"},{class:"select-area-default"}
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "gender"}
+
+        .field
+          .field-label
+            = f.label :職業
+            %i (任意)
+          .field-input
+            = f.text_field :ocupation, placeholder: '職業を入力'
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "ocupation"}
+        
+        .new-article-select-heading-box
+          .new-article-select-box-heading
+            当てはまる方のみチェックして下さい
+        .field.displayflex
+          .field-label-register.half-box
+            = f.label :専門家ですか？
+            %i 
+          .field-label-register.half-box
+            = f.check_box :expert, id: :expert_checkbox,:as => :boolean
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "expert"}
+        .field.displayflex
+          .field-label-register.half-box
+            = f.label :詳細なプロフィールを公開しますか？
+          .field-label-register.half-box
+            = f.check_box :release, id: :expert_checkbox,:as => :boolean
+            = render partial: 'error-profile-messages2', locals: {profile: @profile, column: "release"}
+        
+
+        .field-entry.displayflex
+          = f.submit "登録内容を確認する", class: 'account-register-btn'
+          = link_to "ログインへ戻る", user_session_path, class: 'account-register-btn'
+
+          -# = render "devise/shared/links"
+
+  .main-box-footer        

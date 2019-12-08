@@ -1,0 +1,48 @@
+#account-page.account-page.fadein
+  .account-page__inner.clearfix
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through
+          ユーザー情報
+          .progress-status
+          .progress-status_bar
+        %li.active#active
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.profile
+          ユーザープロフィール
+          .progress-status
+          .progress-status_bar
+        %li.confirm
+          登録内容の確認
+          .progress-status
+          .progress-status_bar  
+        %li.end#end
+          完了
+          .progress-status
+          .progress-status_bar
+          
+    .account-page__inner__box.account-page__header
+      %h2 新規登録
+      %h5 新規アカウントの作成
+      
+    .account-page__inner__form.user-form
+      = form_with model: @profile, url: step3_signup_index_path, method: :get, local: true do |f|
+        .field
+          .field-label
+            = f.label :電話番号, class: "phone-number-register"
+            %i (半角数字)
+
+          .field-input
+            = f.text_field :phone_number, autofocus: true, placeholder: '電話番号を入力(必須)'
+            =  render partial: 'error-profile-messages', locals: {profile: @profile, column: "phone_number"}        
+
+            %p 
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+              
+        .field-entry.displayflex
+          = f.submit "次へ進む", class: 'account-register-btn'
+          = link_to "ログインへ戻る", user_session_path, class: 'account-register-btn'
+
+  .main-box-footer        

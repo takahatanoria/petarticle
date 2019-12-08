@@ -1,0 +1,69 @@
+#account-page.account-page.fadein
+  .account-page__inner.clearfix
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through#active
+          ユーザー情報
+          .progress-status
+          .progress-status_bar
+        %li.active
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.profile
+          ユーザープロフィール
+          .progress-status
+          .progress-status_bar
+        %li.confirm
+          登録内容の確認
+          .progress-status
+          .progress-status_bar  
+        %li.end#end
+          完了
+          .progress-status
+          .progress-status_bar
+          
+
+    .account-page__inner__box.account-page__header
+      %h2 新規登録
+      %h5 新規アカウントの作成
+      
+    .account-page__inner__form.user-form
+      = form_with model: @user, url: step2_signup_index_path, method: :get, local: true do |f|
+        .field
+          .field-label
+            = f.label :name, "ニックネーム"
+            %i (10文字以内)
+          .field-input
+            = f.text_field :name, autofocus: true, placeholder: '名前を入力(必須)'
+            =  render partial: 'error-messages', locals: {user: @user, column: "name"}
+        
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email, placeholder: 'メールアドレスを入力（必須）'
+            = render partial: 'error-messages', locals: {user: @user, column: "email"}
+        
+        .field
+          .field-label
+            = f.label :password
+            %i (英数字8文字以上)
+          .field-input
+            = f.password_field :password, placeholder: 'パスワードを入力'
+            = render partial: 'error-messages', locals: {user: @user, column: "password"}
+        
+        .field
+          .field-label
+            = f.label :password_confirmation
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'パスワードを入力（確認）'
+            = render partial: 'error-messages', locals: {user: @user, column: "password_confirmation"}
+        
+        .field-entry.displayflex
+          = f.submit "次へ進む", class: 'account-register-btn'
+          = link_to "ログインへ戻る", user_session_path, class: 'account-register-btn'
+
+          -# = render "devise/shared/links"
+
+  .main-box-footer        

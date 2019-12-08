@@ -1,15 +1,5 @@
 .account-page {
   margin:0 auto;
-  // a:visited {
-  //   color:$white;
-  //   background-color: $green_light3; 
-  //   border: 1px solid $green_light5;
-  // }
-  // a:hover {
-  //   color:$white;
-  //   background-color: $green_light5;
-  //   border: 1px solid $green_light5;
-  // }
   .account-page__inner {
     margin:0 auto;
     text-align: center;
@@ -84,6 +74,7 @@
       }
     }
     .field-input {
+      padding: 10px;
       input {
         width: 100%;
         padding: 10px;
@@ -92,36 +83,57 @@
       }
     }
   }
-  .account-register-btn{
-    height: 30px;
-    line-height: 30px;
-    width: 100px;
-    // margin:0 auto;
-    text-align: center;
-    margin: 20px 20px;
-    color: $white;
-    background-color: $green_light1;
-    font-size: 14px;
-    font-weight: 560;
-    border-color: $green_light1;
-    border-radius: 5px;
-    cursor: pointer;
+  .field-entry{
+    justify-content: space-around; 
+    .account-register-btn{
+      height: 30px;
+      line-height: 30px;
+      width: 100px;
+      // margin:0 auto;
+      text-align: center;
+      margin: 10px 0;
+      color: $white;
+      background-color: $green_light1;
+      font-size: 14px;
+      font-weight: 560;
+      border-color: $green_light1;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
-  .account-register-btn-link {
-    height: 30px;
-    width: 140px;
-    line-height: 30px;
-    margin:0 auto;
-    text-align: center;
-    margin: 20px 20px;
-    color: $white;
-    background-color: $green_light1;
-    font-size: 14px;
-    font-weight: 560;
-    border-color: $green_light1;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  // a:link {
+  //   height: 30px;
+  //   width: 100px;
+  //   // margin:0 auto;
+  //   text-align: center;
+  //   margin-top: 20px;
+  //   padding: 10px;
+  //   color: $white;
+  //   background-color: $green_light1;
+  //   font-size: 14px;
+  //   border-color: $green_light1;
+  //   border-radius: 5px;
+  //   cursor: pointer;
+  //   font-size: 14px;
+  //   font-weight: 560;
+
+  // }
+  // a:visited {
+  //   height: 30px;
+  //   width: 100px;
+  //   // margin:0 auto;
+  //   text-align: center;
+  //   margin-top: 20px;
+  //   padding: 10px;
+  //   color: $white;
+  //   background-color: $green_light1;
+  //   font-size: 14px;
+  //   border-color: $green_light1;
+  //   border-radius: 5px;
+  //   cursor: pointer;
+  //   font-size: 14px;
+  //   font-weight: 560;
+  // }
   // 新規登録ログインボタン
   .btn {
     height: 30px;
@@ -135,43 +147,30 @@
     border-color: $green_light1;
     border-radius: 5px;
     cursor: pointer;
-
-
-    // display: inline-block;
-    // height: 50px;
-    // padding: 0 30px;
-    // margin: 20px 20px;    
-    // line-height: 50px;
-    // letter-spacing: 1px;
-    // text-align: center;
-    // border: none;
-    // border-radius: 2px;
-    // color: #fff;
-    // background-color: $green_light3;
   }
   // ログイン画面のログインボタン
-  input[type='submit'] {
-    height: 30px;
-    width: 100px;
-    margin:0 auto;
-    text-align: center;
-    margin: 20px 20px;
-    color: $white;
-    background-color: $green_light1;
-    font-size: 14px;
-    font-weight: 560;
-    border-color: $green_light1;
-    border-radius: 5px;
-    cursor: pointer;
-    // margin:0 auto;
-    // text-align: center;
-    // margin: 20px 20px;
-    // color: #fff;
-    // background-color: $green_light3;
-    // font-size: 14px;
-    // border-radius: 2px;
-    // cursor: pointer;
-  }
+  // input[type='submit'] {
+  //   height: 30px;
+  //   width: 100px;
+  //   margin:0 auto;
+  //   text-align: center;
+  //   margin: 20px 20px;
+  //   color: $white;
+  //   background-color: $green_light1;
+  //   font-size: 14px;
+  //   font-weight: 560;
+  //   border-color: $green_light1;
+  //   border-radius: 5px;
+  //   cursor: pointer;
+  //   // margin:0 auto;
+  //   // text-align: center;
+  //   // margin: 20px 20px;
+  //   // color: #fff;
+  //   // background-color: $green_light3;
+  //   // font-size: 14px;
+  //   // border-radius: 2px;
+  //   // cursor: pointer;
+  // }
   .field-label {
     .field_with_errors {
       display: inline-block;
@@ -229,6 +228,45 @@
     text-align: center;
   }
 }
+.select-area-default{
+  height:40px;
+  width: 70%;
+  min-width: 70%;
+  line-height: 40px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid $green_light1;
+  background-color: $green_light1;
+  padding: 0 10px;
+}
+.field-birthday-register{
+  justify-content: space-around; 
+  .field-label-register{
+    width: 30%;
+  }
+  .field-input-register{
+    width: 15%;
+  }
+}
+.self-introduction-register{
+  width: 100%;
+  padding: 10px;
+  letter-spacing: 1px;
+  color: black;
+}
 
+.half-box{
+  width: 50%;
+}
+.require-register{
+  color: $red;
+}
+
+.field-label-finishd{
+  width: 100%;
+  padding: 30px;
+
+}
 
 

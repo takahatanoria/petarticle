@@ -1,0 +1,68 @@
+.progress {
+  padding: 40px 0 0 44px;
+  border: 0;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  text-align: center;
+  margin-bottom: 30px;
+  &-bar{
+    margin: 0;
+    li{
+      margin: 0 28px 0 0;
+      padding: 0;
+      position: relative;
+      z-index: 7;
+      display: inline-block;
+      min-width: 60px;
+      font-size: 12px;
+      color: $green_light1;
+      .progress-status{
+        position: absolute;
+        left: 40%;
+        width: 20px;
+        height: 20px;
+        margin: 3px auto 0;
+        background: $green_light1;
+        border-radius: 50%;
+        z-index: 6;
+      }
+    }
+  }
+}
+
+// デフォルトのプログレスバー
+.progress-status_bar {
+position: absolute;
+left: 50%;
+top: 30px;
+bottom: 5px;
+display: block;
+width: 130px;
+height: 2px;
+background: $green_light1;
+z-index: 5;
+}
+
+.end .progress-status_bar {
+width: 0px;
+}
+.confirm .progress-status_bar {
+width: 100px;
+}
+#through{
+color: $pink;
+.progress-status{
+  background: $pink;
+}
+}
+
+#through .progress-status_bar{
+  background: $pink;
+}
+#active{
+  color: $red;
+  .progress-status{
+    background: $red;
+  }
+}

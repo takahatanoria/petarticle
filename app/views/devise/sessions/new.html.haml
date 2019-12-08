@@ -25,8 +25,7 @@
                 %span<>
                 .field-label-remember
                   = f.check_box :remember_me
-            .actions.displayflex
+            .field-entry.displayflex
               = f.submit "ログインする", class: 'account-register-btn'
-
-              = render "devise/shared/links"
+              = link_to "新規登録画面へ", entry_signup_signup_index_path, class: 'account-register-btn'
   .main-box-footer             

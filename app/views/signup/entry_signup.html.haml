@@ -1,0 +1,37 @@
+#account-page.account-page.fadein
+  .account-page__inner.clearfix
+    .account-page__inner__box.account-page__header
+      %h2 新規登録
+      %h5 新規アカウントの作成
+      
+    .account-page__inner__form.user-form
+      = form_with model: @user, url: step2_signup_index_path, method: :get, local: true do |f|
+        .field
+          .field-label
+            = link_to step1_signup_index_path, class: "btn-default" do
+              = fa_icon 'envelope', width: "20", height: "20", class: "googlesai-icon"
+              メールアドレスで登録する。
+
+        .field
+          .field-label
+            = link_to root_path, class: "facebookrelative" do
+              = fa_icon 'facebook', class: "facebook-icon"
+              %span
+                Facebookで登録する
+        .field
+          .field-label
+            = link_to root_path, class: "google-login-icon" do
+              .field-label-icon
+                = image_tag 'googlelogo.png', width:"12", height: "12",class: "google-icon"
+                %span
+                  Googleで登録する
+
+        .field-entry.displayflex
+          .account-register-btn
+            = link_to "ログイン画面へ", user_session_path, class: 'account-register-btn'
+
+          .account-register-btn
+            = link_to "新規登録画面へ", step1_signup_index_path, class: 'account-register-btn'
+            %br/
+
+  .main-box-footer          
