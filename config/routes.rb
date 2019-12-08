@@ -27,9 +27,11 @@ Rails.application.routes.draw do
 
   resources :signup do
     collection do
+      get 'entry_signup'
       get 'step1'
       get 'step2'
       get 'step3'# ここで、入力の全てが終了する
+      get 'step4'
       get 'done' # 登録完了後のページ
     end
   end

@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   #   @articles_discipline = Article.where(:category_id => 2).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   # end  
 
+  # カテゴリごとに記事を5件づつ最新順に取得
   def walk
     @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end  

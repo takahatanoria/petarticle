@@ -3,9 +3,7 @@ class CommentsController < ApplicationController
   def create 
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build(comment_params)
-
     if @comment.save
-      # redirect_to @article
     end
     redirect_to article_path(@article)
   end
@@ -15,6 +13,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     # その記事内の削除対象のコメントを探して取得
     @comment = @article.comments.find(params[:id])
+    # コメント削除
     if @comment.destroy
       redirect_to article_path(@article)
     end

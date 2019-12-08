@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_014332) do
+ActiveRecord::Schema.define(version: 2019_12_08_052641) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_014332) do
     t.text "content", null: false
     t.integer "category_id"
     t.integer "genre_id", null: false
+    t.index ["title"], name: "index_articles_on_title", length: 40
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,18 +62,19 @@ ActiveRecord::Schema.define(version: 2019_12_05_014332) do
     t.bigint "user_id", null: false
     t.text "self_introduction"
     t.text "avatar"
-    t.integer "prefectures", null: false
+    t.integer "prefectures"
     t.string "city"
     t.string "phone_number", null: false
-    t.string "birth_year", null: false
-    t.string "birth_month", null: false
-    t.string "birth_day", null: false
+    t.string "birth_year"
+    t.string "birth_month"
+    t.string "birth_day"
     t.integer "age", null: false
     t.integer "gender", null: false
     t.string "occupation"
-    t.integer "expert"
+    t.boolean "expert", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "release", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

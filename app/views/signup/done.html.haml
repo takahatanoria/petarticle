@@ -1,0 +1,40 @@
+#account-page.account-page.fadein
+  .account-page__inner.clearfix
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through
+          ユーザー情報
+          .progress-status
+          .progress-status_bar
+        %li.active#through
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.profile#through
+          ユーザープロフィール
+          .progress-status
+          .progress-status_bar
+        %li.confirm#through
+          登録内容の確認
+          .progress-status
+          .progress-status_bar  
+        %li.end#end#active
+          完了
+          .progress-status
+          .progress-status_bar
+
+    .account-page__inner__box.account-page__header
+      %h2 新規登録
+      %h5 新規アカウントの作成
+      
+    .account-page__inner__form.user-form
+      .field
+        .field-label-finishd
+          ユーザー登録が完了しました。
+
+      .field-entry.displayflex
+        = link_to "TOPページへ", root_path, class: 'account-register-btn'
+
+  .main-box-footer        
+
+

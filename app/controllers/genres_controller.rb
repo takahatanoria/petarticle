@@ -1,5 +1,6 @@
 class GenresController < ApplicationController
 
+  # ジャンルごとに記事を5件づつ最新順に取得
   def dog
     @articles_dog = Article.where(:genre_id => 1).includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end  

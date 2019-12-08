@@ -1,5 +1,8 @@
 class DetailsController < ApplicationController
 
+
+  # 最新順やランキング順など各並び順ごとの記事一覧用
+  # 新着記事を５件取得
   def latest
     @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
