@@ -10,13 +10,9 @@ class SignupController < ApplicationController
     @user = User.new # 新規インスタンス作成
   end
 
-
   def step2
-
     @profile = Profile.new # 新規インスタンスの作成
-  
   end
-
 
   def step3
     @profile = Profile.new # 新規インスタンスを再度作成
@@ -24,8 +20,8 @@ class SignupController < ApplicationController
 
   def step4
     @user = User.new(
-      name: session[:name], # sessionに保存された値をインスタンスに渡す
-      email: session[:email],
+    name: session[:name], # sessionに保存された値をインスタンスに渡す
+    email: session[:email],
     )
     
     @profile = Profile.new(
@@ -43,14 +39,11 @@ class SignupController < ApplicationController
       expert: session[:expert],
       release: session[:release],
     )
-    # redirect_to done_signup_index_path
   end
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
   end
-
-
 
   # before_actionごとに、遷移元のページのデータをsessionに保管
   # 仮でインスタンスを作成しバリデーションチェックを行う
@@ -69,7 +62,6 @@ class SignupController < ApplicationController
       password_confirmation: session[:password_confirmation],
     )
     # 仮で作成したインスタンスのバリデーションチェックを行う
-
     render '/signup/step1' unless @user.valid?(:validates_step1)
   
   end
@@ -79,14 +71,12 @@ class SignupController < ApplicationController
     # session[:phone_number] = user_params[:phone_number]
     # バリデーション用に、仮でインスタンスを作成する
     session[:phone_number] = profile_params[:phone_number]
-
     @profile = Profile.new(
       phone_number: session[:phone_number],
     )
     # 仮で作成したインスタンスのバリデーションチェックを行う
     render '/signup/step2' unless @profile.valid?(:validates_step2)
   end 
-
 
   def validates_step3
     session[:self_introduction] = profile_params[:self_introduction]
@@ -102,7 +92,6 @@ class SignupController < ApplicationController
     session[:expert] = profile_params[:expert]
     session[:release] = profile_params[:release]
 
-
     # バリデーション用に、仮でインスタンスを作成する
     @profile = Profile.new(
       avatar: session[:avatar], # sessionに保存された値をインスタンスに渡す
@@ -117,7 +106,6 @@ class SignupController < ApplicationController
       occupation: session[:occupation],
       expert: session[:expert],
       release: session[:release],
-
     )
     # 仮で作成したインスタンスのバリデーションチェックを行う
     render '/signup/step3' unless @profile.valid?(:validates_step3)
@@ -136,7 +124,6 @@ class SignupController < ApplicationController
     
     if @user.save
       
-
       # ログインするための情報を保管
       session[:id] = @user.id
 
@@ -157,19 +144,14 @@ class SignupController < ApplicationController
         release: session[:release],
       )
       @profile.save
-
       redirect_to done_signup_index_path
-
     else
-      render '/signup/entry_signup'
+      render '/signup/step4', notice: 'ユーザー登録が出来ませんでした'
     end
   end
 
-
-
-
   private
-  # 許可するキーを設定します
+  # 許可するキーを設定
     def user_params
       params.require(:user).permit(
         :name, 
@@ -193,8 +175,7 @@ class SignupController < ApplicationController
       :gender, 
       :occupation, 
       :expert,
-      :release
-      
+      :release 
     )
   end
 

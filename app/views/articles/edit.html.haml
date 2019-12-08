@@ -48,11 +48,16 @@
               .new-article-select-box-heading
                 ジャンル
               = f.collection_select(:genre_id, @genres, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
+              .clearfix
+                =  render partial: 'error-messages', locals: {article: @article, column: "genre_id"}
+                        
+            .input-box-select-container
               .new-article-select-box-heading.displayflex
                 カテゴリ 
               = f.collection_select(:category_id, @categories, :id, :name,{prompt: "--------"}, class: "input-box-select-area") 
-            .input-box-select-container
-
+              .clearfix
+                =  render partial: 'error-messages', locals: {article: @article, column: "genre_id"}
+            
 
       .input-box-image__del
         = f.submit '編集する', class: 'form__edit'
