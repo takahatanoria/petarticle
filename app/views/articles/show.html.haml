@@ -43,14 +43,13 @@
           = @article.created_at.to_s 
     .show-article-select-box
       .show-article-select-box-container   
-        .input-box-select-show
-          .input-box-select-container
-            .input-box-select-chose.displayflex
-              ジャンル：
-              = @article.genre.name 
-            .input-box-select-chose.displayflex
-              カテゴリ：
-              = @article.category.name  
+        .input-box-select-show.displayflex
+          .input-box-select-chose.displayflex
+            ジャンル：
+            = @article.genre.name 
+          .input-box-select-chose.displayflex
+            カテゴリ：
+            = @article.category.name  
     -if user_signed_in? && @article.user_id == current_user.id            
       .show-article-edit-box
         .new-article-edit-box   

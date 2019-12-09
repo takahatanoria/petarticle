@@ -167,7 +167,7 @@
       }
     }
     .new-article-select-box  {
-      height:300px;
+      height:140px;
       width: 100%;
       min-width:650px;
       padding: 20px 0 20px 0;
@@ -175,7 +175,7 @@
       margin:0 auto;
       justify-content: space-around; 
         .input-box-select{
-          height:260px;
+          height:100px;
           padding: 20px 40px;
           background-color: $backgroundsub;
           border-radius: 20px;
@@ -213,12 +213,12 @@
     .article-post-main-view{
       text-align: center;
       .show-article-select-box{
-        height: 200px;
+        height: 140px;
         width: 80%;
         min-width: 500px;
-        margin: 0 auto;
+        margin: 20px auto;
         .show-article-select-box-container  {
-          height:200px;
+          height:100px;
           width: 100%;
           min-width:650px;
           padding: 20px 0 20px 0;
@@ -226,11 +226,12 @@
           margin:0 auto;
           justify-content: space-around; 
           .input-box-select-show{
-            height:100px;
+            height:50px;
             padding: 20px 40px;
             background-color: $backgroundsub;
             border-radius: 20px;
             margin:0 auto;
+            justify-content: space-around; 
             .input-box-select-chose{
               font-size: 20px;
               color: $green_light5;
@@ -404,8 +405,11 @@
     }
   }
   .input-box-image{
+    width: 650px;
+    height: 160px;
     display:none;
   }
+  
   .input-box-image1{
     display:none;
   }
