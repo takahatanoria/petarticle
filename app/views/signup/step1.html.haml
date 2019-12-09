@@ -48,7 +48,7 @@
         .field
           .field-label
             = f.label :password
-            %i (英数字8文字以上)
+            %i (英数字6文字以上128文字以内)
           .field-input
             = f.password_field :password, placeholder: 'パスワードを入力'
             = render partial: 'error-messages', locals: {user: @user, column: "password"}

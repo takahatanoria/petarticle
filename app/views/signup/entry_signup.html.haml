@@ -10,17 +10,17 @@
           .field-label
             = link_to step1_signup_index_path, class: "btn-default" do
               = fa_icon 'envelope', width: "20", height: "20", class: "googlesai-icon"
-              メールアドレスで登録する。
+              メールアドレスで登録する
 
         .field
           .field-label
-            = link_to root_path, class: "facebookrelative" do
+            = link_to user_facebook_omniauth_authorize_path, class: "facebookrelative" do
               = fa_icon 'facebook', class: "facebook-icon"
               %span
                 Facebookで登録する
         .field
           .field-label
-            = link_to root_path, class: "google-login-icon" do
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "google-login-icon" do
               .field-label-icon
                 = image_tag 'googlelogo.png', width:"12", height: "12",class: "google-icon"
                 %span
