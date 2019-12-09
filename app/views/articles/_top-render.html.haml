@@ -8,12 +8,12 @@
             = params[:q][:title_or_content_cont_all]
             の検索結果　新着１０件
           = render partial: 'articles/article', collection: @search_articles
-          .category-show
-            .show-all-search-btn
+          .result-show
+            .show-all-result-btn
               全件表示する
-            .show-all-search-off-btn
+            .show-all-result-off-btn
               非表示にする
-          .show-all-search-display-off
+          .show-all-result-display-off
             = render partial: 'articles/article', collection: @search_articles_all
 
         - elsif @search_articles.length == 0

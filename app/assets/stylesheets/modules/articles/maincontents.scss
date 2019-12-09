@@ -196,15 +196,32 @@
   margin:0 auto;
   color: $green_light5;
 }
-.show-all-search-btn{
+
+
+.result-show{
+  width:200px;
+  min-width: 200px;
+  text-align: center;
+  margin:0 auto;
+  color: $green_light5;
+}
+.result-show-box{
+  height: 100px;
+  width:200px;
+  min-width: 200px;
+  text-align: center;
+  margin:0 auto;
+  color: $green_light5;
+}
+.show-all-result-btn{
   display:block;
   cursor:pointer;
 }
-.show-all-search-off-btn{
+.show-all-result-off-btn{
   display:none;
   cursor:pointer;
 }
-.show-all-search-display-off{
+.show-all-result-display-off{
   display:none;
   
 }

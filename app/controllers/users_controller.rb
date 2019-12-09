@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user_articles= Article.where(user_id: current_user.id).includes(:user).page(params[:page]).per(5).order("created_at DESC")
       @likes = Like.where(user_id: @user.id).page(params[:page]).per(5).order("created_at DESC")
-
       @name = current_user.name
 
     else
@@ -39,7 +38,13 @@ class UsersController < ApplicationController
   def likes
     if  user_signed_in?
       # @user = @user = User.find_by(params[:id])
+
       @likes = Like.select(:user_id, :article_id).distinct.where(user_id: current_user.id).page(params[:page]).per(5).order("created_at DESC")
+      # @likes_ranks = Like.select(:user_id, :article_id).distinct.where(user_id: current_user.id).page(params[:page]).per(5).order("count(article_id) desc")
+      @all_ranks = Article.create_all_ranks
+      @my_ranks = @all_ranks.select{ |article| article.user_id == current_user.id }
+
+
     else
       redirect_to root_path unless @article.user_id == current_user.id
     end  

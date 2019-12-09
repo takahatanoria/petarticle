@@ -6,8 +6,7 @@ class ArticlesController < ApplicationController
   def index
     # 記事を３件づつ最新順に取得
     @articles = Article.includes(:user).page(params[:page]).per(3).order("created_at DESC")
-    # @articles_other = Article.includes(:user).limit(10).order("created_at DESC")
-    # @category_number = 1
+
 
     # カテゴリごとに記事を３件づつ最新順に取得
     @articles_walk = Article.where(:category_id => 1).includes(:user).page(params[:page]).per(3).order("created_at DESC")
@@ -44,16 +43,9 @@ class ArticlesController < ApplicationController
       params[:images][:url].each do |url|
       @article.images.create(url: url, article_id: @article.id)
       end
-      # バリデーション設定時に仕様確認
-      # respond_to do |format|
-      #   format.html { redirect_to root_path }
-      #   format.json
-      # end  
+
     elsif @article.save
-      # respond_to do |format|
-      #   format.html { redirect_to root_path }
-      #   format.json
-      # end  
+
     else
       @article.images.build
       render action: :new
@@ -92,21 +84,12 @@ class ArticlesController < ApplicationController
         params[:images][:url].each do |url|
         @article.images.create(url: url, article_id: @article.id) 
         end
-        # バリデーション設定時に仕様確認
-        # respond_to do |format|
-        #   format.html { redirect_to root_path }
-        #   format.json
+
         @article.update(article_params) 
-        # respond_to do |format|
-        #   format.html { redirect_to root_path }
-        #   format.json
-        # end  
+
       else 
         @article.update(article_params) 
-        # respond_to do |format|
-        #   format.html { redirect_to root_path }
-        #   format.json
-        # end  
+
       end  
     else  
       redirect_to action: 'edit'  
@@ -115,7 +98,6 @@ class ArticlesController < ApplicationController
   
   def show
     @article = Article.find(params[:id])
-    # article = Article.find(params[:id])
     @likes_count = Like.where(article_id: @article.id).count
     if @article.present? 
       @user_article = Article.where(user_id: @article.user.id).where.not(id: @article.id).limit(16).order("created_at DESC")

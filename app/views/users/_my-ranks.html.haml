@@ -1,0 +1,37 @@
+- number = 0
+- @likes_ranks.each do |like|
+  .article-post-index  
+    .article-post.fadein.displayflex
+      .article-post-content
+        = link_to article_path(like.article) do
+          .article-post-content-clickarea    
+            .article-post__title
+              = like.article.title
+            .article-post__text  
+              = like.article.content
+            .users-resource-select.displayflex
+              .users-resource-select__name  
+                = fa_icon 'user', class: 'content-user__icon'
+                = like.article.user.name
+              .users-resource-select__detail
+                = fa_icon 'file', class: 'content-user__icon'
+                = link_to '詳細',article_path(like.article), method: :get
+              - if user_signed_in? && current_user.id == like.article.user_id
+                .users-resource-select__edit
+                  = fa_icon 'edit', class: 'content-user__icon'
+                  = link_to '編集', edit_article_path(like.article), method: :get
+                .users-resource-select__delete
+                  = fa_icon 'trash', class: 'content-user__icon'
+                  = link_to '削除', article_path(like.article), method: :delete  
+                .article-post-show-like-icon
+                  = Like.where(article_id: like.article.id).count        
+                .article-post-show-like-heading
+                  いいね！
+                .users-post-time-index
+                  投稿日時：
+                  = like.article.created_at.to_s  
+                  - number += 1
+      .article-post__image  
+        = image_tag "#{like.article.images.first.url}", class: 'article-post__image' if like.article.images.present?
+      
+
