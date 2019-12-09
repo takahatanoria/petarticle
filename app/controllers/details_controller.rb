@@ -8,7 +8,10 @@ class DetailsController < ApplicationController
   end
 
   def ranking
-    @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    # @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @ranks = Article.create_ranks
+    @all_ranks = Article.create_all_ranks
+
   end
 
   def search

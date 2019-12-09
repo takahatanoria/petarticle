@@ -7,9 +7,17 @@
       .index-render-container
         .index-render    
           .index-render-box
-            %p4 ランキング
-            = render partial: 'articles/article', collection: @articles
+            %p4 いいねランキング上位１０件
+            = render partial: 'articles/article', collection: @ranks
+          .result-show-box
+            .show-all-result-btn
+              %p4 全件表示する
+            .show-all-result-off-btn
+              %p4 非表示にする
+          .show-all-result-display-off    
+            = render partial: 'articles/article', collection: @all_ranks
+        
         .kaminari-under
-          = paginate(@articles)    
+          -# = paginate(@articles)    
   .side-bar
     = render 'shared/side-bar'   

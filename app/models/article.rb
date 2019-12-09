@@ -14,6 +14,17 @@ class Article < ApplicationRecord
   validates :genre_id, presence: {message:  "を選択して下さい"}
   
 
+  def self.create_ranks #Articleクラスからデータを取ってくる処理なのでクラスメソッド
+    Article.find(Like.group(:article_id).order('count(article_id) desc').limit(10).pluck(:article_id))
+  end
+
+  def self.create_all_ranks #Articleクラスからデータを取ってくる処理なのでクラスメソッド
+    Article.find(Like.group(:article_id).order('count(article_id) desc').pluck(:article_id))
+  end
+
+
+
+  
 
   # def reject_both_blank(attributes)
     # if attributes[:id]

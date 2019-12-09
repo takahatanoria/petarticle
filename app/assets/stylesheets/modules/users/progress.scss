@@ -33,28 +33,28 @@
 
 // デフォルトのプログレスバー
 .progress-status_bar {
-position: absolute;
-left: 50%;
-top: 30px;
-bottom: 5px;
-display: block;
-width: 130px;
-height: 2px;
-background: $green_light1;
-z-index: 5;
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  bottom: 5px;
+  display: block;
+  width: 130px;
+  height: 5px;
+  background: $green_light1;
+  z-index: 5;
 }
 
 .end .progress-status_bar {
-width: 0px;
+  width: 0px;
 }
 .confirm .progress-status_bar {
-width: 100px;
+  width: 100px;
 }
 #through{
-color: $pink;
-.progress-status{
-  background: $pink;
-}
+  color: $pink;
+  .progress-status{
+    background: $pink;
+  }
 }
 
 #through .progress-status_bar{
