@@ -5,21 +5,32 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+# Name
+  PetMeeting
 
-* System dependencies
+# DEMO  
 
-* Configuration
+Please click the URL below.
+You can browse how to use and feature description.
 
-* Database creation
+https://docs.google.com/document/d/1tEyPGFffAJRNbpGRqnSKEtGRqc5MVLyxzCu5-TejBrE/edit?usp=sharing
 
-* Database initialization
+# Features
 
-* How to run the test suite
+A communication website specializing in pets.
+You can post articles by pet genre and category.
+You can consulting about the pet's problems of living, discipline, illness, eating, care, etc.
+In addition, you can post the daily life of the pet when you want to share.
 
-* Services (job queues, cache servers, search engines, etc.)
+# Requirement
+  
+* Ruby '2.5.1'
+* Ruby on Rails 5.2.3
 
-* Deployment instructions
+# Author
+ 
+* Author NozomiTakeuchi
+* E-mail n61.takeuchi.nozomi@gmail.com
 
 * ...
 
