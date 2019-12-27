@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # before_action :authenticate_user!, except: [:index, :show, :entry_signup, :step1, :step2, :step3, :done,:sign_in, :latest]
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :basic_auth, if: :production?
   before_action :set_search
   before_action :set_category
   before_action :set_genre
